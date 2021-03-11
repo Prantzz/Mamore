@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eff155cbc77f2e14d962b65a21b6d1ed
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gravtrac
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 817e622d4318b1247811f442499ab1a9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
