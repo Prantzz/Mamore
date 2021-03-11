@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    /* 
+     olá eu sou um comentário de teste, apague-me assim que me ver
+     ou não me apague, já que eu tenho consciencia própria e vou sofrer muito tendo meus bytes anulados
+     it's up to you 
+    */
     private float mPosX, mPosY, rotation = 0f, sensitivity = 100f;
     private GameObject Player;
     private Vector3 crouchPos, standPos;
