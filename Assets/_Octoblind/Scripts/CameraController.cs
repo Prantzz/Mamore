@@ -38,11 +38,14 @@ public class CameraController : MonoBehaviour
     }
     private void RotatePlayer()
     {
-        rotation -= mPosY;
-        rotation = Mathf.Clamp(rotation, -90f, 90f);
+        if (!GameGlobeData.IsCamLock)
+        {
+            rotation -= mPosY;
+            rotation = Mathf.Clamp(rotation, -90f, 90f);
 
-        Player.transform.Rotate(Vector3.up * mPosX);
-        transform.localRotation = Quaternion.Euler(rotation, 0, 0);
+            Player.transform.Rotate(Vector3.up * mPosX);
+            transform.localRotation = Quaternion.Euler(rotation, 0, 0);
+        }
     }
     private void CrouchPlayer() 
     {

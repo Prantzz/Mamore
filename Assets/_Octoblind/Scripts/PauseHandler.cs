@@ -27,7 +27,12 @@ public class PauseHandler : MonoBehaviour
 
     private void GameCon_OnEscPressed(object sender, System.EventArgs e)
     {
-        if (GameGlobeData.IsGamePaused) GameGlobeData.IsGamePaused = false;
+        if (GameGlobeData.IsGamePaused)
+        {
+            GameGlobeData.IsGamePaused = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+        }
         else GameGlobeData.IsGamePaused = true;
     }
 
