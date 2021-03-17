@@ -1286,18 +1286,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184760898}
   m_Enabled: 1
-<<<<<<< Updated upstream
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbc9ba9986b4d9c43956298e333ec8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2009288555}
-  selectionTag: Selectable
-  highLightMaterial: {fileID: 2100000, guid: 82ac941a78cbd2d40a66e6d74ecfd949, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 2bd4c5611cffb3143a3131349cb86c72, type: 2}
---- !u!4 &1184760900
-Transform:
-=======
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c6abb73bda7eaab418294de6caa10bde, type: 3}
@@ -1408,21 +1396,10 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &1221411467
 RectTransform:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 1184760898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
   m_GameObject: {fileID: 1221411466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1544,7 +1521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Swap1: {fileID: 21300000, guid: 4875a0876ba0ff740bc7785eafa59e03, type: 3}
   Swap2: {fileID: 21300000, guid: 4b779de0072b0ea4e98500fb037dbb87, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &1316784909
 GameObject:
   m_ObjectHideFlags: 0
