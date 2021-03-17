@@ -17,7 +17,7 @@ public class objectController : MonoBehaviour
 
     private Transform player;
     private String PropertyType, CollectableType;
-
+    public int DocumentIndex;
     private Vector3 DesiredY;
     private Vector3 rotate;
     private float mPosX;
@@ -25,13 +25,12 @@ public class objectController : MonoBehaviour
     private float rotationx;
     private float rotationy;
 
+    public DocumentManager DocMan;
+
     private void Start()
     {
         PropertyType = transform.GetChild(0).tag;
-        if (transform.GetChild(1) != null) 
-        {
-            CollectableType = transform.GetChild(1).tag; 
-        }
+
         player = GameObject.Find("Main Camera").transform;
        
         #region LIST_MANAGING
@@ -42,6 +41,11 @@ public class objectController : MonoBehaviour
         CollectableList.Add("Weapon");
         ReadableList.Add("FirstDocument");
         #endregion
+        
+        if (PropertyType == PropertyList[1])
+        {
+            CollectableType = transform.GetChild(1).tag;
+        }
     }
     private void Update()
     {
@@ -119,7 +123,27 @@ public class objectController : MonoBehaviour
         #region READABLE
         if(PropertyType == PropertyList[2]) //PropertyList[2] --- Readable;
         {
-            
+            GameGlobeData.IsDocumentCollected = true;
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                GameGlobeData.IsDocumentCollected = false;
+                hasInteracted = false;
+            }
+
+            if (DocumentIndex == 0)
+            {
+               var title = "Documento #1 = Dona Maria virou cinzas";
+               var body = "A vida é realmente uma caixinha de surpresas! Quando imaginei ter me livrado de uma boa dor de cabeça, Anne, a faxineira do edifício, me vem com essa de que os dirigentes da empresa me viram passando informações privilegiadas para ajudar a liberação do réu! Isso é um absurdo! Preciso sair desse lugar imediatamente, antes que o pior aconteça. Estou realmente preocupado pela minha saúde e sanidade. Espero sair desse lugar com vida...";
+               DocMan.ChangeDocument(title, body);
+            }
+
+            if (DocumentIndex == 1)
+            {
+                var title = "Documento #2 = Bolsonaro Genocida";
+                var body = "É indiscutível, no cenário atual de toda a esfera sócio-politica brasileira, que a conduta e a postura do atual presidente da república, Jair Bolsonaro, são índices indiscútiveis de um GENOCIDA. Eu estou escrevendo isso de placeholder pro segundo documento, mas a verdade é que enquanto desenvolvo esse projeto, meu coração se enche duvidas e incertezas sobre o meu futuro e o futuro do país com um governante tão boçal, desprepado e ignorante. Não apenas o governante em si, mas ver uma considerável massa apoiadora de um chorume desses me faz cada vez pensar que não temos salvação. É isso amigos. Obrigado por ler até aqui.";
+                DocMan.ChangeDocument(title, body);
+            }
+           
         }
         #endregion
     }

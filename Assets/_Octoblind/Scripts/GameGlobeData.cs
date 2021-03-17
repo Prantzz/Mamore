@@ -16,6 +16,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsGamePaused = false;
     public static bool isCompassCollected = false;
     public static bool IsCamLock = false;
+    public static bool IsDocumentCollected = false;
 
     private void Start()
     {
