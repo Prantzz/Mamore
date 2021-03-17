@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         AudioInstances = new Stack<GameObject>();
+        PullSound(Camera.main.transform.position, 1, 2);
     }
     public void PullSound (Vector3 pos, int type, int sound)
     {

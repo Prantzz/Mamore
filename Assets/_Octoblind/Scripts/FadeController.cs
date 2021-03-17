@@ -28,7 +28,7 @@ public class FadeController : MonoBehaviour
         if (gameObject.tag == "Out")
         {
             gameObject.SetActive(true);
-            fadeSpeed += 0.8f * Time.deltaTime;
+            fadeSpeed += 0.3f * Time.deltaTime;
             thisImg.color = new Color(thisImg.color.r, thisImg.color.g, thisImg.color.b, fadeSpeed);
             if (fadeSpeed >= 1)
             {

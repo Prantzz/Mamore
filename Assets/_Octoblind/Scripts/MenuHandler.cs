@@ -10,11 +10,12 @@ public class MenuHandler : MonoBehaviour
     public VolumeProfile MenuVol;
     public GameObject MainMenuPanel, CreditsPanel;
     public Image MainLogo;
-
+    private AudioManager AU;
     DepthOfField Dof;
 
     private void Start()
     {
+        AU = GameObject.Find("GameGlobeData").GetComponent<AudioManager>();
         CreditsPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
 
@@ -27,6 +28,7 @@ public class MenuHandler : MonoBehaviour
 
     public void Credits() 
     {
+        AU.PullSound(Camera.main.transform.position, 1, 1);
         MainLogo.rectTransform.position = new Vector3(1920f/2, 950f, MainLogo.rectTransform.position.z);
 
         Dof.focusDistance.value = 0f;
@@ -37,6 +39,7 @@ public class MenuHandler : MonoBehaviour
     }
     public void Voltar()
     {
+        AU.PullSound(Camera.main.transform.position, 1, 1);
         MainLogo.rectTransform.position = new Vector3(1920f/4, 850f, MainLogo.rectTransform.position.z);
 
         Dof.focusDistance.value = 0.9f;

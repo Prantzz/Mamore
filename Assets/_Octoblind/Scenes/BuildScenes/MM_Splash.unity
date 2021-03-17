@@ -189,6 +189,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c34892865cc452e479f2d67e5c0f5792, type: 3}
     - {fileID: 8300000, guid: fa76554097723ee4e8af950e0575a8d2, type: 3}
     - {fileID: 8300000, guid: 53d7630d79e509b4e95ee909076cad3e, type: 3}
+  - Name: UI
+    Type: 1
+    Sounds:
+    - {fileID: 8300000, guid: 4839d32db5903b544b06135f1b4c7cfd, type: 3}
+    - {fileID: 8300000, guid: d1f3fa495e9bf454bb1e217c479b60a3, type: 3}
+    - {fileID: 8300000, guid: ad6867db0c8df154790104845c55ca51, type: 3}
 --- !u!1 &587924216
 GameObject:
   m_ObjectHideFlags: 0
