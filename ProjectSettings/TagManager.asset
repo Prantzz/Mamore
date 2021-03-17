@@ -9,6 +9,7 @@ TagManager:
   - Selectable
   - Holdable
   - Collectable
+  - Compass
   layers:
   - Default
   - TransparentFX

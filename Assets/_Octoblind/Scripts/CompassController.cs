@@ -33,6 +33,7 @@ public class CompassController : MonoBehaviour
         {
             marker.thisImg.rectTransform.anchoredPosition = GetPosOnCompass(marker);
         }
+
     }
 
     public void AddQuestMarker(QuestHandler marker)

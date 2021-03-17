@@ -15,7 +15,8 @@ public class objectController : MonoBehaviour
     public List<String> CollectableList;
     public List<String> ReadableList;
 
-    private Transform PropertyType, player;
+    private Transform player;
+    private String PropertyType, CollectableType;
 
     private Vector3 DesiredY;
     private Vector3 rotate;
@@ -26,13 +27,20 @@ public class objectController : MonoBehaviour
 
     private void Start()
     {
-        PropertyType = transform.GetChild(0);
+        PropertyType = transform.GetChild(0).tag;
+        if (transform.GetChild(1) != null) 
+        {
+            CollectableType = transform.GetChild(1).tag; 
+        }
         player = GameObject.Find("Main Camera").transform;
        
         #region LIST_MANAGING
         PropertyList.Add("Holdable");
         PropertyList.Add("Collectable");
         PropertyList.Add("Readable");
+        CollectableList.Add("Compass");
+        CollectableList.Add("Weapon");
+        ReadableList.Add("FirstDocument");
         #endregion
     }
     private void Update()
@@ -58,7 +66,7 @@ public class objectController : MonoBehaviour
     private void ObjectController_OnInteraction(object sender, EventArgs e)
     {
         #region HOLDABLE
-        if (PropertyType.CompareTag(PropertyList[0]))
+        if (PropertyType == PropertyList[0]) //PropertyList[0] --- Holdable;
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -97,9 +105,21 @@ public class objectController : MonoBehaviour
         }
         #endregion
         #region COLLECTABLE
-        if (PropertyType.CompareTag(PropertyList[1]))
+        if (PropertyType == PropertyList[1]) //PropertyList[1] --- Collectable;
         {
-            Destroy(gameObject);
+            if(CollectableType == CollectableList[0]) //CollectableList[0] --- Compass;
+            {
+                GameGlobeData.isCompassCollected = true;
+                Destroy(gameObject);
+            }
+            
+        }
+        #endregion
+
+        #region READABLE
+        if(PropertyType == PropertyList[2]) //PropertyList[2] --- Readable;
+        {
+            
         }
         #endregion
     }

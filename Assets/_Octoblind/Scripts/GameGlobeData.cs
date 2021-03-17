@@ -14,6 +14,7 @@ public class GameGlobeData : MonoBehaviour
     public event EventHandler OnEscPressed;
     public static bool SceneHasEnded = false;
     public static bool IsGamePaused = false;
+    public static bool isCompassCollected = false;
     public static bool IsCamLock = false;
 
     private void Start()
