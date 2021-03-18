@@ -12,6 +12,7 @@ TagManager:
   - Compass
   - Readable
   - FirstDocument
+  - Curupira
   layers:
   - Default
   - TransparentFX
