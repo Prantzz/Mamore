@@ -24,9 +24,9 @@ public class PauseHandler : MonoBehaviour
     {
         AU.ResumeSound();
         GameGlobeData.IsCamLock = false;
-        Time.timeScale = 1f;
         PauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        GameGlobeData.UnfreezeGame();
     }
 
     private void GameCon_OnEscPressed(object sender, System.EventArgs e)
@@ -42,8 +42,8 @@ public class PauseHandler : MonoBehaviour
 
     private void GameCon_OnGamePaused(object sender, System.EventArgs e)
     {
-        AU.PauseSound();
-        Time.timeScale = 0f;
+        GameGlobeData.FreezeGame();
+        AU.PauseSound();   
         PauseMenu.SetActive(true);
         GameGlobeData.IsCamLock = true;
         Cursor.lockState = CursorLockMode.None;

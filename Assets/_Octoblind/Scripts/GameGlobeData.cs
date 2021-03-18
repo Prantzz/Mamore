@@ -32,4 +32,13 @@ public class GameGlobeData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PullSound(this.transform.position, 0, 0);
     }
+
+    public static void FreezeGame() 
+    {
+        Time.timeScale = 0f;
+    }
+    public static void UnfreezeGame()
+    {
+        Time.timeScale = 1f;
+    }
 }

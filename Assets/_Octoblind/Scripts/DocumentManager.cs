@@ -17,13 +17,17 @@ public class DocumentManager : MonoBehaviour
         {
             ownCanvas.SetActive(true);
             GameGlobeData.IsCamLock = true;
-            Time.timeScale = 0f;
+            GameGlobeData.FreezeGame();
         }
         else
         {
-            ownCanvas.SetActive(false);
-            GameGlobeData.IsCamLock = false;
-            Time.timeScale = 1f;
+            if (!GameGlobeData.IsGamePaused)
+            {
+                ownCanvas.SetActive(false);
+                GameGlobeData.IsCamLock = false;
+                GameGlobeData.UnfreezeGame();
+            }
+
         }
 
     }
