@@ -22,7 +22,7 @@ public class PauseHandler : MonoBehaviour
     }
     private void GameCon_OnGameResumed(object sender, System.EventArgs e)
     {
-        AU.ResumeSound();
+        
         GameGlobeData.IsCamLock = false;
         PauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
@@ -33,17 +33,22 @@ public class PauseHandler : MonoBehaviour
     {
         if (GameGlobeData.IsGamePaused)
         {
+            AU.ResumeSound();
             GameGlobeData.IsGamePaused = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
         }
-        else GameGlobeData.IsGamePaused = true;
+        else
+        {
+            AU.PauseSound();
+            GameGlobeData.IsGamePaused = true;
+        }
     }
 
     private void GameCon_OnGamePaused(object sender, System.EventArgs e)
     {
         GameGlobeData.FreezeGame();
-        AU.PauseSound();   
+        
         PauseMenu.SetActive(true);
         GameGlobeData.IsCamLock = true;
         Cursor.lockState = CursorLockMode.None;

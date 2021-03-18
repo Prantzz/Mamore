@@ -20,7 +20,7 @@ public class PlayerSoundController : MonoBehaviour
     }
     private void Update()
     {
-        if(PlayerController.CharCon.isGrounded && !WalkingAudio.isPlaying)
+        if(PlayerController.CharCon.isGrounded && !WalkingAudio.isPlaying && !GameGlobeData.IsGamePaused)
         {
             //Som de cair
             AM.PullSound(this.transform.position, 0, 1);

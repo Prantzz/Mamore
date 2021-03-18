@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public Stack<GameObject> AudioInstances;
     public List<AudioGroup> AudioGroupes;
     private AudioSource AmbientePlayer;
+    private PlayerSoundController PSC;
     void Start()
     {
         playable = true;
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case (2):
                 AmbientePlayer.clip = Ambients[0];
+                PSC = GameObject.Find("Player").GetComponent<PlayerSoundController>();
                 break;
         }
         AmbientePlayer.Play();
@@ -67,10 +69,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PauseSound()
     {
+        PSC.WalkingAudio.Pause();
         AmbientePlayer.volume = 0.15f;
     }
     public void ResumeSound()
     {
+        if (!PSC.WalkingAudio.isPlaying) PSC.WalkingAudio.Play();
         AmbientePlayer.volume = 0.50f;
     }
 }
