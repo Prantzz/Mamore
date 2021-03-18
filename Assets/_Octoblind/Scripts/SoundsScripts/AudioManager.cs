@@ -73,9 +73,4 @@ public class AudioManager : MonoBehaviour
     {
         AmbientePlayer.volume = 0.50f;
     }
-
-    private void xxx()
-    {
-
-    }
 }

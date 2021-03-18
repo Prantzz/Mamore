@@ -14,6 +14,7 @@ public class objectController : MonoBehaviour
     public List<String> PropertyList;
     public List<String> CollectableList;
     public List<String> ReadableList;
+    public int AudioNum;
 
     private Transform player;
     private String PropertyType, CollectableType;
@@ -24,6 +25,7 @@ public class objectController : MonoBehaviour
     private float mPosY;
     private float rotationx;
     private float rotationy;
+    private AudioManager AU;
 
     public DocumentManager DocMan;
 
@@ -32,6 +34,7 @@ public class objectController : MonoBehaviour
         PropertyType = transform.GetChild(0).tag;
 
         player = GameObject.Find("Main Camera").transform;
+        AU = GameObject.Find("GameGlobeData").GetComponent<AudioManager>();
        
         #region LIST_MANAGING
         PropertyList.Add("Holdable");
@@ -60,9 +63,10 @@ public class objectController : MonoBehaviour
 
     #region EVENT_METHODS
     private void ObjectController_OnSelection(object sender, EventArgs e)
-    {
+    {        
         if (Input.GetKeyDown(KeyCode.E) && !hasInteracted) 
         {
+            AU.PullSound(this.transform.position, 2, AudioNum);
             hasInteracted = true;
         }
     }

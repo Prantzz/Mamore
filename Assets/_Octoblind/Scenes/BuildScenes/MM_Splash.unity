@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5420cb3c8952e1f42ad19f0598b384fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 0
+  playable: 0
   AudioInstancePrefab: {fileID: 7242938262875117914, guid: 189a3c407a1e1f943b2d813724d2d1b8, type: 3}
   Ambients:
   - {fileID: 8300000, guid: c6abb73bda7eaab418294de6caa10bde, type: 3}
@@ -197,6 +197,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4839d32db5903b544b06135f1b4c7cfd, type: 3}
     - {fileID: 8300000, guid: d1f3fa495e9bf454bb1e217c479b60a3, type: 3}
     - {fileID: 8300000, guid: ad6867db0c8df154790104845c55ca51, type: 3}
+  - Name: Interactions
+    Type: 2
+    Sounds:
+    - {fileID: 8300000, guid: fc3163c63db0bad49a9d34fb8a085ddb, type: 3}
+    - {fileID: 8300000, guid: 00eca8e2d715b434ba55814fc1bc2580, type: 3}
 --- !u!82 &258372068
 AudioSource:
   m_ObjectHideFlags: 0
