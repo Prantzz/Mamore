@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01602986, g: 0.018923363, b: 0.021959236, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -856,7 +856,8 @@ PrefabInstance:
       propertyPath: m_ForceIntoRT
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1125067190, guid: 1298fda94db1b8245a54df0d9362725d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1298fda94db1b8245a54df0d9362725d, type: 3}
 --- !u!20 &614776980 stripped
 Camera:
@@ -2310,6 +2311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 3583958542044638781, guid: d5ea311cee2ba1d47a4fc979dc8e7bd4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -5296020251895589082, guid: 35b14772acfd5054cadb7dde273262d0, type: 3}
     - target: {fileID: 3583958542044638783, guid: d5ea311cee2ba1d47a4fc979dc8e7bd4, type: 3}
       propertyPath: m_RootOrder
       value: 7
