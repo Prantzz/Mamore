@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 258372066}
   - component: {fileID: 258372065}
   - component: {fileID: 258372067}
+  - component: {fileID: 258372069}
   - component: {fileID: 258372068}
   m_Layer: 0
   m_Name: GameGlobeData
@@ -202,6 +203,34 @@ MonoBehaviour:
     Sounds:
     - {fileID: 8300000, guid: fc3163c63db0bad49a9d34fb8a085ddb, type: 3}
     - {fileID: 8300000, guid: 00eca8e2d715b434ba55814fc1bc2580, type: 3}
+  - Name: Aves
+    Type: 3
+    Sounds:
+    - {fileID: 8300000, guid: 627744d231c01b249968de63795b044c, type: 3}
+    - {fileID: 8300000, guid: 19764a39d59a83345ab782c131af7a03, type: 3}
+    - {fileID: 8300000, guid: 79f33c0f814b8b94ea9642bc16dbd514, type: 3}
+    - {fileID: 8300000, guid: a349bdbb41eae6449b87531b3d1ab55d, type: 3}
+    - {fileID: 8300000, guid: 92643ad059124144eb072f056d389e85, type: 3}
+    - {fileID: 8300000, guid: 2e676bdbdafce2c4f80100707419f095, type: 3}
+    - {fileID: 8300000, guid: fdb8ab71fca2aca4585201558c3fe627, type: 3}
+    - {fileID: 8300000, guid: 2f5858430c65ff44f9ebad79730d5b69, type: 3}
+    - {fileID: 8300000, guid: 5826fa2e0d9bb814da8806cfac4caf67, type: 3}
+    - {fileID: 8300000, guid: d27246765f784b8429a86b2ae557e0d0, type: 3}
+    - {fileID: 8300000, guid: 622da411c85c65343ae8f8a9eb60e079, type: 3}
+    - {fileID: 8300000, guid: b59294f74ef9e33409d4d6f4d0a88546, type: 3}
+    - {fileID: 8300000, guid: 8e80b48caba27574d9fbf740b2aa9683, type: 3}
+    - {fileID: 8300000, guid: 5bed455c911e7b8458991838e0ee724e, type: 3}
+  - Name: "Mam\xEDferos"
+    Type: 4
+    Sounds:
+    - {fileID: 8300000, guid: e8cab625334dc934fadf20f21827826a, type: 3}
+    - {fileID: 8300000, guid: 9a26ffb0ccd93d34fabe7200967c7bd7, type: 3}
+    - {fileID: 8300000, guid: a950c14445571854e9bb01752f179079, type: 3}
+    - {fileID: 8300000, guid: be40e60ab462e8849b0674d83d352c11, type: 3}
+    - {fileID: 8300000, guid: b9f11a578c54673458ab4cbbff9ec1d6, type: 3}
+    - {fileID: 8300000, guid: 43ebd190c969c8a4db26ea133a0388fb, type: 3}
+    - {fileID: 8300000, guid: 9cd76a4038374554e9cdd1c4be7e9340, type: 3}
+    - {fileID: 8300000, guid: 4c87319ef3566834db790af285dad311, type: 3}
 --- !u!82 &258372068
 AudioSource:
   m_ObjectHideFlags: 0
@@ -298,6 +327,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &258372069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258372064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0868dd198fa169f46a97a663a148c607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587924216
 GameObject:
   m_ObjectHideFlags: 0
