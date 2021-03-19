@@ -49,7 +49,7 @@ public class SelectionManager : MonoBehaviour
                 _selection = selection;
                 _outline = selection;
 
-                objCon = selection.GetComponent<objectController>();
+                if (objCon == null) objCon = selection.GetComponent<objectController>();
                 if (!objCon.isSelected) objCon.isSelected = true;
             }
 
