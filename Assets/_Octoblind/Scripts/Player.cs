@@ -6,11 +6,10 @@ public class Player : MonoBehaviour
 {
     public static float INSANITY;
     public string CurupiraTag = "Curupira";
+    public InventoryObject inventory;
     void Start()
     {
-        INSANITY = 0f;
-
-        
+        INSANITY = 0f;    
     }
 
     // Update is called once per frame
@@ -31,5 +30,11 @@ public class Player : MonoBehaviour
             INSANITY -= 2f * Time.deltaTime;
         }
         Debug.Log(INSANITY);
+    }
+
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
     }
 }

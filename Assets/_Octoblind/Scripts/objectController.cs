@@ -29,6 +29,9 @@ public class objectController : MonoBehaviour
 
     public DocumentManager DocMan;
 
+    private Player Player;
+    private Item item;
+
     private void Start()
     {
         PropertyType = transform.GetChild(0).tag;
@@ -122,9 +125,16 @@ public class objectController : MonoBehaviour
 
             if (CollectableType == CollectableList[1]) //CollectableList[1] --- Weapon;
             {
-                Destroy(gameObject);
-            }
 
+                    if (item == null) item = gameObject.GetComponent<Item>();
+                    if (item)
+                    {
+                        if (Player == null) Player = GameObject.Find("Player").GetComponent<Player>();
+                        Player.inventory.AddItem(item.item, 1);
+                        hasInteracted = false;
+                        Destroy(gameObject);
+                    }
+            }
         }
         #endregion
 
