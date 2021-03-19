@@ -6,6 +6,7 @@ public class Hand : MonoBehaviour
 {
     public InventoryObject inventory;
     public int SelectInt;
+    public static string HOLDING_TOOL;
     
     void Update()
     {
@@ -15,7 +16,10 @@ public class Hand : MonoBehaviour
             if(inventory.Container[SelectInt] != null) 
             {
                 if(gameObject.transform.childCount <= 0)
-                Instantiate(inventory.Container[0].item.prefab, gameObject.transform);
+                Instantiate(inventory.Container[SelectInt].item.prefab, gameObject.transform);
+
+                string toolName = inventory.Container[SelectInt].item.ToolName;
+                HOLDING_TOOL = toolName;
             }
             
         }
