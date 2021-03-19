@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("HARD CODED 4 e 5!!!")]
     public bool playable;
     public GameObject AudioInstancePrefab;
     public List<AudioClip> Ambients;
@@ -12,8 +13,15 @@ public class AudioManager : MonoBehaviour
     public List<AudioGroup> AudioGroupes;
     private AudioSource AmbientePlayer;
     private PlayerSoundController PSC;
+    private ProceduralSound PS;
     void Start()
     {
+        //SetUp do Procedural---
+        PS = GetComponent<ProceduralSound>();
+        PS.AU = this;
+        PS.SetUp();
+        PS.enabled = false;
+        // -----
         playable = true;
         AudioInstances = new Stack<GameObject>();
         PullSound(Camera.main.transform.position, 1, 2);
@@ -28,15 +36,17 @@ public class AudioManager : MonoBehaviour
                 //Aqui virá a música do menu inicial
                 break;
             case (2):
+                //Ativa as coisas necessárias quando o jogador entra no main game.
                 AmbientePlayer.clip = Ambients[0];
                 PSC = GameObject.Find("Player").GetComponent<PlayerSoundController>();
+                PS.enabled = true;
+                PS.PlayerPos = PSC.gameObject.transform;
                 break;
         }
         AmbientePlayer.Play();
     }
-    public void PullSound (Vector3 pos, int type, int sound)
-    {
-        
+    public GameObject PullSound (Vector3 pos, int type, int sound)
+    {        
         if (playable)
         {
             //Caso a lista esteja vazia
@@ -45,6 +55,7 @@ public class AudioManager : MonoBehaviour
                 GameObject toInstantiate = Instantiate(AudioInstancePrefab, pos, Quaternion.identity);
                 toInstantiate.GetComponent<AudioInstanceComponent>().AU = this;
                 toInstantiate.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
+                return toInstantiate;
             }
             //Caso a lista tenha objetos
             else
@@ -54,9 +65,10 @@ public class AudioManager : MonoBehaviour
                 Popped.transform.position = pos;
                 Popped.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
                 Popped.SetActive(true);
+                return Popped;
             }
         }
-        
+        else return null;        
     }
     //Volta tudo para lista quando terminar de trocar.
     public void Comeback(GameObject toSave)

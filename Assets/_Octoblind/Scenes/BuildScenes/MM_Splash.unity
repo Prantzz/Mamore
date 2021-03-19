@@ -203,8 +203,11 @@ MonoBehaviour:
     Sounds:
     - {fileID: 8300000, guid: fc3163c63db0bad49a9d34fb8a085ddb, type: 3}
     - {fileID: 8300000, guid: 00eca8e2d715b434ba55814fc1bc2580, type: 3}
-  - Name: Aves
+  - Name: Ambiente
     Type: 3
+    Sounds: []
+  - Name: Aves
+    Type: 4
     Sounds:
     - {fileID: 8300000, guid: 627744d231c01b249968de63795b044c, type: 3}
     - {fileID: 8300000, guid: 19764a39d59a83345ab782c131af7a03, type: 3}
@@ -221,7 +224,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8e80b48caba27574d9fbf740b2aa9683, type: 3}
     - {fileID: 8300000, guid: 5bed455c911e7b8458991838e0ee724e, type: 3}
   - Name: "Mam\xEDferos"
-    Type: 4
+    Type: 5
     Sounds:
     - {fileID: 8300000, guid: e8cab625334dc934fadf20f21827826a, type: 3}
     - {fileID: 8300000, guid: 9a26ffb0ccd93d34fabe7200967c7bd7, type: 3}
@@ -339,6 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0868dd198fa169f46a97a663a148c607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AU: {fileID: 0}
+  Instance: {fileID: 0}
+  PlayerPos: {fileID: 0}
 --- !u!1 &587924216
 GameObject:
   m_ObjectHideFlags: 0
