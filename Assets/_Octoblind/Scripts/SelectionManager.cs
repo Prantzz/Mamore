@@ -14,7 +14,9 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
     private Renderer selectionRenderer;
 
-
+    objectController objCon;
+    private Ray ray;
+    private RaycastHit hit;
     private Transform _selection,_outline;
     
  
@@ -25,9 +27,8 @@ public class SelectionManager : MonoBehaviour
             _selection.GetComponent<objectController>().isSelected = false;
             _selection = null;
         }
-        var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
-        RaycastHit hit;
-
+        ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+        
         if (Physics.Raycast(ray, out hit, 1.5f))
         {
             Transform selection = hit.transform;
@@ -48,7 +49,7 @@ public class SelectionManager : MonoBehaviour
                 _selection = selection;
                 _outline = selection;
 
-                objectController objCon = selection.GetComponent<objectController>();
+                objCon = selection.GetComponent<objectController>();
                 if (!objCon.isSelected) objCon.isSelected = true;
             }
 

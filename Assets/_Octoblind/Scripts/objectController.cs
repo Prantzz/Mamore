@@ -79,13 +79,12 @@ public class objectController : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 gameObject.transform.parent = player.transform;
-                gameObject.GetComponent<Rigidbody>().isKinematic = true;
-
+                if(!gameObject.GetComponent<Rigidbody>().isKinematic) gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 if (Input.GetKey(KeyCode.Q))
                 {
-                    GameGlobeData.IsCamLock = true;
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = false;
+                    if (!GameGlobeData.IsCamLock) GameGlobeData.IsCamLock = true;
+                    if (Cursor.lockState != CursorLockMode.None)Cursor.lockState = CursorLockMode.None;
+                    if (Cursor.visible) Cursor.visible = false;
 
                     rotationx -= mPosY;
                     rotationy -= mPosX;
@@ -101,14 +100,14 @@ public class objectController : MonoBehaviour
                 gameObject.transform.parent = null;
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 hasInteracted = false;
-                GameGlobeData.IsCamLock = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                if (GameGlobeData.IsCamLock) GameGlobeData.IsCamLock = false;
+                if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
             }
 
             if (Input.GetKeyUp(KeyCode.Q))
             {
-                GameGlobeData.IsCamLock = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                if (GameGlobeData.IsCamLock) GameGlobeData.IsCamLock = false;
+                if (Cursor.lockState != CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Locked;
             }
         }
         #endregion
@@ -120,7 +119,12 @@ public class objectController : MonoBehaviour
                 GameGlobeData.isCompassCollected = true;
                 Destroy(gameObject);
             }
-            
+
+            if (CollectableType == CollectableList[1]) //CollectableList[1] --- Weapon;
+            {
+                Destroy(gameObject);
+            }
+
         }
         #endregion
 
@@ -147,6 +151,7 @@ public class objectController : MonoBehaviour
                 var body = "É indiscutível, no cenário atual de toda a esfera sócio-politica brasileira, que a conduta e a postura do atual presidente da república, Jair Bolsonaro, são índices indiscútiveis de um GENOCIDA. Eu estou escrevendo isso de placeholder pro segundo documento, mas a verdade é que enquanto desenvolvo esse projeto, meu coração se enche duvidas e incertezas sobre o meu futuro e o futuro do país com um governante tão boçal, desprepado e ignorante. Não apenas o governante em si, mas ver uma considerável massa apoiadora de um chorume desses me faz cada vez pensar que não temos salvação. É isso amigos. Obrigado por ler até aqui.";
                 DocMan.ChangeDocument(title, body);
             }
+
            
         }
         #endregion

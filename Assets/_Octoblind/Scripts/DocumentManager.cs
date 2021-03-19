@@ -27,7 +27,6 @@ public class DocumentManager : MonoBehaviour
                 GameGlobeData.IsCamLock = false;
                 GameGlobeData.UnfreezeGame();
             }
-
         }
 
     }
