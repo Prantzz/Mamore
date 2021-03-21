@@ -150,8 +150,10 @@ public class objectController : MonoBehaviour
 
             if (DocumentIndex == 0)
             {
-               var title = "Documento #1 = Dona Maria virou cinzas";
-               var body = "A vida é realmente uma caixinha de surpresas! Quando imaginei ter me livrado de uma boa dor de cabeça, Anne, a faxineira do edifício, me vem com essa de que os dirigentes da empresa me viram passando informações privilegiadas para ajudar a liberação do réu! Isso é um absurdo! Preciso sair desse lugar imediatamente, antes que o pior aconteça. Estou realmente preocupado pela minha saúde e sanidade. Espero sair desse lugar com vida...";
+               var title = "Documento #1 = Arrependimento";
+               var body = "Eu sabia que essa ideia era maluca. Uma ferrovia que atravessa a Amazônia e o Acre? Isso é um absurdo, não me surpreende que levaram décadas para concretizar a ideia. Por que aceitei trabalhar nessa insanidade? " +
+                    "Além do trabalho impossível e baixo salário, nossos acampamentos estão sendo atacados por onças. Várias pessoas estão tendo que fugir e se abrigar em tendas improvisadas. Porém, todos que se abrigarem nessas tendas devem voltar o mais rápido possível para o acampamento. Dizem que ficar sozinho na mata te corrompe. " +
+                    "Estou cansado, minha cabeça está quente, tão quente que cheguei a enxergar chamas a noite. Quero ir para casa.";
                DocMan.ChangeDocument(title, body);
             }
 
