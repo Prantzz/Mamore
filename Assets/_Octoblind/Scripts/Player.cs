@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         {
             INSANITY -= 2f * Time.deltaTime;
         }
-        Debug.Log(INSANITY);
+        //Debug.Log(INSANITY);
     }
 
 
