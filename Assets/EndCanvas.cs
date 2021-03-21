@@ -7,8 +7,17 @@ public class EndCanvas : MonoBehaviour
 {
     public void Voltar()
     {
-        SceneManager.LoadScene(1);
+        GameGlobeData.IsGameOver = false;
+        GameGlobeData.isCompassCollected = false;
+        GameGlobeData.IsDocumentCollected = false;
+        GameGlobeData.SceneHasEnded = true;
     }
+
+    public void Sair() 
+    {
+        Application.Quit();
+    }
+
 }
 
 

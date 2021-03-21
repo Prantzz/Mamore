@@ -17,6 +17,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool isCompassCollected = false;
     public static bool IsCamLock = false;
     public static bool IsDocumentCollected = false;
+    public static bool IsGameOver = false;
 
     private void Start()
     {
@@ -40,5 +41,13 @@ public class GameGlobeData : MonoBehaviour
     public static void UnfreezeGame()
     {
         Time.timeScale = 1f;
+    }
+
+    public void GameOver() 
+    {
+        if (IsGameOver) 
+        {
+            SceneHasEnded = true;
+        }
     }
 }

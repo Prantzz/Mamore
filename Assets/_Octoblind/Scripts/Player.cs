@@ -22,12 +22,17 @@ public class Player : MonoBehaviour
             Transform _curupira = hit.transform;
             if (_curupira.CompareTag(CurupiraTag)) 
             {
-                INSANITY += 6f * Time.deltaTime;
+                INSANITY += 25f * Time.deltaTime;
             }
         }
-        if (INSANITY >= 15f)
+        if (INSANITY >= 0f)
         {
-            INSANITY -= 2f * Time.deltaTime;
+            INSANITY -= 15f * Time.deltaTime;
+        }
+        if (INSANITY >= 100f) 
+        {
+            INSANITY = 100f;
+            EndGame();
         }
         //Debug.Log(INSANITY);
     }
@@ -36,5 +41,10 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
+    }
+
+    public void EndGame() 
+    {
+        GameGlobeData.IsGameOver = true;
     }
 }
