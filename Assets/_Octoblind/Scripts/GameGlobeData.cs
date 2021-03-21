@@ -31,7 +31,7 @@ public class GameGlobeData : MonoBehaviour
         if (!IsGamePaused) OnGameResumed?.Invoke(this, EventArgs.Empty);
         if (Input.GetKeyDown(KeyCode.Escape)) OnEscPressed?.Invoke(this, EventArgs.Empty);
         if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
-        if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PullSound(this.transform.position, 0, 0);
+        if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PS.InvokeSound();
         GameOver();
     }
 

@@ -16,7 +16,7 @@ public class Track : MonoBehaviour
     private void Update()
     {
         if(HOLDING_TOOL != Hand.HOLDING_TOOL) HOLDING_TOOL = Hand.HOLDING_TOOL;
-        Debug.Log(HOLDING_TOOL);
+        //Debug.Log(HOLDING_TOOL);
         placedPlanks = gameObject.transform.childCount;
         if (placedPlanks == 2) GameGlobeData.IsGameOver = true;
     }

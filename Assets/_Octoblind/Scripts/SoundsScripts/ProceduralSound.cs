@@ -27,7 +27,7 @@ public class ProceduralSound : MonoBehaviour
         }
         ProceduralArr = new int[size];
     }
-    void InvokeSound()
+    public void InvokeSound()
     {
         //Escolhe um som
         int SoundIndex = FindValidSound();
@@ -55,7 +55,10 @@ public class ProceduralSound : MonoBehaviour
     }
     Vector3 PickRandomPos()
     {
-        return Vector3.back;
+        float x = UnityEngine.Random.value;
+        float z = UnityEngine.Random.value;
+        Vector3 Normalized = new Vector3(x, 0, z);
+        return Normalized * UnityEngine.Random.Range(10, 100);
     }
     KeyValuePair<int, int> FindPos(int numb)
     {

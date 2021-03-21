@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioGroup> AudioGroupes;
     private AudioSource AmbientePlayer;
     private PlayerSoundController PSC;
-    private ProceduralSound PS;
+    public ProceduralSound PS;
     void Start()
     {
         //SetUp do Procedural---
@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
                 PSC = GameObject.Find("Player").GetComponent<PlayerSoundController>();
                 PS.enabled = true;
                 PS.PlayerPos = PSC.gameObject.transform;
+                PS.InvokeRepeating("InvokeSound", 5, 60);
                 break;
         }
         AmbientePlayer.Play();
