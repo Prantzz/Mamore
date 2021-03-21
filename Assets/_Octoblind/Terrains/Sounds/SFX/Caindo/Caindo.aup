@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Caindo_data" version="1.3.0" audacityversion="2.4.2" sel0="0.3684580499" sel1="0.3684580499" vpos="0" h="0.0000000000" zoom="378.4782967486" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="February 20, 2020"/>
+		<tag name="TITLE" value="Jumping into Puddle"/>
+		<tag name="COMMENTS" value="2 seconds, one person jumps into a puddle"/>
+		<tag name="ARTIST" value="Andrea Orvik - And/Or Graphics"/>
+		<tag name="GENRE" value="Outdoor sounds"/>
+	</tags>
+	<wavetrack name="421791__markbolden__walking-through-leaves" isSelected="0" height="74" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="14279">
+				<waveblock start="0">
+					<simpleblockfile filename="e080858e.au" len="14279" min="-0.134082" max="0.183314" rms="0.017049"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="421791__markbolden__walking-through-leaves" isSelected="0" height="74" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="14279">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808b28.au" len="14279" min="-0.166173" max="0.147875" rms="0.016854"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="383833__deleted-user-7146007__old-metal-lunch-box" isSelected="0" height="60" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.12766185" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="17150">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808ccd.au" len="17150" min="-0.296722" max="0.2948" rms="0.023461"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="383833__deleted-user-7146007__old-metal-lunch-box" isSelected="0" height="60" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.12766185" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="17150">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808048.au" len="17150" min="-0.296722" max="0.2948" rms="0.023461"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Audio Track" isSelected="0" height="76" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="16249">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808dca.au" len="16249" min="-0.13213" max="0.124524" rms="0.015418"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Audio Track" isSelected="0" height="76" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="16249">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808570.au" len="16249" min="-0.117631" max="0.146802" rms="0.017029"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="506526__wildtofurkey__jumpintopuddle" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="17686">
+				<waveblock start="0">
+					<simpleblockfile filename="e08087e8.au" len="17686" min="-0.400678" max="0.379538" rms="0.034616"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
