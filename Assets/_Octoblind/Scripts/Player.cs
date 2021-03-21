@@ -22,12 +22,12 @@ public class Player : MonoBehaviour
             Transform _curupira = hit.transform;
             if (_curupira.CompareTag(CurupiraTag)) 
             {
-                INSANITY += 25f * Time.deltaTime;
+                INSANITY += 30f * Time.deltaTime;
             }
         }
         if (INSANITY >= 0f)
         {
-            INSANITY -= 15f * Time.deltaTime;
+            INSANITY -= 20f * Time.deltaTime;
         }
         if (INSANITY >= 100f) 
         {

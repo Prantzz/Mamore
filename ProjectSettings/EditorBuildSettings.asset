@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Octoblind/Scenes/BuildScenes/MM_RainForest.unity
     guid: 904df15788b7b624684530e0daaa085f
+  - enabled: 1
+    path: Assets/_Octoblind/Scenes/BuildScenes/MM_End.unity
+    guid: 54599db45293c6749930f009b3c73e8a
   m_configObjects: {}
