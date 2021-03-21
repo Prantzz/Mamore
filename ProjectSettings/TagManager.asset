@@ -14,6 +14,8 @@ TagManager:
   - FirstDocument
   - Curupira
   - Weapon
+  - FixPoint0
+  - FixPoint1
   layers:
   - Default
   - TransparentFX

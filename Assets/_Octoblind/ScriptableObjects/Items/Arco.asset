@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Arco
   m_EditorClassIdentifier: 
   prefab: {fileID: 3401798989301410385, guid: 8d23b0c3ac31fd8449d674db2e7b711f, type: 3}
+  ToolName: Arco
   type: 0
   description: 

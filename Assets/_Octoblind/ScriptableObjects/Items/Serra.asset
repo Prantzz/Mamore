@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c15bfec711c63439395487547d94c4, type: 3}
   m_Name: Serra
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3028388800665013229, guid: e55629a718d6b8a478b5770dcc2beea1, type: 3}
+  ToolName: Serra
   type: 0
   description: 

@@ -29,7 +29,7 @@ public class SelectionManager : MonoBehaviour
         }
         ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
         
-        if (Physics.Raycast(ray, out hit, 1.5f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             Transform selection = hit.transform;
             if (selection.tag == selectionTag)

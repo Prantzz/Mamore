@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Lanterna
   m_EditorClassIdentifier: 
   prefab: {fileID: 4332025175710616353, guid: 15a586153613dee48b9de3eaf45b5f5e, type: 3}
+  ToolName: Lanterna
   type: 0
   description: 

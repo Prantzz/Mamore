@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3583958542044638782}
   - component: {fileID: 3583958542044638781}
   - component: {fileID: 3583958542044638780}
-  - component: {fileID: 3583958542044638771}
   - component: {fileID: 3583958542044638776}
   - component: {fileID: 3583958542044638777}
   m_Layer: 0
@@ -65,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bd4c5611cffb3143a3131349cb86c72, type: 2}
+  - {fileID: -5296020251895589082, guid: 35b14772acfd5054cadb7dde273262d0, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,20 +99,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3583958542044638771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3583958542044638770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b587d59162651d41a3b3cbc2b8e0b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuestMark: {fileID: 21300000, guid: be1082397aae2194c9b4967b787929fe, type: 3}
-  thisImg: {fileID: 6759845088279566453, guid: 4f34c111986034840a0986246936100f, type: 3}
 --- !u!114 &3583958542044638776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +117,8 @@ MonoBehaviour:
   PropertyList: []
   CollectableList: []
   ReadableList: []
+  AudioNum: 0
+  DocumentIndex: 0
   DocMan: {fileID: 0}
 --- !u!54 &3583958542044638777
 Rigidbody:
