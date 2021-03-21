@@ -17,6 +17,8 @@ public class Track : MonoBehaviour
     {
         if(HOLDING_TOOL != Hand.HOLDING_TOOL) HOLDING_TOOL = Hand.HOLDING_TOOL;
         Debug.Log(HOLDING_TOOL);
+        placedPlanks = gameObject.transform.childCount;
+        if (placedPlanks == 2) GameGlobeData.IsGameOver = true;
     }
 
     private void OnTriggerStay(Collider other)
@@ -38,7 +40,6 @@ public class Track : MonoBehaviour
                             hit.transform.localRotation = gameObject.transform.rotation;
                             if (hit.transform.gameObject.name == "Dormente0") hit.transform.position = FirstPlank;
                             if (hit.transform.gameObject.name == "Dormente1") hit.transform.position = SecondPlank;
-                            placedPlanks++;
 
                         }
                     }

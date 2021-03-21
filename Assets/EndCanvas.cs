@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class EndCanvas : MonoBehaviour
 {
+    private void Start()
+    {
+        GameGlobeData.IsCamLock = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void Voltar()
     {
         GameGlobeData.IsGameOver = false;
         GameGlobeData.isCompassCollected = false;
         GameGlobeData.IsDocumentCollected = false;
-        GameGlobeData.SceneHasEnded = true;
+        SceneManager.LoadScene(1);
     }
 
     public void Sair() 
