@@ -45,7 +45,7 @@ public class Track : MonoBehaviour
                     }
                     if (HOLDING_TOOL == "Serra" && hit.transform.gameObject.tag == "Selectable")
                     {
-                        Player.INSANITY -= 50;
+                        Player.INSANITY += 25;
                     }
                 }
                 

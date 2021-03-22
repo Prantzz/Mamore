@@ -13,7 +13,10 @@ public class CompassController : MonoBehaviour
 
     float compassUnit;
 
-    public QuestHandler test;
+    public QuestHandler test0;
+    public QuestHandler test1;
+    public QuestHandler test2;
+
 
     private void Start()
     {
@@ -21,9 +24,9 @@ public class CompassController : MonoBehaviour
         compass = GetComponent<RawImage>();
         player = GameObject.Find("Player").transform;
         compassUnit = compass.rectTransform.rect.width / 360;
-
-        AddQuestMarker(test);
-
+        AddQuestMarker(test0);
+        AddQuestMarker(test1);
+        AddQuestMarker(test2);
     }
     private void Update()
     {

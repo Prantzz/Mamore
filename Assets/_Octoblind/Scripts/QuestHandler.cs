@@ -9,4 +9,5 @@ public class QuestHandler : MonoBehaviour
     public Vector2 position{
          get { return new Vector2(transform.position.x, transform.position.z); }
     }
+    
 }

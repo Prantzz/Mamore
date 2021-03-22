@@ -26,6 +26,7 @@ public class SelectionManager : MonoBehaviour
         {
             _selection.GetComponent<objectController>().isSelected = false;
             _selection = null;
+            objCon.isSelected = false;
         }
         ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
         
@@ -63,7 +64,7 @@ public class SelectionManager : MonoBehaviour
                     Destroy(_outline.GetComponent<Outlinable>());
                 }
             }
-
+            
             _outline = null;
         }
 
