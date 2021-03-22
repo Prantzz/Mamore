@@ -527,14 +527,14 @@ RectTransform:
   m_GameObject: {fileID: 289747430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_Children: []
   m_Father: {fileID: 604076854}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -469, y: 269}
+  m_AnchoredPosition: {x: -610, y: 419}
   m_SizeDelta: {x: 613.97, y: 77.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289747432
@@ -558,7 +558,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5ba215e4b3caba14e8b8875f1022ed0b, type: 3}
+    m_Font: {fileID: 12800000, guid: d6d00ac6ad4b5cb4ea7f7f88bc0970cc, type: 3}
     m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conserte os trilhos!
+  m_Text: Conserte os trilhos.
 --- !u!222 &289747433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -955,14 +955,14 @@ RectTransform:
   m_GameObject: {fileID: 511001246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.38374144, y: 0.38374144, z: 0.38374144}
   m_Children: []
   m_Father: {fileID: 604076854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841, y: 277}
+  m_AnchoredPosition: {x: -879.7, y: 428}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511001248
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be1082397aae2194c9b4967b787929fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09e0e9bfc8718e942919d9d7f63b1dbe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
