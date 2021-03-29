@@ -22,11 +22,13 @@ public class PauseHandler : MonoBehaviour
     }
     private void GameCon_OnGameResumed(object sender, System.EventArgs e)
     {
-        
+        if(PauseMenu != null) 
+        { 
         GameGlobeData.IsCamLock = false;
         PauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameGlobeData.UnfreezeGame();
+        }
     }
 
     private void GameCon_OnEscPressed(object sender, System.EventArgs e)

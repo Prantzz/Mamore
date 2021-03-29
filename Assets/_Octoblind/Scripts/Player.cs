@@ -31,8 +31,9 @@ public class Player : MonoBehaviour
         }
         if (INSANITY >= 100f) 
         {
-            INSANITY = 100f;
-            EndGame();
+            INSANITY = 0f;
+            GameGlobeData.SceneHasEnded = true;
+
         }
         //Debug.Log(INSANITY);
     }
@@ -43,8 +44,4 @@ public class Player : MonoBehaviour
         inventory.Container.Clear();
     }
 
-    public void EndGame() 
-    {
-        GameGlobeData.IsGameOver = true;
-    }
 }

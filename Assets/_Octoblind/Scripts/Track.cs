@@ -18,7 +18,7 @@ public class Track : MonoBehaviour
         if(HOLDING_TOOL != Hand.HOLDING_TOOL) HOLDING_TOOL = Hand.HOLDING_TOOL;
         //Debug.Log(HOLDING_TOOL);
         placedPlanks = gameObject.transform.childCount;
-        if (placedPlanks == 2) GameGlobeData.IsGameOver = true;
+        if (placedPlanks == 2) GameGlobeData.SceneHasEnded = true;
     }
 
     private void OnTriggerStay(Collider other)
