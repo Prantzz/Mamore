@@ -55,8 +55,8 @@ public class GameGlobeData : MonoBehaviour
             fadeOutSceneCanvas = GameObject.Find("FadeOutBlack");   
         }
 
-        Debug.Log(fadeInAlphaVal + " - fade In AlphaVal");
-        Debug.Log(fadeOutAlphaVal + " - fade out AlphaVal");
+        /*Debug.Log(fadeInAlphaVal + " - fade In AlphaVal");
+        Debug.Log(fadeOutAlphaVal + " - fade out AlphaVal");*/
     }
 
     public static void FreezeGame() 
