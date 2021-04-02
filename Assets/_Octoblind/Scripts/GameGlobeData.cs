@@ -19,7 +19,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsCamLock = false;
     public static bool IsDocumentCollected = false;
     public static bool IsGameOver = false;
-    public ParticleSystem[] PSList;
+    public static ParticleSystem[] PSList;
     private Image thisImgIn;
     private Image thisImgOut;
     private GameGlobeData GameCon;
