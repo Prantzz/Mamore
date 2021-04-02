@@ -10,18 +10,23 @@ public class AudioManager : MonoBehaviour
     public GameObject AudioInstancePrefab;
     public List<AudioClip> Ambients;
     public Stack<GameObject> AudioInstances;
+    public List<GameObject> AudioInstancesPlaying;
     public List<AudioGroup> AudioGroupes;
     private AudioSource AmbientePlayer;
     private PlayerSoundController PSC;
+    [HideInInspector]
     public ProceduralSound PS;
     void Start()
     {
-        //SetUp do Procedural---
+
+        //---SetUp do Procedural---
         PS = GetComponent<ProceduralSound>();
         PS.AU = this;
         PS.SetUp();
         PS.enabled = false;
-        // -----
+        // -------------------------
+
+
         playable = true;
         AudioInstances = new Stack<GameObject>();
         PullSound(Camera.main.transform.position, 1, 2);
@@ -56,16 +61,18 @@ public class AudioManager : MonoBehaviour
                 GameObject toInstantiate = Instantiate(AudioInstancePrefab, pos, Quaternion.identity);
                 toInstantiate.GetComponent<AudioInstanceComponent>().AU = this;
                 toInstantiate.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
+                AudioInstancesPlaying.Add(toInstantiate);
                 return toInstantiate;
             }
             //Caso a lista tenha objetos
             else
             {
                 GameObject Popped = AudioInstances.Pop();
+                AudioInstancesPlaying.Add(Popped);
                 Popped.transform.parent = null;
                 Popped.transform.position = pos;
                 Popped.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
-                Popped.SetActive(true);
+                Popped.SetActive(true);                
                 return Popped;
             }
         }
@@ -74,6 +81,7 @@ public class AudioManager : MonoBehaviour
     //Volta tudo para lista quando terminar de trocar.
     public void Comeback(GameObject toSave)
     {
+        AudioInstancesPlaying.Remove(toSave);
         AudioInstances.Push(toSave);
         toSave.transform.SetParent(this.transform);
         toSave.transform.TransformPoint(Vector3.zero);
@@ -82,11 +90,24 @@ public class AudioManager : MonoBehaviour
     }
     public void PauseSound()
     {
+        if (AudioInstancesPlaying.Count > 0)
+        {
+            foreach (GameObject G in AudioInstancesPlaying)
+            {
+                G.GetComponent<AudioInstanceComponent>().Paused = true;
+                G.GetComponent<AudioSource>().Pause();
+            }
+        }        
         PSC.WalkingAudio.Pause();
         AmbientePlayer.volume = 0.15f;
     }
     public void ResumeSound()
     {
+        foreach (GameObject G in AudioInstancesPlaying)
+        {
+            G.GetComponent<AudioSource>().Play();
+            G.GetComponent<AudioInstanceComponent>().Paused = false;
+        }
         if (!PSC.WalkingAudio.isPlaying) PSC.WalkingAudio.Play();
         AmbientePlayer.volume = 0.50f;
     }

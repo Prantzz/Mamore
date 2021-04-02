@@ -19,6 +19,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsCamLock = false;
     public static bool IsDocumentCollected = false;
     public static bool IsGameOver = false;
+    public ParticleSystem[] PSList;
     private Image thisImgIn;
     private Image thisImgOut;
     private GameGlobeData GameCon;
@@ -27,23 +28,28 @@ public class GameGlobeData : MonoBehaviour
     public GameObject fadeInSceneCanvas;
     public GameObject fadeOutSceneCanvas;
 
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         OnSceneStart += GameCon_OnSceneStart;
         OnSceneEnd += GameCon_OnSceneEnd;
-       
+        SceneManager.activeSceneChanged += GetAllPS;
+
     }
     void Update()
     {
+        
         if (Time.timeSinceLevelLoad <= 5) OnSceneStart?.Invoke(this, EventArgs.Empty);
         if (SceneHasEnded) OnSceneEnd?.Invoke(this, EventArgs.Empty);
         if (IsGamePaused) OnGamePaused?.Invoke(this, EventArgs.Empty);
-        if (!IsGamePaused) OnGameResumed?.Invoke(this, EventArgs.Empty);
+        if (!IsGamePaused) OnGameResumed?.Invoke(this, EventArgs.Empty);       
         if (Input.GetKeyDown(KeyCode.Escape)) OnEscPressed?.Invoke(this, EventArgs.Empty);
+
+        //--------------------------DEBUG---------------------------------------
         if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PS.InvokeSound();
-
+        //-----------------------------------------------------------------------
 
 
         if(fadeInSceneCanvas == null && GameObject.Find("FadeInBlack") != null) 
@@ -67,7 +73,6 @@ public class GameGlobeData : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
-
 
     private void GameCon_OnSceneEnd(object sender, System.EventArgs e)
     {
@@ -106,6 +111,16 @@ public class GameGlobeData : MonoBehaviour
                 fadeInSceneCanvas.SetActive(false);
                 fadeInAlphaVal = 0;
             }
+        }
+    }
+
+    private void GetAllPS(Scene cur, Scene next) 
+    {
+        //Caso seja a cena principal
+        if(next.buildIndex == 2)
+        {
+            //Busque todos os Particle system do mapa e ponha na lista
+            PSList = Resources.FindObjectsOfTypeAll<ParticleSystem>();
         }
     }
 }
