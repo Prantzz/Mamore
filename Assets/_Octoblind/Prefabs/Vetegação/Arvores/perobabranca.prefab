@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8492270531815825156}
   - component: {fileID: 4788804814440583329}
   - component: {fileID: 7318832984935212139}
-  - component: {fileID: 5073790754480599692}
+  - component: {fileID: 9028421951930202628}
   m_Layer: 0
   m_Name: perobabranca
   m_TagString: Untagged
@@ -82,17 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5073790754480599692
-CapsuleCollider:
+--- !u!208 &9028421951930202628
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9120153882173244862}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.8519478
-  m_Height: 6.0086613
-  m_Direction: 1
-  m_Center: {x: 0.025302887, y: 2.2051802, z: -0.49325943}
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.14, y: 2.49, z: 1.14}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.53, z: -0.55}
+  m_TimeToStationary: 0.5

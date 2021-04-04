@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2359527074370427836}
   - component: {fileID: 1662218358135395353}
   - component: {fileID: 3527890276710080723}
-  - component: {fileID: 7789958635816520775}
+  - component: {fileID: 9044835305831500807}
   m_Layer: 0
   m_Name: uxicoroa
   m_TagString: Untagged
@@ -82,17 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7789958635816520775
-CapsuleCollider:
+--- !u!208 &9044835305831500807
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167554409273245958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.48350906
-  m_Height: 7.4769735
-  m_Direction: 1
-  m_Center: {x: -0.06335449, y: 3.0403295, z: 0.021030426}
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.56, y: 2.83, z: 0.56}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.08, y: 2.8, z: 0.01}
+  m_TimeToStationary: 0.5

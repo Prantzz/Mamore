@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3048438438231601222}
   - component: {fileID: 6245911588573046067}
   - component: {fileID: 334698650425238708}
-  - component: {fileID: 5640428377615768085}
+  - component: {fileID: 3853684354950436972}
   m_Layer: 0
   m_Name: ingaquina
   m_TagString: Untagged
@@ -82,17 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5640428377615768085
-CapsuleCollider:
+--- !u!208 &3853684354950436972
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4132946300105033945}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.3454576
-  m_Height: 3.091616
-  m_Direction: 1
-  m_Center: {x: 0.32629347, y: 1.3867804, z: -0.0003769405}
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.16, y: 1.705, z: 1.16}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.44, y: 1.33, z: 0.08}
+  m_TimeToStationary: 0.5
