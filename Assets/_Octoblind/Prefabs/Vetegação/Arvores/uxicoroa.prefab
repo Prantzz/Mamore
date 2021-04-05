@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2359527074370427836}
   - component: {fileID: 1662218358135395353}
   - component: {fileID: 3527890276710080723}
-  - component: {fileID: 9044835305831500807}
+  - component: {fileID: 8923893746444020028}
   m_Layer: 0
   m_Name: uxicoroa
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167554409273245958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.70877, y: 0.17322159, z: 85.3625}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,19 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &9044835305831500807
-NavMeshObstacle:
+--- !u!136 &8923893746444020028
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167554409273245958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.56, y: 2.83, z: 0.56}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.08, y: 2.8, z: 0.01}
-  m_TimeToStationary: 0.5
+  m_Radius: 0.54
+  m_Height: 8.31
+  m_Direction: 1
+  m_Center: {x: -0.09, y: 3.69, z: -0.06}

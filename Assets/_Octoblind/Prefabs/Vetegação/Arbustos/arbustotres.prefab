@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1548550998699866301}
   - component: {fileID: 3646079119286078583}
   m_Layer: 0
-  m_Name: arbustotreis
+  m_Name: arbustotres
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

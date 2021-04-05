@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5986844593676780042}
   - component: {fileID: 7258202695911968175}
   - component: {fileID: 4854501808205035877}
-  - component: {fileID: 7833971464532332651}
+  - component: {fileID: 4160814106093209621}
   m_Layer: 0
   m_Name: paixiuba
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367627926437025968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.548996, y: 0.31646156, z: 85.40901}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,19 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &7833971464532332651
-NavMeshObstacle:
+--- !u!136 &4160814106093209621
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367627926437025968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.23, y: 1.485, z: 0.23}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0.01, y: 1.2, z: 0}
-  m_TimeToStationary: 0.5
+  m_Radius: 0.28
+  m_Height: 10.596982
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.01, z: 0}

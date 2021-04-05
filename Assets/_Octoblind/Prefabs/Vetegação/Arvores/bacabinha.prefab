@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2759738864080502832}
   - component: {fileID: 1288966781126627221}
   - component: {fileID: 3893259883767937887}
-  - component: {fileID: 7543810204400661754}
+  - component: {fileID: 6140455055917210206}
   m_Layer: 0
   m_Name: bacabinha
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3244666838997244554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.15041, y: 0.11055565, z: 77.51061}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,19 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &7543810204400661754
-NavMeshObstacle:
+--- !u!136 &6140455055917210206
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3244666838997244554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.77, y: 3.51, z: 0.77}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.01, y: 2.8, z: -0.13}
-  m_TimeToStationary: 0.5
+  m_Radius: 0.59
+  m_Height: 5.59
+  m_Direction: 1
+  m_Center: {x: -0.1, y: 2.09, z: -0.13}
