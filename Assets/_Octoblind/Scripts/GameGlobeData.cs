@@ -13,6 +13,7 @@ public class GameGlobeData : MonoBehaviour
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameResumed;
     public event EventHandler OnEscPressed;
+    public static GameGlobeData GameCon;
     public static bool SceneHasEnded = false;
     public static bool IsGamePaused = false;
     public static bool isCompassCollected = false;
@@ -20,21 +21,30 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsDocumentCollected = false;
     public static bool IsGameOver = false;
     public static ParticleSystem[] PSList;
+
+    private int currentTutorial;
+    private bool[] TutorialConditions;
+
+
     private Image thisImgIn;
-    private Image thisImgOut;
-    private GameGlobeData GameCon;
+    private Image thisImgOut;    
     float fadeInAlphaVal;
     float fadeOutAlphaVal;
     public GameObject fadeInSceneCanvas;
     public GameObject fadeOutSceneCanvas;
 
-
+    private void Awake()
+    {
+        //Criando singleton
+        GameCon = this;
+    }
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         OnSceneStart += GameCon_OnSceneStart;
         OnSceneEnd += GameCon_OnSceneEnd;
         SceneManager.activeSceneChanged += GetAllPS;
+        reallyOnTutorialTrigger += changeTutorialConditions;
 
     }
     void Update()
@@ -60,6 +70,11 @@ public class GameGlobeData : MonoBehaviour
         {
             fadeOutSceneCanvas = GameObject.Find("FadeOutBlack");   
         }
+
+        //Caso a condição de tutorial seja diferente de zero cheque todo frame caso o player compeltou o tutorial;
+        ///Não é ideial fazer dessa maneira, seria corretor ter um event para cada ação possível mas foda-se
+        if(currentTutorial!=0) checkTutorialConditions();
+
 
         /*Debug.Log(fadeInAlphaVal + " - fade In AlphaVal");
         Debug.Log(fadeOutAlphaVal + " - fade out AlphaVal");*/
@@ -123,4 +138,88 @@ public class GameGlobeData : MonoBehaviour
             PSList = Resources.FindObjectsOfTypeAll<ParticleSystem>();
         }
     }
+
+    #region Tutorial Stuff
+    //Declaração do event e delegate de trigger de tutorial-----
+    public delegate void onTutorialTrigger(int behaviourType);
+    public event onTutorialTrigger reallyOnTutorialTrigger;
+    //----------------------------------------------------------
+
+    //Função do trigger de tutorial
+    public void TutorialTrigger(int behaviour)
+    {
+        if(reallyOnTutorialTrigger != null)
+        {
+            reallyOnTutorialTrigger(behaviour);
+        }
+    }
+
+    //Declaração do evento de completar tutorial--------------
+    public delegate void onTutorialCompleted();
+    public event onTutorialCompleted reallyOnTutorialCompleted;
+    //--------------------------------------------------------
+
+    public void TutorialCompleted()
+    {
+        if (reallyOnTutorialCompleted != null)
+        {
+            reallyOnTutorialCompleted();
+        }
+    }
+
+    #region Métodos Condicionais de Tutorial
+    //Checa para ver se as condições para compeltar o tutorial foram preenchidas
+    private void checkTutorialConditions()
+    {
+        Debug.Log("O current tutorial é: " + currentTutorial);
+        for( int i = 0; i < TutorialConditions.Length; i++)
+        {
+            Debug.Log("A condição na posição: " + i + " é:" + TutorialConditions[i]);
+        }
+        
+        switch (currentTutorial)
+        {
+            case (1):
+                if (Input.GetKeyDown(KeyCode.W)) TutorialConditions[0] = true;
+                if (Input.GetKeyDown(KeyCode.A)) TutorialConditions[1] = true;
+                if (Input.GetKeyDown(KeyCode.S)) TutorialConditions[2] = true;
+                if (Input.GetKeyDown(KeyCode.D)) TutorialConditions[3] = true;
+                break;
+        }
+        bool passer = true;
+        foreach(bool b in TutorialConditions)
+        {
+            if (!b)
+            {
+                passer = false;
+                break;
+            }
+        }
+        if (passer)
+        {
+            changeTutorialConditions(0);
+        }
+    }
+
+    //Muda as condições para completar o atual tutorial
+    private void changeTutorialConditions(int behaviour)
+    {
+        switch (behaviour)
+        {
+            case (0):
+                currentTutorial = behaviour;
+                TutorialConditions = new bool[0];
+                TutorialCompleted();
+                break;
+            case (1):
+                currentTutorial = behaviour;
+                TutorialConditions = new bool[4];
+            break;
+        }
+    }
+
+    #endregion
+
+    #endregion
+
 }
