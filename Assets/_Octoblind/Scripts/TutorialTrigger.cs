@@ -10,6 +10,7 @@ public class TutorialTrigger : MonoBehaviour
     {
         //Caso o jogador colida com o trigger mande o valor do behaviour desse objetos para o canvas
         GameGlobeData.GameCon.TutorialTrigger(behaviour);
+        GameGlobeData.GameCon.GetComponent<AudioManager>().PullSound(this.transform.position, 1, 1);
         Destroy(this);
     }
 }

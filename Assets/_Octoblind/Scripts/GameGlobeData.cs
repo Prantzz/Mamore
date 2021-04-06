@@ -171,11 +171,13 @@ public class GameGlobeData : MonoBehaviour
     //Checa para ver se as condições para compeltar o tutorial foram preenchidas
     private void checkTutorialConditions()
     {
+        /*
         Debug.Log("O current tutorial é: " + currentTutorial);
         for( int i = 0; i < TutorialConditions.Length; i++)
         {
             Debug.Log("A condição na posição: " + i + " é:" + TutorialConditions[i]);
         }
+        */
         
         switch (currentTutorial)
         {
