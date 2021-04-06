@@ -148,3 +148,5 @@ MonoBehaviour:
   AudioNum: 1
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  DocumentInventory: {fileID: 11400000, guid: def85c57bd781c844aaa27e061f43cfa, type: 2}
+  Diary: {fileID: 0}

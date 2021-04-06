@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e50ae58fa6da6046a5262280784597c, type: 3}
+  m_Name: Document0
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  ToolName: 
+  type: 2
+  description: 
+  Index: 0
+  Title: Arrependimento
+  Body: "Eu sabia que essa ideia era maluca. Uma ferrovia que atravessa a Amaz\xF4nia
+    e o Acre? Isso \xE9 um absurdo, n\xE3o me surpreende que levaram d\xE9cadas para
+    concretizar a ideia. Por que aceitei trabalhar nessa insanidade?\r\n\r\nAl\xE9m
+    do trabalho imposs\xEDvel e baixo sal\xE1rio, nossos acampamentos est\xE3o sendo
+    atacados por on\xE7as. V\xE1rias pessoas est\xE3o tendo que fugir e se abrigar
+    em tendas improvisadas. Por\xE9m, todos que se abrigarem nessas tendas devem
+    voltar o mais r\xE1pido poss\xEDvel para o acampamento. Dizem que ficar sozinho
+    na mata te corrompe.\r\n\r\nEstou cansado, minha cabe\xE7a est\xE1 quente, t\xE3o
+    quente que cheguei a enxergar chamas a noite. Quero ir para casa.\r\n"

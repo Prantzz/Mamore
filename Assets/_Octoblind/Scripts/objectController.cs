@@ -32,6 +32,11 @@ public class objectController : MonoBehaviour
     private Player Player;
     private Item item;
 
+    [SerializeField]
+    InventoryDocument DocumentInventory;
+    [SerializeField]
+    DiaryManager Diary;
+
     private void Start()
     {
         PropertyType = transform.GetChild(0).tag;
@@ -155,6 +160,10 @@ public class objectController : MonoBehaviour
                     "Além do trabalho impossível e baixo salário, nossos acampamentos estão sendo atacados por onças. Várias pessoas estão tendo que fugir e se abrigar em tendas improvisadas. Porém, todos que se abrigarem nessas tendas devem voltar o mais rápido possível para o acampamento. Dizem que ficar sozinho na mata te corrompe. " +
                     "Estou cansado, minha cabeça está quente, tão quente que cheguei a enxergar chamas a noite. Quero ir para casa.";
                DocMan.ChangeDocument(title, body);
+
+               AddDocumentToSO(DocumentIndex, title, body, DocumentInventory);
+               Diary.addDocumentToList(LoadDocumentFromSO(DocumentIndex, DocumentInventory));
+
             }
 
             if (DocumentIndex == 1)
@@ -162,6 +171,9 @@ public class objectController : MonoBehaviour
                 var title = "Documento #2 = Bolsonaro Genocida";
                 var body = "É indiscutível, no cenário atual de toda a esfera sócio-politica brasileira, que a conduta e a postura do atual presidente da república, Jair Bolsonaro, são índices indiscútiveis de um GENOCIDA. Eu estou escrevendo isso de placeholder pro segundo documento, mas a verdade é que enquanto desenvolvo esse projeto, meu coração se enche duvidas e incertezas sobre o meu futuro e o futuro do país com um governante tão boçal, desprepado e ignorante. Não apenas o governante em si, mas ver uma considerável massa apoiadora de um chorume desses me faz cada vez pensar que não temos salvação. É isso amigos. Obrigado por ler até aqui.";
                 DocMan.ChangeDocument(title, body);
+
+                AddDocumentToSO(DocumentIndex, title, body, DocumentInventory);
+                Diary.addDocumentToList(LoadDocumentFromSO(DocumentIndex, DocumentInventory));
             }
 
            
@@ -182,6 +194,21 @@ public class objectController : MonoBehaviour
     {
         mPosX = Input.GetAxis("Mouse X") * 0.2f * Time.deltaTime;
         mPosY = Input.GetAxis("Mouse Y") * 0.2f * Time.deltaTime;
+    }
+
+    public void AddDocumentToSO(int _index, string _title, string _body, InventoryDocument Inventory)
+    {
+        var Document = new DocumentObject();
+        Document.Index = _index;
+        Document.Title = _title;
+        Document.Body = _body;
+        Inventory.AddItem(Document, 1);
+    }
+
+    public DocumentObject LoadDocumentFromSO(int index, InventoryDocument Inventory) 
+    {
+        var Document = Inventory.Container[index].item;
+        return Document;
     }
     #endregion
 
