@@ -4875,6 +4875,8 @@ GameObject:
   - component: {fileID: 5576272246967640654}
   - component: {fileID: 3223583283809591631}
   - component: {fileID: 996298076829494900}
+  - component: {fileID: 1645118357}
+  - component: {fileID: 1645118356}
   m_Layer: 0
   m_Name: Folhas
   m_TagString: Untagged
@@ -9671,3 +9673,29 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!135 &1645118357
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045838256141186925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 70.44075
+  m_Center: {x: 0, y: -25.27, z: 0}
+--- !u!114 &1645118356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045838256141186925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dad101f330bb9499eb0cfa6f4d6629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartOn: 0
