@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 6008359026170402064}
   - component: {fileID: 84323320}
   m_Layer: 0
-  m_Name: bussula(1)
+  m_Name: BussolaCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bd4c5611cffb3143a3131349cb86c72, type: 2}
+  - {fileID: 2100000, guid: b25841da6efe99d41a95359f66f845c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

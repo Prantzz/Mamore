@@ -16,7 +16,7 @@ GameObject:
   m_Name: acaidamata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9122395704720531014
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8490008926616208636}
-  m_Mesh: {fileID: -337359702582745576, guid: e7742572ed681d241b38c59733785b14, type: 3}
+  m_Mesh: {fileID: -337359702582745576, guid: c7e1224af8cbd0940ba1fe0bd3d2e511, type: 3}
 --- !u!23 &7985566392922760489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e44624ef5ed6c124797a261890956d72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

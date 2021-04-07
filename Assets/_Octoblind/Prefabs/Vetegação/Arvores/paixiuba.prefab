@@ -16,7 +16,7 @@ GameObject:
   m_Name: paixiuba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5986844593676780042
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367627926437025968}
-  m_Mesh: {fileID: 2410557727416825456, guid: 5f705758d9c661e44879797a15581d10, type: 3}
+  m_Mesh: {fileID: 2410557727416825456, guid: 1bacaca769fe7bb408541ce78663a5d5, type: 3}
 --- !u!23 &4854501808205035877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 5f705758d9c661e44879797a15581d10, type: 3}
+  - {fileID: 2100000, guid: 10bac602b86181440b75cd997025b668, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

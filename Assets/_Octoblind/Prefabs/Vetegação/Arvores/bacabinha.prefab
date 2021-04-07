@@ -16,7 +16,7 @@ GameObject:
   m_Name: bacabinha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2759738864080502832
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3244666838997244554}
-  m_Mesh: {fileID: 3610295760876701554, guid: 996b959a4b9f73549b87307bdfe3aa0a, type: 3}
+  m_Mesh: {fileID: 3610295760876701554, guid: 8e9533dcc7eb58045b464a8f7ab27707, type: 3}
 --- !u!23 &3893259883767937887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 996b959a4b9f73549b87307bdfe3aa0a, type: 3}
+  - {fileID: 2100000, guid: b37057e4799d4744dad0dea1e10c24e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +92,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.59
+  m_Radius: 0.615133
   m_Height: 5.59
   m_Direction: 1
-  m_Center: {x: -0.1, y: 2.09, z: -0.13}
+  m_Center: {x: 0.014047276, y: 2.0900002, z: 0.20413363}

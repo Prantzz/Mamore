@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3254871371625643439}
   - component: {fileID: 3254871369700697839}
   m_Layer: 0
-  m_Name: martelo
+  m_Name: MarteloCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2443987392061276412}
-  m_Mesh: {fileID: -6439690930856260424, guid: d34983212fcc1fc47a7af7fc8fd54fb4, type: 3}
+  m_Mesh: {fileID: -6439690930856260424, guid: 63ccaa6a472f324498cc2fe5c1fcfd30, type: 3}
 --- !u!23 &4245264859198333225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: d34983212fcc1fc47a7af7fc8fd54fb4, type: 3}
+  - {fileID: 2100000, guid: beecc6e8e0fe731418dc02770433afa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

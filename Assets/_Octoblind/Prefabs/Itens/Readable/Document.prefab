@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 9002448187489832761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.32, y: 0.5, z: 16.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6776, y: 0.026838366, z: 1}
   m_Children:
   - {fileID: 9002448186582232368}
   m_Father: {fileID: 0}
@@ -150,3 +150,4 @@ MonoBehaviour:
   DocMan: {fileID: 0}
   DocumentInventory: {fileID: 11400000, guid: def85c57bd781c844aaa27e061f43cfa, type: 2}
   Diary: {fileID: 0}
+  Document: {fileID: 0}

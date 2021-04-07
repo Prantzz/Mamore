@@ -134,8 +134,6 @@ GameObject:
   - component: {fileID: 1199694341896628024}
   - component: {fileID: 1831592425}
   - component: {fileID: 1831592424}
-  - component: {fileID: 1831592422}
-  - component: {fileID: 1831592423}
   m_Layer: 0
   m_Name: tabua(1)
   m_TagString: Selectable
@@ -243,6 +241,9 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  DocumentInventory: {fileID: 0}
+  Diary: {fileID: 0}
+  Document: {fileID: 0}
 --- !u!114 &1199694341896628024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,38 +287,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.64875853, y: 0.11045307, z: 3.3238988}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1831592422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287114757782605084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b587d59162651d41a3b3cbc2b8e0b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuestMark: {fileID: 21300000, guid: be1082397aae2194c9b4967b787929fe, type: 3}
-  thisImg: {fileID: 6759845088279566453, guid: 4f34c111986034840a0986246936100f, type: 3}
---- !u!114 &1831592423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287114757782605084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelected: 0
-  hasInteracted: 0
-  zeroY: 0
-  PropertyList: []
-  CollectableList: []
-  ReadableList: []
-  AudioNum: 0
-  DocumentIndex: 0
-  DocMan: {fileID: 0}

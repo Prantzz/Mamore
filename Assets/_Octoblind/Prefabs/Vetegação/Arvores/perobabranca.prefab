@@ -16,7 +16,7 @@ GameObject:
   m_Name: perobabranca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8492270531815825156
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9120153882173244862}
-  m_Mesh: {fileID: 4571610114020094267, guid: 3a4435f481cc8ba41b60121468944a9c, type: 3}
+  m_Mesh: {fileID: 4571610114020094267, guid: 1d242f76d03c06948978ff035750eb45, type: 3}
 --- !u!23 &7318832984935212139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 3a4435f481cc8ba41b60121468944a9c, type: 3}
+  - {fileID: 2100000, guid: f43c6a5ebc141824c8d0677f7fc6cfb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
