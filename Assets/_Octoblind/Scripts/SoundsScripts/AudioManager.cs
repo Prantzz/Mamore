@@ -94,8 +94,11 @@ public class AudioManager : MonoBehaviour
         {
             foreach (GameObject G in AudioInstancesPlaying)
             {
-                G.GetComponent<AudioInstanceComponent>().Paused = true;
-                G.GetComponent<AudioSource>().Pause();
+                if (G != null)
+                {
+                    G.GetComponent<AudioInstanceComponent>().Paused = true;
+                    G.GetComponent<AudioSource>().Pause();
+                }
             }
         }        
         PSC.WalkingAudio.Pause();
@@ -105,8 +108,11 @@ public class AudioManager : MonoBehaviour
     {
         foreach (GameObject G in AudioInstancesPlaying)
         {
-            G.GetComponent<AudioSource>().Play();
-            G.GetComponent<AudioInstanceComponent>().Paused = false;
+            if (G != null)
+            {
+                G.GetComponent<AudioSource>().Play();
+                G.GetComponent<AudioInstanceComponent>().Paused = false;
+            }
         }
         if (!PSC.WalkingAudio.isPlaying) PSC.WalkingAudio.Play();
         AmbientePlayer.volume = 0.50f;

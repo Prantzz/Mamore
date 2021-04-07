@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e50ae58fa6da6046a5262280784597c, type: 3}
-  m_Name: Document0
+  m_Name: Doc0
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  ToolName: 
-  type: 2
-  description: 
   Index: 0
   Title: Arrependimento
   Body: "Eu sabia que essa ideia era maluca. Uma ferrovia que atravessa a Amaz\xF4nia

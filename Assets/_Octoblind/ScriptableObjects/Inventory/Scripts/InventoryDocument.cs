@@ -13,14 +13,13 @@ public class InventoryDocument : ScriptableObject
         {
             if (Container[i].item == _item)
             {
-                Container[i].AddAmount(_amount);
                 hasItem = true;
-                break;
+                return;
             }
         }
         if (!hasItem)
         {
-            Container.Add(new InventoryDocSlot(_item, _amount));
+            Container.Add(new InventoryDocSlot(_item));
         }
     }
 }
@@ -29,17 +28,11 @@ public class InventoryDocument : ScriptableObject
 public class InventoryDocSlot
 {
     public DocumentObject item;
-    public int amount;
 
-    public InventoryDocSlot(DocumentObject _item, int _amount)
+    public InventoryDocSlot(DocumentObject _item)
     {
         item = _item;
-        amount = _amount;
     }
 
-    public void AddAmount(int value)
-    {
-        amount += value;
-    }
 }
 

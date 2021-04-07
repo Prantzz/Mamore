@@ -6,15 +6,18 @@ public class PauseHandler : MonoBehaviour
 {
     private GameGlobeData GameCon;
     private GameObject PauseMenu;
+    private GameObject DiaryMenu;
     private AudioManager AU;
 
     void Start()
     {
         PauseMenu = GameObject.Find("PausePanel");
+        DiaryMenu = GameObject.Find("DiarioPanel");
         GameCon = GameObject.Find("GameGlobeData").GetComponent<GameGlobeData>();
         AU = GameCon.GetComponent<AudioManager>();
 
         PauseMenu.SetActive(false);
+        DiaryMenu.SetActive(false);
 
         GameCon.OnGamePaused += GameCon_OnGamePaused;
         GameCon.OnGameResumed += GameCon_OnGameResumed;
@@ -26,6 +29,7 @@ public class PauseHandler : MonoBehaviour
         { 
         GameGlobeData.IsCamLock = false;
         PauseMenu.SetActive(false);
+        DiaryMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameGlobeData.UnfreezeGame();
         }
@@ -54,6 +58,15 @@ public class PauseHandler : MonoBehaviour
         PauseMenu.SetActive(true);
         GameGlobeData.IsCamLock = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void OpenDiary() 
+    {
+        DiaryMenu.SetActive(true);
+    }
+    public void CloseDiary()
+    {
+        DiaryMenu.SetActive(false);
     }
 
 }

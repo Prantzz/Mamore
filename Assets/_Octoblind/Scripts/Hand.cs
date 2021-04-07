@@ -15,11 +15,17 @@ public class Hand : MonoBehaviour
         {
             if(inventory.Container[SelectInt] != null) 
             {
-                if(gameObject.transform.childCount <= 0)
-                Instantiate(inventory.Container[SelectInt].item.prefab, gameObject.transform);
+                if (gameObject.transform.childCount <= 0)
+                {
+                    if (inventory.Container[SelectInt].item != null)
+                    {
+                        Instantiate(inventory.Container[SelectInt].item.prefab, gameObject.transform);
+                        string toolName = inventory.Container[SelectInt].item.ToolName;
+                        HOLDING_TOOL = toolName;
+                    }
+                }
 
-                string toolName = inventory.Container[SelectInt].item.ToolName;
-                HOLDING_TOOL = toolName;
+               
             }
             
         }
