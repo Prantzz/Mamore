@@ -55,10 +55,7 @@ public class ProceduralSound : MonoBehaviour
     }
     Vector3 PickRandomPos()
     {
-        float x = UnityEngine.Random.value;
-        float z = UnityEngine.Random.value;
-        Vector3 Normalized = new Vector3(x, 0, z);
-        return Normalized * UnityEngine.Random.Range(10, 100);
+        return new Vector3(PlayerPos.position.x + UnityEngine.Random.Range(-100,100), UnityEngine.Random.Range(3, 8), PlayerPos.position.y + UnityEngine.Random.Range(-100, 100));
     }
     KeyValuePair<int, int> FindPos(int numb)
     {
