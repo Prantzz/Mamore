@@ -26,6 +26,10 @@ public class GameGlobeData : MonoBehaviour
     private int currentTutorial;
     private bool[] TutorialConditions;
 
+    [SerializeField]
+    private InventoryObject InvObj;
+    [SerializeField]
+    private InventoryDocument InvDoc;
 
     private Image thisImgIn;
     private Image thisImgOut;    
@@ -51,7 +55,7 @@ public class GameGlobeData : MonoBehaviour
     void Update()
     {
         
-        if (Time.timeSinceLevelLoad <= 5) OnSceneStart?.Invoke(this, EventArgs.Empty);
+        if (Time.timeSinceLevelLoad <= 1.5) OnSceneStart?.Invoke(this, EventArgs.Empty);
         if (SceneHasEnded) OnSceneEnd?.Invoke(this, EventArgs.Empty);
         if (IsGamePaused) OnGamePaused?.Invoke(this, EventArgs.Empty);
         if (!IsGamePaused) OnGameResumed?.Invoke(this, EventArgs.Empty);       
@@ -223,6 +227,14 @@ public class GameGlobeData : MonoBehaviour
 
     #endregion
 
+    #endregion
+
+    #region APPLICATION.QUIT
+    private void OnApplicationQuit()
+    {
+        InvDoc.Container.Clear();
+        InvObj.Container.Clear();
+    }
     #endregion
 
 }

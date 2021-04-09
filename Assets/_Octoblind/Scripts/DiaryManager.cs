@@ -14,8 +14,8 @@ public class DiaryManager : MonoBehaviour
             GameGlobeData.IsGoodEnding = true;
         }
         //Debug.Log("numero de docs coletados e: " + Logs.Count);
-        //Debug.Log("o titulo do primeiro e: " + Logs[0].Title);
-        //Debug.Log("o titulo do segundo e: " + Logs[1].Title);
+       // Debug.Log("o titulo do primeiro e: " + Logs[0].Title);
+       // Debug.Log("o titulo do segundo e: " + Logs[1].Title);
     }
 
     public void addDocumentToList(DocumentObject document) 

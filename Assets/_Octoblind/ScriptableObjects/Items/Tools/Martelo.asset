@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c15bfec711c63439395487547d94c4, type: 3}
   m_Name: Martelo
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6440957684424171952, guid: 2d6cdc7de026bd44e995c1a9484a4c6e, type: 3}
+  prefab: {fileID: 8613365142185364186, guid: 100591ef4bbb2c74da8e6959ffb8b3e7, type: 3}
   ToolName: Martelo
   type: 0
   description: Pode ser usado para prender coisas no lugar!

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c15bfec711c63439395487547d94c4, type: 3}
   m_Name: Lanterna
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4332025175710616353, guid: 15a586153613dee48b9de3eaf45b5f5e, type: 3}
+  prefab: {fileID: 8394030432294737586, guid: 13093f5676d06314f83adef2f4ab81b2, type: 3}
   ToolName: Lanterna
   type: 0
   description: 

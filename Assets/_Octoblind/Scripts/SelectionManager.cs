@@ -18,20 +18,18 @@ public class SelectionManager : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
     private Transform _selection,_outline;
+
+    private bool OutlineChecking;
     
  
     private void Update()
     {
-        if (_selection != null)
-        {
-            _selection.GetComponent<objectController>().isSelected = false;
-            _selection = null;
-            objCon.isSelected = false;
-        }
         ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
         
         if (Physics.Raycast(ray, out hit, 2f))
         {
+            
+            OutlineChecking = true;
             Transform selection = hit.transform;
             if (selection.tag == selectionTag)
             {
@@ -53,22 +51,63 @@ public class SelectionManager : MonoBehaviour
                 objCon = selection.GetComponent<objectController>();
                 if (!objCon.isSelected) objCon.isSelected = true;
             }
-
-        }
-        else
-        {
-            if (_outline != null)
+            if (selection.tag != selectionTag)
             {
-                if (_outline.GetComponent<Outlinable>() != null)
+                if (_selection != null)
                 {
-                    Destroy(_outline.GetComponent<Outlinable>());
+                    if (_selection.GetComponent<objectController>() != null)
+                    {
+                        _selection.GetComponent<objectController>().isSelected = false;
+                    }
                 }
+                if (objCon != null)
+                {
+                    objCon.isSelected = false;
+                    if (objCon.isSelected == false || _selection.GetComponent<objectController>().isSelected == false)
+                    {
+                        if (_outline != null)
+                        {
+                            if (_outline.GetComponent<Outlinable>() != null)
+                            {
+                                Destroy(_outline.GetComponent<Outlinable>());
+                            }
+                        }
+                    }
+                }
+                _selection = null;
             }
-            
-            _outline = null;
+
+
         }
-
-
+        else if (Physics.Raycast(ray, out hit, 200000f)) 
+        {
+            Transform selection = hit.transform;
+            if (selection.tag != selectionTag)
+            {
+                if (_selection != null)
+                {
+                    if (_selection.GetComponent<objectController>() != null)
+                    {
+                        _selection.GetComponent<objectController>().isSelected = false;
+                    }
+                }
+                if (objCon != null)
+                {
+                    objCon.isSelected = false;
+                    if (objCon.isSelected == false || _selection.GetComponent<objectController>().isSelected == false)
+                    {
+                        if (_outline != null)
+                        {
+                            if (_outline.GetComponent<Outlinable>() != null)
+                            {
+                                Destroy(_outline.GetComponent<Outlinable>());
+                            }
+                        }
+                    }
+                }
+                _selection = null;
+            }
+        }
        
 
     }

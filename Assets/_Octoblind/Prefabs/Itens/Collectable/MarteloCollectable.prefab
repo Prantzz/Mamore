@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3071764153613474374}
   - component: {fileID: 2093824922104616419}
   - component: {fileID: 4245264859198333225}
-  - component: {fileID: 3254871371625643432}
   - component: {fileID: 3254871371625643439}
   - component: {fileID: 3254871369700697839}
+  - component: {fileID: 5889517046869773578}
   m_Layer: 0
   m_Name: MarteloCollectable
   m_TagString: Selectable
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3254871371625643432
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2443987392061276412}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6439690930856260424, guid: d34983212fcc1fc47a7af7fc8fd54fb4, type: 3}
 --- !u!114 &3254871371625643439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +107,9 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  DocumentInventory: {fileID: 0}
+  Diary: {fileID: 0}
+  Document: {fileID: 0}
 --- !u!114 &3254871369700697839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2e06d8fd736dc664895dd4540642366a, type: 2}
+--- !u!64 &5889517046869773578
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443987392061276412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6439690930856260424, guid: 63ccaa6a472f324498cc2fe5c1fcfd30, type: 3}
 --- !u!1 &3254871370197853666
 GameObject:
   m_ObjectHideFlags: 0
