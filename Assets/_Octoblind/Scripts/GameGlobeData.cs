@@ -23,8 +23,10 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsGoodEnding = true;
     public static ParticleSystem[] PSList;
 
+
     private int currentTutorial;
     private bool[] TutorialConditions;
+    private Queue<int> TutorialBehaviourFila;
 
     [SerializeField]
     private InventoryObject InvObj;
@@ -45,6 +47,7 @@ public class GameGlobeData : MonoBehaviour
     }
     private void Start()
     {
+        TutorialBehaviourFila = new Queue<int>();
         DontDestroyOnLoad(gameObject);
         OnSceneStart += GameCon_OnSceneStart;
         OnSceneEnd += GameCon_OnSceneEnd;
@@ -77,9 +80,8 @@ public class GameGlobeData : MonoBehaviour
         }
 
         //Caso a condição de tutorial seja diferente de zero cheque todo frame caso o player compeltou o tutorial;
-        ///Não é ideial fazer dessa maneira, seria corretor ter um event para cada ação possível mas foda-se
+        ///Não é ideial fazer dessa maneira, seria correto ter um event para cada ação possível mas foda-se
         if(currentTutorial!=0) checkTutorialConditions();
-
 
         /*Debug.Log(fadeInAlphaVal + " - fade In AlphaVal");
         Debug.Log(fadeOutAlphaVal + " - fade out AlphaVal");*/
@@ -175,15 +177,7 @@ public class GameGlobeData : MonoBehaviour
     #region Métodos Condicionais de Tutorial
     //Checa para ver se as condições para compeltar o tutorial foram preenchidas
     private void checkTutorialConditions()
-    {
-        /*
-        Debug.Log("O current tutorial é: " + currentTutorial);
-        for( int i = 0; i < TutorialConditions.Length; i++)
-        {
-            Debug.Log("A condição na posição: " + i + " é:" + TutorialConditions[i]);
-        }
-        */
-        
+    {        
         switch (currentTutorial)
         {
             case (1):
@@ -191,6 +185,9 @@ public class GameGlobeData : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A)) TutorialConditions[1] = true;
                 if (Input.GetKeyDown(KeyCode.S)) TutorialConditions[2] = true;
                 if (Input.GetKeyDown(KeyCode.D)) TutorialConditions[3] = true;
+                break;
+            case (2):
+                if (Input.GetKeyDown(KeyCode.Space)) TutorialConditions[0] = true;
                 break;
         }
         bool passer = true;
@@ -211,18 +208,37 @@ public class GameGlobeData : MonoBehaviour
     //Muda as condições para completar o atual tutorial
     private void changeTutorialConditions(int behaviour)
     {
-        switch (behaviour)
-        {
-            case (0):
-                currentTutorial = behaviour;
-                TutorialConditions = new bool[0];
-                TutorialCompleted();
-                break;
-            case (1):
-                currentTutorial = behaviour;
-                TutorialConditions = new bool[4];
-            break;
+        Debug.Log(behaviour);
+        if (TutorialBehaviourFila.Count > 0 && behaviour == 0)
+        {            
+            TutorialCompleted();
+            changeTutorialConditions(TutorialBehaviourFila.Dequeue());
+            return;
         }
+        if (currentTutorial != 0 && behaviour != 0)
+        {
+            TutorialBehaviourFila.Enqueue(behaviour);
+            return;
+        }
+        else
+        {
+            switch (behaviour)
+            {
+                case (0):
+                    currentTutorial = behaviour;
+                    TutorialConditions = new bool[0];
+                    TutorialCompleted();
+                    break;
+                case (1):
+                    currentTutorial = behaviour;
+                    TutorialConditions = new bool[4];
+                    break;
+                case (2):
+                    currentTutorial = behaviour;
+                    TutorialConditions = new bool[1];
+                    break;
+            }
+        }        
     }
 
     #endregion

@@ -9,12 +9,36 @@ public class TutorialCanvasComponent : MonoBehaviour
     [SerializeField]
     private Text tutorialTextCanvas;
     private string[] tutorialTexts;
+    private Queue<string> queuedTutorials;
     void Start()
     {
+        queuedTutorials = new Queue<string>();
         GameGlobeData.GameCon.reallyOnTutorialTrigger += ChangeHud;
         GameGlobeData.GameCon.reallyOnTutorialCompleted += DesapearHud;
+        GameGlobeData.GameCon.reallyOnTutorialCompleted += ChangeHud;
+
         ownAnim = GetComponent<Animator>();
-        tutorialTexts = new string[] {"Mova-se com WASD"};
+        tutorialTexts = new string[] {"Mova-se com WASD", "Pule com Espaço"};
+    }
+    private void Update()
+    {
+        
+    }
+    private void DesapearHud()
+    {
+        //Caso não existam itens na fila
+        //if (queuedTutorials.Count <= 0) ownAnim.SetBool("Visivel", false);
+    }
+    private void ChangeHud()
+    {
+        if (queuedTutorials.Count > 0)
+        {
+            ownAnim.SetTrigger("ChangeAnimTrigger");
+        }
+    }
+    public void ChangeHudText()
+    {
+        tutorialTextCanvas.text = queuedTutorials.Dequeue();
     }
     private void ChangeHud(int behaviour)
     {
@@ -26,16 +50,11 @@ public class TutorialCanvasComponent : MonoBehaviour
             //Atribua o texto de acordo com o behaviour
             tutorialTextCanvas.text = tutorialTexts[behaviour-1];
         }
-        //Caso ele ja tenha um tutorial aberto e é apenas uma continuação
+        //Caso ele ja tenha um tutorial aberto coloque o tutorial na queue
         else
         {
-
+            queuedTutorials.Enqueue(tutorialTexts[behaviour - 1]);
         }
-        
-        Debug.Log("Chamando o texto de tutorial de número: " + behaviour);
     }
-    private void DesapearHud()
-    {
-        ownAnim.SetBool("Visivel", false);
-    }
+    
 }
