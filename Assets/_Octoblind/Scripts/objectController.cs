@@ -26,6 +26,7 @@ public class objectController : MonoBehaviour
     private float rotationx;
     private float rotationy;
     private AudioManager AU;
+    private TutorialChanger TC;
 
     public DocumentManager DocMan;
 
@@ -41,6 +42,7 @@ public class objectController : MonoBehaviour
 
     private void Start()
     {
+        if (TryGetComponent(out TutorialChanger t)) TC = t;
         PropertyType = transform.GetChild(0).tag;
 
         player = GameObject.Find("Main Camera").transform;
@@ -148,6 +150,7 @@ public class objectController : MonoBehaviour
         #region READABLE
         if(PropertyType == PropertyList[2]) //PropertyList[2] --- Readable;
         {
+            if (TC != null) TC.ChangeT();
             GameGlobeData.IsDocumentCollected = true;
             if (Input.GetKeyDown(KeyCode.Return))
             {

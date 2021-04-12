@@ -65,6 +65,7 @@ public class GameGlobeData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) OnEscPressed?.Invoke(this, EventArgs.Empty);
 
         //--------------------------DEBUG---------------------------------------
+        Debug.Log(currentTutorial);
         if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PS.InvokeSound();
         //-----------------------------------------------------------------------
@@ -148,16 +149,16 @@ public class GameGlobeData : MonoBehaviour
 
     #region Tutorial Stuff
     //Declaração do event e delegate de trigger de tutorial-----
-    public delegate void onTutorialTrigger(int behaviourType);
+    public delegate void onTutorialTrigger(int behaviourType, bool newOrNot);
     public event onTutorialTrigger reallyOnTutorialTrigger;
     //----------------------------------------------------------
 
     //Função do trigger de tutorial
-    public void TutorialTrigger(int behaviour)
+    public void TutorialTrigger(int behaviour, bool newOrNot)
     {
         if(reallyOnTutorialTrigger != null)
         {
-            reallyOnTutorialTrigger(behaviour);
+            reallyOnTutorialTrigger(behaviour,newOrNot);
         }
     }
 
@@ -201,21 +202,30 @@ public class GameGlobeData : MonoBehaviour
         }
         if (passer)
         {
-            changeTutorialConditions(0);
+            changeTutorialConditions(0,false);
         }
     }
-
-    //Muda as condições para completar o atual tutorial
-    private void changeTutorialConditions(int behaviour)
+    public void AlterTutorialCondition()
     {
-        Debug.Log(behaviour);
+        for (int i = 0; i < TutorialConditions.Length; i++)
+        {
+            if (!TutorialConditions[i])
+            {
+                TutorialConditions[i] = true;
+                return;
+            }
+        }
+    }
+    //Muda as condições para completar o atual tutorial
+    private void changeTutorialConditions(int behaviour, bool newValue)
+    {
         if (TutorialBehaviourFila.Count > 0 && behaviour == 0)
         {            
             TutorialCompleted();
-            changeTutorialConditions(TutorialBehaviourFila.Dequeue());
+            changeTutorialConditions(TutorialBehaviourFila.Dequeue(),false);
             return;
         }
-        if (currentTutorial != 0 && behaviour != 0)
+        if (currentTutorial != 0 && behaviour != 0 && newValue)
         {
             TutorialBehaviourFila.Enqueue(behaviour);
             return;
@@ -234,6 +244,10 @@ public class GameGlobeData : MonoBehaviour
                     TutorialConditions = new bool[4];
                     break;
                 case (2):
+                    currentTutorial = behaviour;
+                    TutorialConditions = new bool[1];
+                    break;
+                case (3):
                     currentTutorial = behaviour;
                     TutorialConditions = new bool[1];
                     break;

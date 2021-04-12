@@ -18,7 +18,7 @@ public class TutorialCanvasComponent : MonoBehaviour
         GameGlobeData.GameCon.reallyOnTutorialCompleted += ChangeHud;
 
         ownAnim = GetComponent<Animator>();
-        tutorialTexts = new string[] {"Mova-se com WASD", "Pule com Espaço"};
+        tutorialTexts = new string[] {"Mova-se com WASD", "Pule com Espaço","Pegue um documento"};
     }
     private void Update()
     {
@@ -26,13 +26,13 @@ public class TutorialCanvasComponent : MonoBehaviour
     }
     private void DesapearHud()
     {
-        //Caso não existam itens na fila
-        //if (queuedTutorials.Count <= 0) ownAnim.SetBool("Visivel", false);
+        if (queuedTutorials.Count <= 0) ownAnim.SetBool("Visivel", false);
     }
     private void ChangeHud()
     {
         if (queuedTutorials.Count > 0)
         {
+            ownAnim.ResetTrigger("ChangeAnimTrigger");
             ownAnim.SetTrigger("ChangeAnimTrigger");
         }
     }
@@ -40,7 +40,7 @@ public class TutorialCanvasComponent : MonoBehaviour
     {
         tutorialTextCanvas.text = queuedTutorials.Dequeue();
     }
-    private void ChangeHud(int behaviour)
+    private void ChangeHud(int behaviour,bool x)
     {
         //Caso ele não tenha nenhum tutorial 
         if (!ownAnim.GetBool("Visivel"))
@@ -51,7 +51,7 @@ public class TutorialCanvasComponent : MonoBehaviour
             tutorialTextCanvas.text = tutorialTexts[behaviour-1];
         }
         //Caso ele ja tenha um tutorial aberto coloque o tutorial na queue
-        else
+        else if(x)
         {
             queuedTutorials.Enqueue(tutorialTexts[behaviour - 1]);
         }
