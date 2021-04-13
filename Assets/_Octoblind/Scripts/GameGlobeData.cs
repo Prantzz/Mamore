@@ -23,7 +23,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsGoodEnding = true;
     public static ParticleSystem[] PSList;
 
-
+    private GameObject player;
     private int currentTutorial;
     private bool[] TutorialConditions;
     private Queue<int> TutorialBehaviourFila;
@@ -65,7 +65,6 @@ public class GameGlobeData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) OnEscPressed?.Invoke(this, EventArgs.Empty);
 
         //--------------------------DEBUG---------------------------------------
-        Debug.Log(currentTutorial);
         if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PS.InvokeSound();
         //-----------------------------------------------------------------------
@@ -142,6 +141,7 @@ public class GameGlobeData : MonoBehaviour
         //Caso seja a cena principal
         if(next.buildIndex == 2)
         {
+            player = GameObject.Find("Player");
             //Busque todos os Particle system do mapa e ponha na lista
             PSList = Resources.FindObjectsOfTypeAll<ParticleSystem>();
         }
