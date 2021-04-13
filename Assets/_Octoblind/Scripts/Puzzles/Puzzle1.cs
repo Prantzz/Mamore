@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Puzzle1 : Puzzle
 {
-    public void Complete1()
+    public GameObject tabua1;
+    public GameObject tabua2;
+    public Transform finalPosTabua1;
+    public Transform finalPosTabua2;
+    public void MiddleStep()
     {
-        
-    }
-    public void Complete2()
-    {
-        
-    }
+        //Travar taboa 1
+        if (steps[0] && steps[1])
+        {
 
+        }
+        //Travar taboa 1
+        if (steps[2] && steps[3])
+        {
+
+        }
+    }
 }

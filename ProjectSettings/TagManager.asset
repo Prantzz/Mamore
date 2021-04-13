@@ -16,6 +16,7 @@ TagManager:
   - Weapon
   - FixPoint0
   - FixPoint1
+  - Trigger
   layers:
   - Default
   - TransparentFX

@@ -7,11 +7,12 @@ public class Puzzle : MonoBehaviour
     public int index;
     public bool[] steps;
     public bool completed;
-    public GameObject[] parts;
-    public void AchiveStep(int step)
+    public PuzzlePart[] parts;
+    public void AchiveStep(int step, bool state)
     {
-        this.steps[step] = true;
-        this.completed = CheckForCompletion();
+        this.steps[step] = state;
+        MiddleStep();
+        if(state)this.completed = CheckForCompletion();
     }
     private bool CheckForCompletion()
     {
@@ -21,4 +22,5 @@ public class Puzzle : MonoBehaviour
         }
         return true;
     }
+    private void MiddleStep() { }
 }
