@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SimplePuzzleCollider : MonoBehaviour
 {
-    private PuzzlePart p;
+    [SerializeField]
+    private int step;
+    [SerializeField]
+    private Puzzle p;
     private void Start()
     {
-        if(GetComponentInParent<PuzzlePart>() != null)
+        if(GetComponentInParent<Puzzle>() != null)
         {
-            p = GetComponentInParent<PuzzlePart>();
+            p = GetComponentInParent<Puzzle>();
         }
         else
         {
@@ -20,14 +23,16 @@ public class SimplePuzzleCollider : MonoBehaviour
     {
         if (other.CompareTag("Trigger"))
         {
-            p.ModifyPuzzle(other.gameObject);
+            p.AddPiece(other.transform.parent.gameObject);
+            p.AchiveStep(step, true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Trigger"))
         {
-            p.ModifyPuzzle(other.gameObject);
+            p.RemovePiece(other.transform.parent.gameObject);
+            p.AchiveStep(step, false);
         }
     }
 }

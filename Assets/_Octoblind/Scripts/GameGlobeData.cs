@@ -65,7 +65,7 @@ public class GameGlobeData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) OnEscPressed?.Invoke(this, EventArgs.Empty);
 
         //--------------------------DEBUG---------------------------------------
-        if (Input.GetKeyDown(KeyCode.Z)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+        if (Input.GetKeyDown(KeyCode.Z) && SceneManager.GetActiveScene().buildIndex == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         if (Input.GetKeyDown(KeyCode.C)) this.GetComponent<AudioManager>().PS.InvokeSound();
         //-----------------------------------------------------------------------
 
