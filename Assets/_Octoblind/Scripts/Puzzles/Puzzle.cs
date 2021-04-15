@@ -5,16 +5,18 @@ using UnityEngine;
 public class Puzzle : MonoBehaviour
 {
     public int index;
-    public bool[] steps;
+    [SerializeField]
+    protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
     private void Start()
     {
+        if (steps == null) Debug.LogError("ESSE PUZZLE NÃO TEM STEPS CARALHO!",this);
         PuzzlePieces = new List<GameObject>();
     }
     public void AchiveStep(int step, bool state)
     {
-        this.steps[step] = state;
+        steps[step] = state;
         MiddleStep();
         if(state)this.completed = CheckForCompletion();
     }
@@ -29,10 +31,23 @@ public class Puzzle : MonoBehaviour
     public virtual void MiddleStep() { }
     public void AddPiece(GameObject toAdd)
     {
-        PuzzlePieces.Add(toAdd);
+        if(!PuzzlePieces.Contains(toAdd))PuzzlePieces.Add(toAdd);
     }
     public void RemovePiece(GameObject toRemove)
     {
         PuzzlePieces.Remove(toRemove);
+    }
+    //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
+    //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
+    //TLDR: Se tu colocar no collider que ele da achive num step que não está no array o sistema não tem como indentificar, é isso.
+    
+    public bool CheckStep(int stepToCheck) 
+    {
+        return (stepToCheck <= steps.Length - 1) ? steps[stepToCheck] : ThrowError();
+        bool ThrowError()
+        {
+            Debug.LogError("Você está tentando verificar um step que não existe nesse Puzzle", this);
+            return false;
+        }
     }
 }

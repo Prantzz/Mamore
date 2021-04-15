@@ -11,18 +11,14 @@ public class PlayerController : MonoBehaviour
     public Vector3 xzMove, yMove;
     public bool isSprinting = false;
     public static bool isCrouching = false;
-    public UnityEvent OnSpacePressed, OnShiftKeepPressed, OnShiftReleased, OnCtrlKeepPressed, OnCtrlReleased;
+    public UnityEvent OnSpacePressed, OnShiftKeepPressed, OnShiftReleased, OnCtrlKeepPressed, OnCtrlReleased, OnMouseButtonPressed;
     void Start()
     {
         CharCon = GetComponent<CharacterController>();
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) OnSpacePressed?.Invoke();
-        if (Input.GetKey(KeyCode.LeftShift)) OnShiftKeepPressed?.Invoke();
-        if (Input.GetKeyUp(KeyCode.LeftShift)) OnShiftReleased?.Invoke();
-        if (Input.GetKey(KeyCode.LeftControl)) OnCtrlKeepPressed?.Invoke();
-        if (Input.GetKeyUp(KeyCode.LeftControl)) OnCtrlReleased?.Invoke();
+        ProcessInputs();
     }
     void FixedUpdate()
     {
@@ -50,6 +46,16 @@ public class PlayerController : MonoBehaviour
         yMove.y += gravity * Time.deltaTime;
         CharCon.Move(yMove * Time.deltaTime);
         if (CharCon.isGrounded && yMove.y < 0) yMove.y = 0; 
+    }
+
+    private void ProcessInputs()
+    {
+        if (Input.GetMouseButtonDown(0)) OnMouseButtonPressed?.Invoke();
+        if (Input.GetKeyDown(KeyCode.Space)) OnSpacePressed?.Invoke();
+        if (Input.GetKey(KeyCode.LeftShift)) OnShiftKeepPressed?.Invoke();
+        if (Input.GetKeyUp(KeyCode.LeftShift)) OnShiftReleased?.Invoke();
+        if (Input.GetKey(KeyCode.LeftControl)) OnCtrlKeepPressed?.Invoke();
+        if (Input.GetKeyUp(KeyCode.LeftControl)) OnCtrlReleased?.Invoke();
     }
     #region EVENTS_METHODS
     public void Jump() 
