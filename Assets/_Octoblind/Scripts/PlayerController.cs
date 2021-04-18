@@ -81,5 +81,10 @@ public class PlayerController : MonoBehaviour
     {
         isCrouching = false;
     }
+    public void TakeDamage()
+    {
+        CharCon.Move(new Vector3(0,1,1));
+        Player.INSANITY += 25;
+    }
     #endregion
 }

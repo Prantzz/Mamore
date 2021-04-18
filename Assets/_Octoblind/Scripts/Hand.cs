@@ -29,6 +29,7 @@ public class Hand : MonoBehaviour
             }
             
         }
+        Debug.Log(HOLDING_TOOL);
     }
 
 
@@ -94,7 +95,7 @@ public class Hand : MonoBehaviour
                     else
                     {
                         //Tome dano pra parar de ser otário
-                        Player.INSANITY += 25;
+                        transform.parent.transform.parent.transform.parent.GetComponent<PlayerController>().TakeDamage();
                     }
                 }
                 //Caso contrário não faça nada
@@ -102,4 +103,5 @@ public class Hand : MonoBehaviour
             }
         }        
     }
+    
 }
