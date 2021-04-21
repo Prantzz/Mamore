@@ -79,7 +79,7 @@ public class GameGlobeData : MonoBehaviour
             fadeOutSceneCanvas = GameObject.Find("FadeOutBlack");   
         }
 
-        //Caso a condição de tutorial seja diferente de zero cheque todo frame caso o player compeltou o tutorial;
+        //Caso a condição de tutorial seja diferente de zero cheque todo frame caso o player completou o tutorial;
         ///Não é ideial fazer dessa maneira, seria correto ter um event para cada ação possível mas foda-se
         if(currentTutorial!=0) checkTutorialConditions();
 
@@ -120,8 +120,9 @@ public class GameGlobeData : MonoBehaviour
     {
         SceneHasEnded = false;
         if(Time.timeSinceLevelLoad <= 0) fadeInAlphaVal = 1f;
-        if(fadeOutSceneCanvas != null)fadeOutSceneCanvas.SetActive(false);
-        
+
+        if (fadeOutSceneCanvas != null) fadeOutSceneCanvas.SetActive(false);
+
         if (fadeInSceneCanvas != null) 
         {
             thisImgIn = fadeInSceneCanvas.GetComponent<Image>();

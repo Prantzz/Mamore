@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6969937805536776925
 Transform:
@@ -57,7 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8841e7cd2da8c3342972ef18dd40c0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepIndex: 0
+  stepOnConllision: 0
+  puzzle: {fileID: 0}
+  canCollide: 0
+  correctTool: 
+  stepOnTool: 0
 --- !u!1 &4022353465557604542
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +78,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4366685720651170308
 Transform:
@@ -157,7 +161,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1737049107818167935
 Transform:
@@ -198,4 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8841e7cd2da8c3342972ef18dd40c0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepIndex: 0
+  stepOnConllision: 0
+  puzzle: {fileID: 0}
+  canCollide: 0
+  correctTool: 
+  stepOnTool: 0
