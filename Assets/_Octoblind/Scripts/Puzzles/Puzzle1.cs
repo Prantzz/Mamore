@@ -8,14 +8,14 @@ public class Puzzle1 : Puzzle
     public Transform finalPosTabua2;
     public override void MiddleStep()
     {
-        //Travar taboa 1
+        //Travar tabua 1
         if (steps[0] && steps[1])
         {
             AjustarBatente(finalPosTabua1.position,PuzzlePieces[0]);
             this.transform.GetChild(0).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(0).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
         }
-        //Travar taboa 1
+        //Travar tabua 2
         if (steps[2] && steps[3])
         {
             AjustarBatente(finalPosTabua2.position, PuzzlePieces[1]);
