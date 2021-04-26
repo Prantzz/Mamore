@@ -19,6 +19,7 @@ public class GameGlobeData : MonoBehaviour
     public static bool isCompassCollected = false;
     public static bool IsCamLock = false;
     public static bool IsDocumentCollected = false;
+    public static bool IsPhotoCollected = false;
     public static bool IsGameOver = false;
     public static bool IsGoodEnding = true;
     public static ParticleSystem[] PSList;

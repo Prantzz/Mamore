@@ -18,6 +18,7 @@ TagManager:
   - FixPoint1
   - Trigger
   - PuzzleCollider
+  - Photo
   layers:
   - Default
   - TransparentFX

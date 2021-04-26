@@ -25,7 +25,7 @@ public class DiaryInstanciator : MonoBehaviour
                 OwnRect = prefabToSpawn.GetComponent<RectTransform>();
                 Button.Title = inventory.Container[i].item.Title;
                 Button.Body = inventory.Container[i].item.Body;
-                OwnRect.anchoredPosition = new Vector3(OwnRect.anchoredPosition.x, OwnRect.anchoredPosition.y - (Y_DISTANCE * i));
+                OwnRect.anchoredPosition = new Vector3(OwnRect.anchoredPosition.x, OwnRect.anchoredPosition.y - (Y_DISTANCE));
                 Instantiate(prefabToSpawn, DiaryPanel.transform);
                 break;
             }

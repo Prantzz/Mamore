@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e50ae58fa6da6046a5262280784597c, type: 3}
+  m_Name: Doc5
+  m_EditorClassIdentifier: 
+  Index: 5
+  Title: "-- DOCUMENTO OFICIAL QHUARFAR\xAE --"
+  Body: "Resposta ao pedido de revis\xE3o de trabalho e entrega de recursos.\r\nPARA
+    DOUTOR O.C.\r\n\r\nFoi descoberta uma nova fonte abundante de l\xE1tex no oriente,
+    os pre\xE7os est\xE3o t\xE3o baratos que a coleta de l\xE1tex na Am\xE9rica Latina
+    j\xE1 n\xE3o adianta de mais nada. O transporte desse produto \xE9 o motivo dessa
+    ferrovia ser constru\xEDda, doutor, voc\xEA entende o que quero dizer?\r\n\r\nSei
+    que est\xE3o passando dificuldades, mas n\xE3o seria a primeira vez, n\xE3o \xE9?
+    Pe\xE7o paci\xEAncia, infelizmente a prioridade agora \xE9 outra.\r\n\r\nFavor
+    descartar este documento imediatamente.\r\n\r\nDir. Qhuarfar.\r\n"

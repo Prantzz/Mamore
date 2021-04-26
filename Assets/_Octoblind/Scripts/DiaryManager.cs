@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DiaryManager : MonoBehaviour
 {
     private List<DocumentObject> Logs = new List<DocumentObject>();
-    private readonly int DocumentsToGoodEnding = 9;
+    private readonly int DocumentsToGoodEnding = 6;
     private void Update()
     {
         if (Logs.Count >= DocumentsToGoodEnding) 

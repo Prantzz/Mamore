@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e50ae58fa6da6046a5262280784597c, type: 3}
+  m_Name: Doc4
+  m_EditorClassIdentifier: 
+  Index: 4
+  Title: Sr. Buster.
+  Body: "J\xE1 \xE9 o segundo m\xEAs que faltam equipamentos de constru\xE7\xE3o,
+    os trilhos est\xE3o pela metade, e quando os americanos v\xEAem, s\xF3 sabem
+    colocar a culpa na gente. Sem falar da falta de alimentos, vejo homens morrendo
+    por mal\xE1ria e outros por falta de comida. At\xE9 enviaram uns doutores aqui,
+    um tal de O.C e um B.P. mas n\xE3o adianta nada sem os equipamentos.\r\n\r\nE
+    pra piorar tudo meu M. M. Buster fugiu, ele se assustou com uma claridade e saiu
+    correndo pela mata. Ele era meu \xFAnico amigo aqui.\r\n\r\nSr. Buster, Kelly
+    sente dos seus latidos, onde est\xE1 voc\xEA amiguinho?\r\n"
