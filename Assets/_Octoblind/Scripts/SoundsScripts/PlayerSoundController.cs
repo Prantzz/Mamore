@@ -15,7 +15,7 @@ public class PlayerSoundController : MonoBehaviour
     void Start()
     {
         isCrouchingBuffer = false;
-        AM = GameObject.Find("GameGlobeData").GetComponent<AudioManager>();
+        AM = GameGlobeData.AU;
         PlayerController = GetComponent<PlayerController>();
     }
     private void Update()

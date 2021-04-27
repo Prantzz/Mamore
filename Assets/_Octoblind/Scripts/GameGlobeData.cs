@@ -23,6 +23,8 @@ public class GameGlobeData : MonoBehaviour
     public static bool IsGameOver = false;
     public static bool IsGoodEnding = true;
     public static ParticleSystem[] PSList;
+    public static GameObject Curupira;
+    public static AudioManager AU;
 
     private GameObject player;
     private int currentTutorial;
@@ -45,6 +47,7 @@ public class GameGlobeData : MonoBehaviour
     {
         //Criando singleton
         GameCon = this;
+        AU = GetComponent<AudioManager>();
     }
     private void Start()
     {
@@ -144,6 +147,8 @@ public class GameGlobeData : MonoBehaviour
         if(next.buildIndex == 2)
         {
             player = GameObject.Find("Player");
+            Curupira = GameObject.Find("Curupira");
+            Curupira.SetActive(false);
             //Busque todos os Particle system do mapa e ponha na lista
             PSList = Resources.FindObjectsOfTypeAll<ParticleSystem>();
         }

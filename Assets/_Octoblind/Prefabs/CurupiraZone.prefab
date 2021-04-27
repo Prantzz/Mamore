@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8959963594210390057}
   - component: {fileID: 946399150925981874}
   - component: {fileID: 5418668672293588421}
+  - component: {fileID: 6352247393137597076}
   m_Layer: 0
   m_Name: CurupiraZone
   m_TagString: Untagged
@@ -2253,3 +2254,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6352247393137597076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934214158956806781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee9313d98402c459fa82a790c72d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curupira: {fileID: 5063100293683287745, guid: 3e66b6ab1e7de8942b3fc7e394537596, type: 3}
+  shouldTriggerOnFirstEnter: 0
+  player: {fileID: 0}

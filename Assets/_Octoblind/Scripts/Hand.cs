@@ -29,7 +29,7 @@ public class Hand : MonoBehaviour
             }
             
         }
-        Debug.Log(HOLDING_TOOL);
+        //Debug.Log(HOLDING_TOOL);
     }
 
 
