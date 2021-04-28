@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
         }
         AmbientePlayer.Play();
     }
-    public GameObject PullSound (Vector3 pos, int type, int sound)
+    public GameObject PullSound (Vector3 pos, int type, int sound, bool linearOrLogarithmic = false)
     {        
         if (playable)
         {
@@ -61,7 +61,9 @@ public class AudioManager : MonoBehaviour
                 GameObject toInstantiate = Instantiate(AudioInstancePrefab, pos, Quaternion.identity);
                 toInstantiate.GetComponent<AudioInstanceComponent>().AU = this;
                 toInstantiate.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
+                toInstantiate.GetComponent<AudioSource>().rolloffMode = linearOrLogarithmic ? AudioRolloffMode.Linear : AudioRolloffMode.Logarithmic;
                 AudioInstancesPlaying.Add(toInstantiate);
+
                 return toInstantiate;
             }
             //Caso a lista tenha objetos
@@ -72,6 +74,7 @@ public class AudioManager : MonoBehaviour
                 Popped.transform.parent = null;
                 Popped.transform.position = pos;
                 Popped.GetComponent<AudioInstanceComponent>().AC = AudioGroupes[type].Sounds[sound];
+                Popped.GetComponent<AudioSource>().rolloffMode = linearOrLogarithmic ? AudioRolloffMode.Linear : AudioRolloffMode.Logarithmic;
                 Popped.SetActive(true);                
                 return Popped;
             }

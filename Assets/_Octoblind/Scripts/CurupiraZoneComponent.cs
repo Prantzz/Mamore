@@ -12,7 +12,7 @@ public class CurupiraZoneComponent : MonoBehaviour
     private List<GameObject> activeZone;
     void Start()
     {
-        StartCoroutine(CallCurupira(alreadyActive));
+        //StartCoroutine(CallCurupira());
         activeZone = new List<GameObject>();
         curupira = GameGlobeData.Curupira;
         foreach(Transform t in transform)
@@ -35,7 +35,13 @@ public class CurupiraZoneComponent : MonoBehaviour
             if (shouldTriggerOnFirstEnter)
             {
                 curupiraActive = true;
-                StartCoroutine(CallCurupira(alreadyActive));
+                StartCoroutine(CallCurupira());
+                shouldTriggerOnFirstEnter = false;
+            }
+            else
+            {
+                curupiraActive = true;
+                StartCoroutine(CallCurupira());
                 shouldTriggerOnFirstEnter = false;
             }
         }
@@ -44,7 +50,7 @@ public class CurupiraZoneComponent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            EndCurupira();
+            alreadyActive = false;
         }
     }
     private IEnumerator EndCurupira()
@@ -53,24 +59,30 @@ public class CurupiraZoneComponent : MonoBehaviour
         
         yield return null;
     }
-    private IEnumerator CallCurupira(bool alreadyActive)
+    private IEnumerator CallCurupira()
     {
-        Debug.Log("Chamando Call Curupira as: " + Time.time);
+        //Debug.Log("Chamando Call Curupira as: " + Time.time);
         //Caso não esteja ativo
         if (!alreadyActive)
         {
             curupira.SetActive(true);
             Vector3 pos = PickRandomPos().position;
             curupira.transform.position = new Vector3(pos.x, 4f, pos.z);
-            GameGlobeData.AU.PullSound(curupira.transform.position, 7, 0);
+            StartCoroutine(curupira.GetComponent<CurupiraComponent>().ExpandLight());
+            GameGlobeData.AU.PullSound(curupira.transform.position, 7, 0,true);
             alreadyActive = true;
         }
         while (alreadyActive)
         {
-            
-            yield return new WaitForSeconds(5);
+            ChangeCurupiraPlace();
+            yield return new WaitForSeconds(Random.Range(4f,8f));                      
         }
         Debug.Log("Terminando Call Curupira as: " + Time.time);
+    }
+    private void ChangeCurupiraPlace()
+    {
+        Vector3 pos = PickRandomPos().position;
+        curupira.GetComponent<CurupiraComponent>().destination = new Vector3(pos.x, 4f, pos.z);
     }
     private Transform PickRandomPos()
     {
