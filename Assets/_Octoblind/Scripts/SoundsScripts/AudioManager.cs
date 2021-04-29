@@ -105,7 +105,7 @@ public class AudioManager : MonoBehaviour
             }
         }        
         PSC.WalkingAudio.Pause();
-        AmbientePlayer.volume = 0.15f;
+        AmbientePlayer.volume = 0.05f;
     }
     public void ResumeSound()
     {
@@ -118,6 +118,6 @@ public class AudioManager : MonoBehaviour
             }
         }
         if (!PSC.WalkingAudio.isPlaying) PSC.WalkingAudio.Play();
-        AmbientePlayer.volume = 0.50f;
+        AmbientePlayer.volume = 0.25f;
     }
 }
