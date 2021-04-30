@@ -14,6 +14,7 @@ public class SimplePuzzleCollider : MonoBehaviour
     {
         //-----LOG ERROR-----
         if (!this.CompareTag("PuzzleCollider")) Debug.LogError("A tag deste collider não é 'Puzzle Collider'", this);
+
         if(GetComponentInParent<Puzzle>() != null)
         {
             puzzle = GetComponentInParent<Puzzle>();

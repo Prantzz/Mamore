@@ -37,9 +37,16 @@ public class Puzzle : MonoBehaviour
     {
         PuzzlePieces.Remove(toRemove);
     }
+
+    public GameObject GetPiece (int pieceIndex)
+    {
+        return PuzzlePieces[pieceIndex];
+
+    }
+
     //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
     //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
-    //TLDR: Se tu colocar no collider que ele da achive num step que não está no array o sistema não tem como indentificar, é isso.
+    //TLDR: Se tu colocar no collider que ele da achive num step que não está no array o sistema não tem como identificar, é isso.
     
     public bool CheckStep(int stepToCheck) 
     {
