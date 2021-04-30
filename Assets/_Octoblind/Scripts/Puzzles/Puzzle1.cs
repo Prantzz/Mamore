@@ -18,9 +18,8 @@ public class Puzzle1 : Puzzle
             AjustarDegrau(finalPosDegrau1.position, PuzzlePieces[0]);
             this.transform.GetChild(0).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(0).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
-        }
-        
-        if(steps[2] && steps[3])
+        } 
+        else if(steps[2] && steps[3])
         {
             AjustarDegrau(finalPosDegrau2.position, PuzzlePieces[1]);
             this.transform.GetChild(1).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;

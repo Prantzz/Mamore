@@ -8,6 +8,8 @@ public class SimplePuzzleCollider : MonoBehaviour
     private int stepOnConllision;
     public Puzzle puzzle;
     public bool canCollide;
+    [SerializeField]
+    private string correctObject;
     public string correctTool;
     public int stepOnTool;
     private void Start()
@@ -33,8 +35,14 @@ public class SimplePuzzleCollider : MonoBehaviour
         {
             if (other.CompareTag("Trigger"))
             {
-                puzzle.AddPiece(other.transform.parent.gameObject);
-                puzzle.AchiveStep(stepOnConllision, true);
+
+                if (other.GetComponentInParent<objectController>()?.type == correctObject)
+                {
+                    puzzle.AddPiece(other.transform.parent.gameObject);
+                    puzzle.AchiveStep(stepOnConllision, true);
+                }
+
+
             }
         }        
     }
@@ -44,8 +52,11 @@ public class SimplePuzzleCollider : MonoBehaviour
         {
             if (other.CompareTag("Trigger"))
             {
-                puzzle.RemovePiece(other.transform.parent.gameObject);
-                puzzle.AchiveStep(stepOnConllision, false);
+                if (other.GetComponentInParent<objectController>()?.type == correctObject)
+                {
+                    puzzle.AddPiece(other.transform.parent.gameObject);
+                    puzzle.AchiveStep(stepOnConllision, false);
+                }
             }
         }        
     }

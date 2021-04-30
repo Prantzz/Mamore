@@ -6,6 +6,18 @@ using UnityEngine;
 
 public class objectController : MonoBehaviour
 {
+    //coloquei essa propriedade somente leitura aqui pra poder identificar objetos seguráveis que não são ferramentas
+    //assim da pra impedir o jogador de colocar pés de mesas nos trilhos ou nos degraus etc.
+
+    [SerializeField] private string Type;
+    public string type 
+    { 
+        get
+        {
+            return Type;
+        } 
+    }
+
     public bool isSelected = false;
     public bool hasInteracted = false;
     public event EventHandler OnSelection;
