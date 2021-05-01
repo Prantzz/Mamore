@@ -16,18 +16,17 @@ public class Player : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, 15f))
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Transform _curupira = hit.transform;
-            if (_curupira.CompareTag(CurupiraTag)) 
+            if (_curupira.CompareTag(CurupiraTag))
             {
-                INSANITY += 30f * Time.deltaTime;
+                INSANITY += 75f * Time.deltaTime;
             }
         }
-        if (INSANITY >= 0f)
+        if (INSANITY >= 15f)
         {
-            INSANITY -= 20f * Time.deltaTime;
+            INSANITY -= 2f * Time.deltaTime;
         }
         if (INSANITY >= 100f) 
         {
@@ -35,7 +34,7 @@ public class Player : MonoBehaviour
             GameGlobeData.SceneHasEnded = true;
 
         }
-        //Debug.Log(INSANITY);
+        Debug.Log(INSANITY);
     }
 
 
