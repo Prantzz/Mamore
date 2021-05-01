@@ -600,7 +600,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0.19
     radius:
-      value: 0.6
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 142.7
+      scalar: 61.65
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4847,8 +4847,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.46302104, b: 0.132921, a: 1}
-  m_Intensity: 18.56
-  m_Range: 10
+  m_Intensity: 1.13
+  m_Range: 9.84
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4940,8 +4940,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9528302, g: 0.25556672, b: 0.13034001, a: 1}
-  m_Intensity: 6.69
-  m_Range: 10
+  m_Intensity: 0.1
+  m_Range: 100.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4985,7 +4985,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.8754505e+28, y: NaN, z: 5.776601e-31, w: 1.3563128e-19}
+  m_BoundingSphereOverride: {x: 8e-43, y: 1.39e-43, z: 0, w: 1.4196516e-14}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
