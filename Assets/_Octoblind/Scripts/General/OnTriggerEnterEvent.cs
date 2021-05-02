@@ -9,9 +9,14 @@ public class OnTriggerEnterEvent : MonoBehaviour
     [SerializeField] private UnityEvent onTriggerEnter;
     [SerializeField] private UnityEvent onTriggerExit;
 
-    [Header("Apenas preencher apenasmente um dos dois apenas")]
     [SerializeField] private string tagToCollide;
     [SerializeField] private string type;
+
+
+    private void Update()
+    {
+        Debug.Log("Habilitado");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,15 +27,18 @@ public class OnTriggerEnterEvent : MonoBehaviour
         }
         else if (tagToCollide != null)
         {
-            if (other.CompareTag("Player"))
-                onTriggerEnter?.Invoke();
+            if (other.CompareTag(tagToCollide))
+            {
+                Debug.Log("Ya");
+                GetComponentInParent<Puzzle1>().DesajustarDegrau();
+            }
+                
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-
         if (type != null)
         {
             if (other.GetComponentInParent<objectController>()?.type == this.type)
@@ -38,9 +46,15 @@ public class OnTriggerEnterEvent : MonoBehaviour
         }
         else if (tagToCollide != null)
         {
-            if (other.CompareTag("Player"))
-                onTriggerExit?.Invoke();
+            
+               
         }
 
     }
+
+    public void ResetTrigger()
+    {
+        type = null;
+    }
+
 }

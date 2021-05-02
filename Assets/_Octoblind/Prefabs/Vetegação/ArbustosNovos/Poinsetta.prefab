@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1687236092352635446
+--- !u!1 &8029402374162000762
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4608126077998195094}
-  - component: {fileID: 200055291604065094}
-  - component: {fileID: 7708801037865591339}
+  - component: {fileID: 2173324749124712205}
+  - component: {fileID: 2401358358387736537}
+  - component: {fileID: 2000132623749837555}
   m_Layer: 0
-  m_Name: TocoArvore
+  m_Name: Poinsetta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &4608126077998195094
+--- !u!4 &2173324749124712205
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687236092352635446}
-  m_LocalRotation: {x: -0.1115098, y: -0.1115098, z: -0.698259, w: 0.698259}
-  m_LocalPosition: {x: 68.334, y: 0.14, z: 79.981}
+  m_GameObject: {fileID: 8029402374162000762}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 41.948, y: -0.125, z: 50.444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -18.147, y: 0, z: -90}
---- !u!33 &200055291604065094
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2401358358387736537
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687236092352635446}
-  m_Mesh: {fileID: -1843355698397502295, guid: ce6df63d762f9944aa116fb6963615bb, type: 3}
---- !u!23 &7708801037865591339
+  m_GameObject: {fileID: 8029402374162000762}
+  m_Mesh: {fileID: 2102593308063445862, guid: e312f4d06f9b8b64baa173c66253368e, type: 3}
+--- !u!23 &2000132623749837555
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687236092352635446}
+  m_GameObject: {fileID: 8029402374162000762}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8ecd0d406384534d83f9e0e23d6392b, type: 2}
+  - {fileID: 2100000, guid: b67948ca8b321794198d0e26ed35019f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
