@@ -8,17 +8,14 @@ public class CurupiraComponent : MonoBehaviour
     public Light callerLight;
     public Vector3 destination;
     private AudioSource ownAS;
-    public bool debugging;
     void Start()
     {
         this.callerLight = transform.GetComponentInChildren<Light>();
         ownAS = GetComponent<AudioSource>();
-        if (debugging) destination = this.transform.position;
     }
 
     void Update()
     {
-        
         if ((destination - transform.position).magnitude > 0.1f)
         {
 
@@ -31,8 +28,7 @@ public class CurupiraComponent : MonoBehaviour
             transform.position = destination;
         }
         ownAS.pitch = Mathf.Clamp((destination - transform.position).magnitude,0,2f);
-        ownAS.volume = Mathf.Clamp((destination - transform.position).magnitude/40, 0, 0.6f);
-        //UnityEngine.Debug.Log((destination - transform.position).magnitude);
+        ownAS.volume = Mathf.Clamp((destination - transform.position).magnitude, 0, 0.8f);
     }
     public IEnumerator ExpandLight()
     {

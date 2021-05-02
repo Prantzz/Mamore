@@ -67,7 +67,7 @@ public class CurupiraZoneComponent : MonoBehaviour
         {
             curupira.SetActive(true);
             Vector3 pos = PickRandomPos().position;
-            curupira.transform.position = new Vector3(pos.x, 2f, pos.z);
+            curupira.transform.position = new Vector3(pos.x, 4f, pos.z);
             StartCoroutine(curupira.GetComponent<CurupiraComponent>().ExpandLight());
             GameGlobeData.AU.PullSound(curupira.transform.position, 7, 0,true);
             alreadyActive = true;

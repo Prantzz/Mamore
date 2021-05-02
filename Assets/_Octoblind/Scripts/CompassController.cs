@@ -20,17 +20,23 @@ public class CompassController : MonoBehaviour
 
     private void Start()
     {
+        
         compass = GetComponent<RawImage>();
         player = GameObject.Find("Player").transform;
         compassUnit = compass.rectTransform.rect.width / 360;
+        AddQuestMarker(test0);
+        AddQuestMarker(test1);
+        AddQuestMarker(test2);
     }
     private void Update()
     {
         compass.uvRect = new Rect(player.localEulerAngles.y / 360f, 0f, 1f, 1f);
+
         foreach(QuestHandler marker in QuestList)
         {
             marker.thisImg.rectTransform.anchoredPosition = GetPosOnCompass(marker);
         }
+
     }
 
     public void AddQuestMarker(QuestHandler marker)

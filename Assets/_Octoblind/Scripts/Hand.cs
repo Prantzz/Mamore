@@ -75,11 +75,12 @@ public class Hand : MonoBehaviour
         {
             //Cast de um ray do mouse ao infinito e além
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //Caso acerte, Out num RaycastHit
+            //Caso acerte Out num RaycastHit
             if (Physics.Raycast(ray, out RaycastHit hit, 3f))
             {
                 //The hit is my bitch now
                 Transform hitT = hit.transform;
+                Debug.Log(hit.transform);
 
                 //Caso acerte um PuzzleCollider
                 if (hitT.CompareTag("PuzzleCollider"))

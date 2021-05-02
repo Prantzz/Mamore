@@ -18,13 +18,5 @@ public class PuzzleLogicStorer : MonoBehaviour
             listOfPuzzles = GameObject.FindObjectsOfType<Puzzle>();
         }
     }
-    public static bool CheckForBestEnding()
-    {
-        foreach(Puzzle p in listOfPuzzles)
-        {
-            if (!p.completed) return false;
-        }
-        return true;
-    }
 
 }
