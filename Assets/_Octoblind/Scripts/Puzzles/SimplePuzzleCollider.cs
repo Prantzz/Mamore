@@ -33,7 +33,7 @@ public class SimplePuzzleCollider : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if (canCollide)
         {
             if (other.CompareTag(tagToCheck))
@@ -41,6 +41,7 @@ public class SimplePuzzleCollider : MonoBehaviour
 
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
+                    Debug.Log(other.transform.parent.gameObject);
                     puzzle.AddPiece(other.transform.parent.gameObject);
                     puzzle.AchiveStep(stepOnConllision, true);
                 }
