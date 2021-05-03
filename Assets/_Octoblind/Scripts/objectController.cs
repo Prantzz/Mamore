@@ -167,7 +167,6 @@ public class objectController : MonoBehaviour
             }
         }
         #endregion
-
         #region READABLE
         if (PropertyType == PropertyList[2]) //PropertyList[2] --- Readable;
         {

@@ -12,7 +12,7 @@ public class Puzzle : MonoBehaviour
     private void Start()
     {
         if (steps == null) Debug.LogError("ESSE PUZZLE NÃO TEM STEPS CARALHO!",this);
-        PuzzlePieces = new List<GameObject>();
+        //PuzzlePieces = new List<GameObject>();
     }
     public void AchiveStep(int step, bool state)
     {

@@ -15,7 +15,7 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Habilitado");
+        //Debug.Log("Habilitado");
     }
 
     private void OnTriggerEnter(Collider other)

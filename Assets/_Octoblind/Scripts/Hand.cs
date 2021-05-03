@@ -24,14 +24,9 @@ public class Hand : MonoBehaviour
                         HOLDING_TOOL = toolName;
                     }
                 }
-
-               
             }
-            
         }
-        //Debug.Log(HOLDING_TOOL);
     }
-
 
     public void UpdateSlot() 
     {
@@ -73,6 +68,7 @@ public class Hand : MonoBehaviour
     //Called by PlayerController
     public void ActiveItem()
     {
+        //Debug.Log(HOLDING_TOOL);
         //Caso esteja segunrando uma ferramenta
         if (!string.IsNullOrEmpty(HOLDING_TOOL))
         {
@@ -86,8 +82,7 @@ public class Hand : MonoBehaviour
 
                 //Caso acerte um PuzzleCollider
                 if (hitT.CompareTag("PuzzleCollider"))
-                {
-                    
+                {                    
                     SimplePuzzleCollider SPC = hitT.GetComponent<SimplePuzzleCollider>();
                     //Caso ele esteja usando a ferramenta correta para o serviço
                     if (string.Equals(SPC.correctTool, HOLDING_TOOL))
@@ -123,7 +118,29 @@ public class Hand : MonoBehaviour
                 //Caso contrário não faça nada
                 else{}
             }
-        }        
+        }
+    }    
+    public void Talk()
+    {
+        //Cast de um ray do mouse ao infinito e além
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Caso acerte, Out num RaycastHit
+        if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+        {
+            //The hit is my bitch now
+            Transform hitT = hit.transform;
+
+            //Caso acerte um PuzzleCollider
+            if (hitT.CompareTag("PuzzleCollider"))
+            {
+                SimplePuzzleCollider SPC = hitT.GetComponent<SimplePuzzleCollider>();
+                //Caso ele esteja usando a ferramenta correta para o serviço
+                if (SPC.talker)
+                {
+                    //Avance um step do Puzzle
+                    SPC.AchiveTalkStep();
+                }
+            }
+        }
     }
-    
 }
