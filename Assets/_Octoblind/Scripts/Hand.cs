@@ -65,7 +65,7 @@ public class Hand : MonoBehaviour
     }
     public void ActiveItem()
     {
-        Debug.Log(HOLDING_TOOL);
+        //Debug.Log(HOLDING_TOOL);
         //Caso esteja segunrando uma ferramenta
         if (!string.IsNullOrEmpty(HOLDING_TOOL))
         {

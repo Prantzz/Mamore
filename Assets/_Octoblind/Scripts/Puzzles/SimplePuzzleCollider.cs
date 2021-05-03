@@ -41,7 +41,7 @@ public class SimplePuzzleCollider : MonoBehaviour
 
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
-                    Debug.Log(other.transform.parent.gameObject);
+                    //Debug.Log(other.transform.parent.gameObject);
                     puzzle.AddPiece(other.transform.parent.gameObject);
                     puzzle.AchiveStep(stepOnConllision, true);
                 }
