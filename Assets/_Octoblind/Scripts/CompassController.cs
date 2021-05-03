@@ -13,10 +13,6 @@ public class CompassController : MonoBehaviour
 
     float compassUnit;
 
-    public QuestHandler test0;
-    public QuestHandler test1;
-    public QuestHandler test2;
-
 
     private void Start()
     {

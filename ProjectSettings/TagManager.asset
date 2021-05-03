@@ -20,6 +20,7 @@ TagManager:
   - PuzzleCollider
   - Photo
   - Obstacle
+  - NPC
   layers:
   - Default
   - TransparentFX

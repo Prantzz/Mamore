@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 xzMove, yMove;
     public bool isSprinting = false;
     public static bool isCrouching = false;
-    public UnityEvent OnSpacePressed, OnShiftKeepPressed, OnShiftReleased, OnCtrlKeepPressed, OnCtrlReleased, OnMouseButtonPressed;
+    public UnityEvent OnSpacePressed, OnShiftKeepPressed, OnShiftReleased, OnCtrlKeepPressed, OnCtrlReleased, OnMouseButtonPressed, OnEPressed;
     void Start()
     {
         CharCon = GetComponent<CharacterController>();
@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift)) OnShiftReleased?.Invoke();
         if (Input.GetKey(KeyCode.LeftControl)) OnCtrlKeepPressed?.Invoke();
         if (Input.GetKeyUp(KeyCode.LeftControl)) OnCtrlReleased?.Invoke();
+        if (Input.GetKeyDown(KeyCode.E)) OnEPressed.Invoke();
     }
     #region EVENTS_METHODS
     public void Jump() 

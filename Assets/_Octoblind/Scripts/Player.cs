@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
             GameGlobeData.SceneHasEnded = true;
 
         }
-        Debug.Log(INSANITY);
+        //Debug.Log(INSANITY);
     }
 
 
