@@ -100,6 +100,23 @@ public class Hand : MonoBehaviour
                         transform.parent.transform.parent.transform.parent.GetComponent<PlayerController>().TakeDamage();
                     }
                 }
+                //Caso acerte um Obstáculo
+                else if (hitT.CompareTag("Obstacle"))
+                {
+                    Obstacle obstacle = hitT.GetComponent<Obstacle>();
+
+                    if (string.Equals(obstacle.correctTool, HOLDING_TOOL))
+                    {
+                        //Remova obstáculo
+                        obstacle.Remove();
+                    }
+                    //Caso ele não esteja usando a fita certa
+                    else
+                    {
+                        //Tome dano pra parar de ser otário
+                        transform.parent.transform.parent.transform.parent.GetComponent<PlayerController>().TakeDamage();
+                    }
+                }
                 //Caso contrário não faça nada
                 else{}
             }
