@@ -6,16 +6,17 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] private string CorrectTool;
     [SerializeField] private float dissolveVelocity = 1f;
+    [SerializeField] private float timer = 6f;
 
     private MeshRenderer[] childRenderers;
     public string correctTool { get => CorrectTool; }
 
     private bool m_remove;
-    private float timer;
+
+    
 
     private void Start()
     {
-        timer = 4.5f;
         m_remove = false;
 
         //pega meshrenderers das children
@@ -37,7 +38,7 @@ public class Obstacle : MonoBehaviour
         {
             //timer pra dissolver nossos queridos obstaculos
             timer -= dissolveVelocity * Time.deltaTime;
-            if (timer > -0.5f)
+            if (timer > 0f)
             {
                 foreach (var a in childRenderers)
                 {
