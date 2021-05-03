@@ -18,7 +18,10 @@ public class Puzzle4 : Puzzle
             QCL.changeTextAndActive(CC.quest1_1.description, true);
             PuzzlePieces[1].SetActive(true);
         }
-        if (steps[0] && steps[1] && steps[2]) PuzzlePieces[0].SetActive(true);
+        if (steps[0] && steps[1] && steps[2]) {
+            PuzzlePieces[0].SetActive(true);
+            PuzzlePieces[2].SetActive(true);
+        }
         if(steps[1] && steps[0] && !steps[2])
         {
             this.AchiveStep(2, true);

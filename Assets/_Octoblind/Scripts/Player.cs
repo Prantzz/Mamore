@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         }
         if (INSANITY >= 100f) 
         {
-            INSANITY = 0f;
+            //INSANITY = 0f;
             GameGlobeData.SceneHasEnded = true;
 
         }
