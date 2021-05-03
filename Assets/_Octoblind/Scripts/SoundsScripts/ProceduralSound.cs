@@ -46,7 +46,7 @@ public class ProceduralSound : MonoBehaviour
         List<int> Remeaming = new List<int>();
         int min = ProceduralArr.Min();
         //Verifica se o som pode ser tocado
-        for (int i = 0; i < ProceduralArr.Length; i++)
+        for (int i = 0; i < ProceduralArr.Length-1; i++)
         {
             if (ProceduralArr[i] > min) continue;
             else Remeaming.Add(i);
