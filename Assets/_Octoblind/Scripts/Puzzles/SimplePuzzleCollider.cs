@@ -12,8 +12,11 @@ public class SimplePuzzleCollider : MonoBehaviour
     private string correctObject;
     public string correctTool;
     public int stepOnTool;
+
+    
     private void Start()
     {
+        
         //-----LOG ERROR-----
         if (!this.CompareTag("PuzzleCollider")) Debug.LogError("A tag deste collider não é 'Puzzle Collider'", this);
 

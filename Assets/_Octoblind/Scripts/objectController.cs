@@ -27,6 +27,11 @@ public class objectController : MonoBehaviour
     public List<String> CollectableList;
     public List<String> ReadableList;
     public int AudioNum;
+    
+    private bool isDissolvind = false;
+    private MeshRenderer meshRenderer;
+    private float dissolveTime = 1;
+    private float timer = -1;
 
     private Transform player;
     private String PropertyType, CollectableType;
@@ -56,6 +61,7 @@ public class objectController : MonoBehaviour
 
     private void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
         if (TryGetComponent(out TutorialChanger t)) TC = t;
         PropertyType = transform.GetChild(0).tag;
 
@@ -239,18 +245,39 @@ public class objectController : MonoBehaviour
         if(PropertyType == PropertyList[3])  //PropertyList[3] --- Photo;
         {
             if (TC != null) TC.ChangeT();
+
             GameGlobeData.IsPhotoCollected = true;
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 GameGlobeData.IsPhotoCollected = false;
                 hasInteracted = false;
+                if (!isDissolvind)
+                {
+                    isDissolvind = true;
+                    StartCoroutine(Dissolve());
+                }
+                
             }
             phoCon.ChangePhoto(photoImg);
+            
         }
         #endregion
     }
 
+    //dissolver objeto dps que pegou e desativar
+    private IEnumerator Dissolve()
+    {
+        while (true)
+        {
+            timer += dissolveTime * Time.deltaTime;
+            if (timer < 1.5f)
+                meshRenderer.material.SetFloat("_Dissolve", timer);
+            else
+                gameObject.SetActive(false);
 
+            yield return null;
+        }
+    }
     #endregion
 
     #region UPDATE_METHODS

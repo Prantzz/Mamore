@@ -63,11 +63,14 @@ public class Hand : MonoBehaviour
                             SelectInt = 3;
                             if (gameObject.transform.childCount >= 1) Destroy(gameObject.transform.GetChild(0).gameObject);
                         }
+                       
                     }
                 }
             }
         }
     }
+
+    //Called by PlayerController
     public void ActiveItem()
     {
         //Caso esteja segunrando uma ferramenta
