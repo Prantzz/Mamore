@@ -176,6 +176,12 @@ public class objectController : MonoBehaviour
             {
                 GameGlobeData.IsDocumentCollected = false;
                 hasInteracted = false;
+                if (!isDissolvind)
+                {
+                    tag = "Untagged";
+                    isDissolvind = true;
+                    StartCoroutine(Dissolve());
+                }
             }
 
             if (DocumentIndex == 0)
@@ -252,6 +258,7 @@ public class objectController : MonoBehaviour
                 hasInteracted = false;
                 if (!isDissolvind)
                 {
+                    tag = "Untagged";
                     isDissolvind = true;
                     StartCoroutine(Dissolve());
                 }

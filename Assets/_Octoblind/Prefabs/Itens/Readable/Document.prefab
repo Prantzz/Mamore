@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: cce29884ee492fb4e8d8dcb5c3ebb313, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 
   isSelected: 0
   hasInteracted: 0
   zeroY: 0
@@ -148,6 +149,8 @@ MonoBehaviour:
   AudioNum: 1
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  phoCon: {fileID: 0}
+  photoImg: {fileID: 0}
   DocumentInventory: {fileID: 11400000, guid: def85c57bd781c844aaa27e061f43cfa, type: 2}
   Diary: {fileID: 0}
-  Document: {fileID: 0}
+  Document: {fileID: 11400000, guid: 8c87efec8e711ce49a911940019e980a, type: 2}

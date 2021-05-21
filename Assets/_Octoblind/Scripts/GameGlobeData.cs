@@ -197,6 +197,10 @@ public class GameGlobeData : MonoBehaviour
             case (2):
                 if (Input.GetKeyDown(KeyCode.Space)) TutorialConditions[0] = true;
                 break;
+            case (4):
+                if (Input.GetKeyDown(KeyCode.E)) TutorialConditions[0] = true;
+                if(Input.GetKeyDown(KeyCode.Q)) TutorialConditions[1] = true;
+                break;
         }
         bool passer = true;
         foreach(bool b in TutorialConditions)
@@ -257,6 +261,10 @@ public class GameGlobeData : MonoBehaviour
                 case (3):
                     currentTutorial = behaviour;
                     TutorialConditions = new bool[1];
+                    break;
+                case (4):
+                    currentTutorial = behaviour;
+                    TutorialConditions = new bool[2];
                     break;
             }
         }        

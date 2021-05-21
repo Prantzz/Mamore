@@ -21,24 +21,27 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TroncoCaido
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 298811cecbc2f1e479045320269c7853, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2
-  m_LightmapFlags: 6
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_197ddaa405d34fb685491e02b40bd76a:
-        m_Texture: {fileID: 2800000, guid: 7c3665462fc98e249b572423e22cf126, type: 3}
+        m_Texture: {fileID: 2800000, guid: fb9ff169b44eb0740aaebf4147ecbeee, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5d72545f9616473787f4efdd49ea39e6:
+        m_Texture: {fileID: 2800000, guid: a0513bcd21f31704382100bc1740ab42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_ab8944e23f80461cbf8ab8b4ed47c562:
-        m_Texture: {fileID: 2800000, guid: 7c3665462fc98e249b572423e22cf126, type: 3}
+        m_Texture: {fileID: 2800000, guid: fb9ff169b44eb0740aaebf4147ecbeee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture3D_9825249391394f3488cc566ea805f36e:
@@ -90,7 +93,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a0513bcd21f31704382100bc1740ab42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -118,8 +121,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_2632baa7c88844be820ee14b2f1ba07a: 1
     - Vector1_39e193be400f402587ce3aa9a26fad96: 30
     - Vector1_46e2d97fc35e4b739e41b0845a2e2aec: 1
+    - Vector1_4e23fca9b2d44a56b4cb542f28764532: 0.1
     - Vector1_660e634799ad4e859945afb434fe4e79: 0.02
     - Vector1_d022fa3a46d44c7fbfeb9b15052b24b4: -1
     - _AlphaClip: 0
@@ -144,6 +149,7 @@ Material:
     - _Metallic: 0
     - _NoiseScale: 70
     - _NoiseStrength: 1
+    - _NormalStrength: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0

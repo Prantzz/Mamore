@@ -7,8 +7,10 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private string CorrectTool;
     [SerializeField] private float dissolveVelocity = 1f;
     [SerializeField] private float timer = 6f;
+    [SerializeField] private bool dissolveGroup = true;
 
     private MeshRenderer[] childRenderers;
+    private MeshRenderer childRenderer;
     public string correctTool { get => CorrectTool; }
 
     private bool m_remove;
@@ -20,13 +22,23 @@ public class Obstacle : MonoBehaviour
         m_remove = false;
 
         //pega meshrenderers das children
-        childRenderers = GetComponentsInChildren<MeshRenderer>();
-        
-        //torna cada material unico pra não cagar o material de outros obstaculos ao mesmo tempo (que gambiarra tenho que fazer por vc hein unity)
-        for(int i = 0; i < transform.childCount - 1; i++)
+        if (dissolveGroup)
         {
-            childRenderers[i].material = new Material(childRenderers[i].material);
+            childRenderers = GetComponentsInChildren<MeshRenderer>();
+            //torna cada material unico pra não cagar o material de outros obstaculos ao mesmo tempo (que gambiarra tenho que fazer por vc hein unity)
+            for (int i = 0; i < transform.childCount - 1; i++)
+            {
+                childRenderers[i].material = new Material(childRenderers[i].material);
+            }
         }
+        else
+        {
+            childRenderer = GetComponent<MeshRenderer>();
+            childRenderer.material = new Material(childRenderer.material);
+        }
+            
+        
+        
     }
 
     //método chamado pelo raycast da nossa querida serra
@@ -42,7 +54,7 @@ public class Obstacle : MonoBehaviour
             {
                 foreach (var a in childRenderers)
                 {
-                    Debug.Log("chamou parça pnc da unity");
+                   
                     a.material.SetFloat("_CutoffHeight", timer);
                 }
             }
