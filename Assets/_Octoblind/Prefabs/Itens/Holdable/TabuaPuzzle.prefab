@@ -91,7 +91,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287114757782605084}
-  m_Mesh: {fileID: 2996457342573383522, guid: bbee78144cfc50e4587dc55ca64e1360, type: 3}
+  m_Mesh: {fileID: -6805908555522509028, guid: e12d0a4959326704496fa8a388d00e27, type: 3}
 --- !u!23 &7261347222435191831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: bbee78144cfc50e4587dc55ca64e1360, type: 3}
+  - {fileID: 2100000, guid: 5e96110df5b29244c98c8fc65327b649, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287114757782605084}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c27f359f677930b47bdaaf1f82a822a1, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestMark: {fileID: 21300000, guid: be1082397aae2194c9b4967b787929fe, type: 3}
+  description: 
   thisImg: {fileID: 6759845088279566453, guid: 4f34c111986034840a0986246936100f, type: 3}
 --- !u!54 &1831592425
 Rigidbody:

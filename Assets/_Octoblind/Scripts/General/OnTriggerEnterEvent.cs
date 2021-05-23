@@ -11,7 +11,15 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     [SerializeField] private string tagToCollide;
     [SerializeField] private string type;
+    private Puzzle1 puzzle1;
+    public GameObject tabua;
 
+    bool disabled = false;
+
+    private void Start()
+    {
+        puzzle1 = GetComponentInParent<Puzzle1>();
+    }
 
     private void Update()
     {
@@ -20,8 +28,9 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (type != null)
+        if (type != null && !disabled) 
         {
+            
             if (other.GetComponentInParent<objectController>()?.type == this.type)
                 onTriggerEnter?.Invoke();
         }
@@ -29,8 +38,8 @@ public class OnTriggerEnterEvent : MonoBehaviour
         {
             if (other.CompareTag(tagToCollide))
             {
-                Debug.Log("Ya");
-                GetComponentInParent<Puzzle1>().DesajustarDegrau();
+               
+                puzzle1.DesajustarDegrau();
             }
                 
         }
@@ -39,7 +48,7 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (type != null)
+        if (type != null && !disabled)
         {
             if (other.GetComponentInParent<objectController>()?.type == this.type)
                 onTriggerExit?.Invoke();
@@ -52,9 +61,14 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     }
 
-    public void ResetTrigger()
+    public void AlternateTrigger(bool state)
     {
-        type = null;
+        disabled = state; 
+    }
+
+    public void DisableTrigger()
+    {
+        this.enabled = false;
     }
 
 }

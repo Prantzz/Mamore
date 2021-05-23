@@ -14,12 +14,15 @@ public class Puzzle : MonoBehaviour
         if (steps == null) Debug.LogError("ESSE PUZZLE NÃO TEM STEPS CARALHO!",this);
         //PuzzlePieces = new List<GameObject>();
     }
+
+    //Chamado pelo simple puzzle collider
     public void AchiveStep(int step, bool state)
     {
         steps[step] = state;
         MiddleStep();
         if(state)this.completed = CheckForCompletion();
     }
+
     private bool CheckForCompletion()
     {
         foreach(bool b in this.steps)
@@ -28,11 +31,16 @@ public class Puzzle : MonoBehaviour
         }
         return true;
     }
+
     public virtual void MiddleStep() { }
+
+    //chamado pelo simple puzzle collider
     public void AddPiece(GameObject toAdd)
     {
         if(!PuzzlePieces.Contains(toAdd))PuzzlePieces.Add(toAdd);
     }
+
+    //chamado pelo simple puzzle collider
     public void RemovePiece(GameObject toRemove)
     {
         PuzzlePieces.Remove(toRemove);
