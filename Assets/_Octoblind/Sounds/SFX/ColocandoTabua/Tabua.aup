@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Tabua_data" version="1.3.0" audacityversion="2.4.2" sel0="0.0000000000" sel1="2.5241950113" vpos="0" h="0.0000000000" zoom="202.2422418794" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="126604__robinhood76__02668-stripwood-noises" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="111317">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808ec8.au" len="111317" min="-0.966034" max="0.966034" rms="0.059243"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="126604__robinhood76__02668-stripwood-noises" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="111317">
+				<waveblock start="0">
+					<simpleblockfile filename="e08088d9.au" len="111317" min="-0.966034" max="0.859375" rms="0.062488"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="389429__rossbell__wooden-tray-misc-objects-falling-onto-it-2" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.09399093" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="33274">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808dda.au" len="33274" min="-0.295469" max="0.294777" rms="0.030345"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="240281__kgatto__thuds" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="22050" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.04820862" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="4580">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808276.au" len="4580" min="-0.38681" max="0.455139" rms="0.067837"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
