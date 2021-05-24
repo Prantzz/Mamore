@@ -7,6 +7,7 @@ public class SimplePuzzleCollider : MonoBehaviour
     [SerializeField]
     private int stepOnConllision;
     public Puzzle puzzle;
+    [SerializeField]private int giveIndex;
     public bool canCollide;
     public string tagToCheck;
     [SerializeField]
@@ -42,8 +43,9 @@ public class SimplePuzzleCollider : MonoBehaviour
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
                     //Debug.Log(other.transform.parent.gameObject);
-                    puzzle.AddPiece(other.transform.parent.gameObject);
+                    puzzle.AddPiece(other.transform.parent.gameObject, giveIndex);
                     puzzle.AchiveStep(stepOnConllision, true);
+                    
                 }
             }
         }        
@@ -56,24 +58,30 @@ public class SimplePuzzleCollider : MonoBehaviour
             {
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
-                    puzzle.RemovePiece(other.transform.parent.gameObject);
+                    puzzle.ArrayRemovePiece(other.transform.parent.gameObject);
                     puzzle.AchiveStep(stepOnConllision, false);
+                    
                 }
             }
         }        
     }
     public void TryToAchiveStep()
     {
+        OnTriggerEnterEvent trigger = transform.parent.GetComponent<OnTriggerEnterEvent>();
         //Aqui estou dizendo que ele só pode ativar com uma tool depois que colidiu, imagino que esse não seja o caso para todo puzzle mas não farei esse modificação sem necessidade
         //Não gosto muito disso, esse código é muito específico e deveria estar no Puzzle não no collider.
         if (puzzle.CheckStep(stepOnConllision) && !puzzle.CheckStep(stepOnTool))
         {
             puzzle.AchiveStep(stepOnTool, true);
-            if (puzzle.CheckStep(4) && puzzle.CheckStep(5))
+            if(puzzle.CheckStep(4) && puzzle.CheckStep(5))
             {
-                Debug.Log("yayaya");
-                GetComponentInParent<OnTriggerEnterEvent>().DisableTrigger();
+                trigger.DisableTrigger();
             }
+            if (puzzle.CheckStep(6) && puzzle.CheckStep(7))
+            {
+                trigger.DisableTrigger();
+            }
+
         }
     }
     public void AchiveTalkStep()

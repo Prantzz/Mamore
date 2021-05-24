@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,12 +31,13 @@ public class Puzzle1 : Puzzle
         {
             Degrau0.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(true);
             if (!Degrau1.gameObject.activeSelf)
-                Degrau1.gameObject.SetActive(true); 
-            
-            AjustarDegrau(finalPosDegrau1.position, PuzzlePieces[a]);
+                Degrau1.gameObject.SetActive(true);
+            ArrayPuzzlePieces[0].GetComponent<objectController>().hasInteracted = false;
+            AjustarDegrau(finalPosDegrau1.position, ArrayPuzzlePieces[0]);
             Degrau0.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau0.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
             locker1 = true;
+            
         }
 
         //Travar degrau 2
@@ -45,7 +47,8 @@ public class Puzzle1 : Puzzle
             if (!Degrau0.gameObject.activeSelf)
                 Degrau0.gameObject.SetActive(true);
 
-            AjustarDegrau(finalPosDegrau2.position, PuzzlePieces[a]);
+            ArrayPuzzlePieces[1].GetComponent<objectController>().hasInteracted = false;
+            AjustarDegrau(finalPosDegrau2.position, ArrayPuzzlePieces[1]);
             Degrau1.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
             locker2 = true;
@@ -53,9 +56,10 @@ public class Puzzle1 : Puzzle
 
     }
 
+ 
+
     public void AjustarDegrau(Vector3 pos, GameObject degrau)
     {
-        a++;
 
         degrau.transform.SetParent(transform);
         degrau.transform.position = pos;
@@ -69,68 +73,78 @@ public class Puzzle1 : Puzzle
 
     }
 
-    public void DesajustarDegrau()
+    public void DesajustarDegrau(GameObject tabua)
     {
-        a = 0;
 
-        if ((!CheckStep(4) || !CheckStep(5)) && PuzzlePieces[0])
+        if(ArrayPuzzlePieces.Length > 0)
         {
-            Debug.Log("desajustou degrau1");
-            PuzzlePieces[0].transform.SetParent(null);
-            PuzzlePieces[0].GetComponent<objectController>().enabled = true;
-            PuzzlePieces[0].GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[0].transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[0].transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[0].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            PuzzlePieces[0].GetComponent<Rigidbody>().isKinematic = false;
-            PuzzlePieces[0].transform.eulerAngles = new Vector3(0, 45, 0);
-            PuzzlePieces[0].GetComponent<objectController>().isSelected = false;
-            PuzzlePieces[0].GetComponent<objectController>().hasInteracted = false;
-            Degrau0.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
-            Degrau0.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
-            locker1 = false;
-            Degrau0.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
-            if (!Degrau1.gameObject.activeSelf)
-                Degrau1.gameObject.SetActive(true);
+            if (Array.IndexOf(ArrayPuzzlePieces, tabua) == 0)
+            {
+                if ((!CheckStep(4) || !CheckStep(5)))
+                {
+                    Debug.Log($"desajustou degrau1: {tabua}");
+                    tabua.transform.SetParent(null);
+                    tabua.GetComponent<objectController>().enabled = true;
+                    tabua.GetComponent<BoxCollider>().enabled = true;
+                    tabua.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+                    tabua.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+                    tabua.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    tabua.GetComponent<Rigidbody>().isKinematic = false;
+                    tabua.transform.eulerAngles = new Vector3(0, 45, 0);
+                    tabua.GetComponent<objectController>().isSelected = false;
+                    tabua.GetComponent<objectController>().hasInteracted = false;
+                    Degrau0.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    Degrau0.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    locker1 = false;
+                    Degrau0.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
+                    if (!Degrau1.gameObject.activeSelf)
+                        Degrau1.gameObject.SetActive(true);
 
-            PuzzlePieces.RemoveAt(0);
+                    AchiveStep(0, false);
+                    AchiveStep(1, false);
+                    AchiveStep(4, false);
+                    AchiveStep(5, false);
+                    
+                    if (ArrayPuzzlePieces[0] != null)
+                        ArrayPuzzlePieces[0] = null;
 
-            AchiveStep(0, false);
-            AchiveStep(1, false);
-        }
-        if (!CheckStep(5) || !CheckStep(6) && PuzzlePieces.Count > 1)
-        {
-           
-            Debug.Log("desajustou degrau2");
-            PuzzlePieces[1].transform.SetParent(null);
-            PuzzlePieces[1].GetComponent<objectController>().enabled = true;
-            PuzzlePieces[1].GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[1].transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[1].transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
-            PuzzlePieces[1].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            PuzzlePieces[1].GetComponent<Rigidbody>().isKinematic = false;
-            PuzzlePieces[1].transform.eulerAngles = new Vector3(0, 45, 0);
-            PuzzlePieces[1].GetComponent<objectController>().isSelected = false;
-            PuzzlePieces[1].GetComponent<objectController>().hasInteracted = false;
+                }
+            }
+            else if (Array.IndexOf(ArrayPuzzlePieces, tabua) == 1)
+            {
+                if ((!CheckStep(6) || !CheckStep(7)))
+                {
+                    Debug.Log($"desajustou degrau2: {tabua}");
+                    tabua.transform.SetParent(null);
+                    tabua.GetComponent<objectController>().enabled = true;
+                    tabua.GetComponent<BoxCollider>().enabled = true;
+                    tabua.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+                    tabua.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+                    tabua.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    tabua.GetComponent<Rigidbody>().isKinematic = false;
+                    tabua.transform.eulerAngles = new Vector3(0, 45, 0);
+                    tabua.GetComponent<objectController>().isSelected = false;
+                    tabua.GetComponent<objectController>().hasInteracted = false;
+                    Degrau1.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    locker2 = false;
+                    Degrau1.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
+                    if (!Degrau0.gameObject.activeSelf)
+                        Degrau0.gameObject.SetActive(true);
 
-            PuzzlePieces.RemoveAt(1);
-           
+                    AchiveStep(2, false);
+                    AchiveStep(3, false);
+                    AchiveStep(6, false);
+                    AchiveStep(7, false);
 
-            Degrau1.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
-            Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
-            locker2 = false;
+                    if (ArrayPuzzlePieces[1] != null)
+                        ArrayPuzzlePieces[1] = null;
 
-            Degrau1.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
-            if (!Degrau0.gameObject.activeSelf)
-                Degrau0.gameObject.SetActive(true);
-
-            AchiveStep(2, false);
-            AchiveStep(3, false);
+                }
+            }
         }
         
-        
-            
-
+ 
     }
 
 }
