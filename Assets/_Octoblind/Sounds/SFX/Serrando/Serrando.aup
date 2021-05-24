@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Serrando_data" version="1.3.0" audacityversion="2.4.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="100.3083700441" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="2017-03-08T18:44:19-05:00"/>
+	</tags>
+	<wavetrack name="383725__deleted-user-7146007__hand-saw-sawing-wood" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="57249">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808831.au" len="57249" min="-0.162476" max="0.158386" rms="0.026164"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="383725__deleted-user-7146007__hand-saw-sawing-wood" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="57249">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808fb1.au" len="57249" min="-0.162476" max="0.158386" rms="0.026164"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="126604__robinhood76__02668-stripwood-noises" isSelected="0" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.63802721" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="73404">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808ece.au" len="73404" min="-0.465723" max="0.437304" rms="0.029726"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="126604__robinhood76__02668-stripwood-noises" isSelected="0" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.63802721" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="73404">
+				<waveblock start="0">
+					<simpleblockfile filename="e08083f4.au" len="73404" min="-0.543241" max="0.49766" rms="0.036025"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="389429__rossbell__wooden-tray-misc-objects-falling-onto-it-2" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.44861678" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="44404">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808eda.au" len="44404" min="-0.484521" max="0.437266" rms="0.020441"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Fade_data" version="1.3.0" audacityversion="2.4.2" sel0="0.0000000000" sel1="3.7046938776" vpos="112" h="0.0000000000" zoom="179.2318154558" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="414767__samarobryn__crackling-fire" isSelected="0" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.15498958" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="95573">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808ec8.au" len="95573" min="-0.305115" max="0.403473" rms="0.008505"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="414767__samarobryn__crackling-fire" isSelected="0" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.15498958" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="95573">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808c97.au" len="95573" min="-0.299744" max="0.401672" rms="0.008168"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="540828__eminyildirim__fire-fuse-ignite-flame" isSelected="0" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="96000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="206025">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808e27.au" len="206025" min="-0.273587" max="0.395195" rms="0.020742"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="540828__eminyildirim__fire-fuse-ignite-flame" isSelected="0" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="96000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="206025">
+				<waveblock start="0">
+					<simpleblockfile filename="e08086a3.au" len="206025" min="-0.341814" max="0.53187" rms="0.038956"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="521696__podcapocalipsis__wind-blowing" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="163377">
+				<waveblock start="0">
+					<simpleblockfile filename="e080879c.au" len="163377" min="-0.040797" max="0.042176" rms="0.006248"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="521696__podcapocalipsis__wind-blowing" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="163377">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085b6.au" len="163377" min="-0.040514" max="0.041826" rms="0.00617"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
