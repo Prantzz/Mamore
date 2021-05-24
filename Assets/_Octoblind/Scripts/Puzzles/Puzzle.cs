@@ -19,8 +19,9 @@ public class Puzzle : MonoBehaviour
     public void AchiveStep(int step, bool state)
     {
         steps[step] = state;
+        MiddleStep(step);
         MiddleStep();
-        if(state)this.completed = CheckForCompletion();
+        if (state)this.completed = CheckForCompletion();
     }
 
     private bool CheckForCompletion()
@@ -32,6 +33,7 @@ public class Puzzle : MonoBehaviour
         return true;
     }
 
+    public virtual void MiddleStep(int step = 0) { }
     public virtual void MiddleStep() { }
 
     //chamado pelo simple puzzle collider

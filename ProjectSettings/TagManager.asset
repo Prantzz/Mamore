@@ -21,6 +21,10 @@ TagManager:
   - Photo
   - Obstacle
   - NPC
+  - Carro
+  - MoveFowardCollider
+  - LeaveCart
+  - CartBlocker
   layers:
   - Default
   - TransparentFX

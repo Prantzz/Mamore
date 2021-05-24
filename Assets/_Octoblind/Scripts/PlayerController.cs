@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController CharCon;
-    private float movX, movZ, speed = 0.1f, gravity = -19.81f, jumpSpeed = 8f;
+    public float movX, movZ, speed = 0.1f, gravity = -19.81f, jumpSpeed = 8f;
     readonly float speedConst = 0.1f;
     public Vector3 xzMove, yMove;
     public bool isSprinting = false;

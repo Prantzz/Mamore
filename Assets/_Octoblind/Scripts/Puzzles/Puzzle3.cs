@@ -11,21 +11,23 @@ public class Puzzle3 : Puzzle
 
     public Transform finalPosTabua1;
     public Transform finalPosTabua2;
-    public override void MiddleStep()
+    public override void MiddleStep(int step)
     {
         //Travar tabua 1
-        if (steps[0] && steps[1])
+        if (steps[0] && steps[1] && (step == 1 || step == 0))
         {
             AjustarBatente(finalPosTabua1.position, PuzzlePieces[0]);
             this.transform.GetChild(0).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(0).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+            PuzzlePieces.Remove(PuzzlePieces[0]);
         }
         //Travar tabua 2
-        if (steps[2] && steps[3])
+        if (steps[2] && steps[3] && (step == 2 || step == 3))
         {
-            AjustarBatente(finalPosTabua2.position, PuzzlePieces[1]);
+            AjustarBatente(finalPosTabua2.position, PuzzlePieces[0]);
             this.transform.GetChild(1).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(1).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+            PuzzlePieces.Remove(PuzzlePieces[0]);
         }
     }
     public void AjustarBatente(Vector3 pos, GameObject batente)

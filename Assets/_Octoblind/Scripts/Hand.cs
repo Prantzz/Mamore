@@ -125,7 +125,7 @@ public class Hand : MonoBehaviour
         //Cast de um ray do mouse ao infinito e além
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //Caso acerte, Out num RaycastHit
-        if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 8f))
         {
             //The hit is my bitch now
             Transform hitT = hit.transform;
@@ -141,6 +141,37 @@ public class Hand : MonoBehaviour
                     SPC.AchiveTalkStep();
                 }
             }
+            else if (hitT.CompareTag("Carro"))
+            {
+                GameObject player = transform.parent.transform.parent.transform.parent.gameObject;
+                GameObject kart = hitT.parent.gameObject;
+                player.GetComponent<CharacterController>().enabled = false;
+                player.GetComponent<PlayerController>().speed = 0;
+                player.transform.position = kart.transform.Find("PosPlayer").transform.position;
+                player.transform.eulerAngles = new Vector3(0, 90, 0);
+                kart.transform.Find("LeaveCart").gameObject.SetActive(true);
+                kart.transform.Find("LeaveCart1").gameObject.SetActive(true);
+                kart.transform.Find("MoveFowardCollider").gameObject.SetActive(true);
+                player.transform.SetParent(kart.transform);
+            }
+            else if (hitT.CompareTag("MoveFowardCollider"))
+            {
+                GameObject kart = hitT.parent.gameObject;
+                kart.GetComponent<CarroDeEmpurrarScript>().Move();
+            }
+            else if (hitT.CompareTag("LeaveCart"))
+            {
+                GameObject player = transform.parent.transform.parent.transform.parent.gameObject;
+                GameObject kart = hitT.parent.gameObject;
+                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z - 3);
+                player.GetComponent<CharacterController>().enabled = true;
+                player.GetComponent<PlayerController>().speed = 0.1f;
+                kart.transform.Find("LeaveCart").gameObject.SetActive(false);
+                kart.transform.Find("LeaveCart1").gameObject.SetActive(false);
+                kart.transform.Find("MoveFowardCollider").gameObject.SetActive(false);
+                player.transform.SetParent(null);
+            }
+            Debug.Log(hitT.gameObject.name);
         }
     }
 }
