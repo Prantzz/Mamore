@@ -8,18 +8,13 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     [SerializeField] private UnityEvent onTriggerEnter;
     [SerializeField] private UnityEvent onTriggerExit;
+    public int triggerIndex;
 
     [SerializeField] private string tagToCollide;
     [SerializeField] private string type;
-    private Puzzle1 puzzle1;
-    public GameObject tabua;
 
     bool disabled = false;
-
-    private void Start()
-    {
-        puzzle1 = GetComponentInParent<Puzzle1>();
-    }
+   
 
     private void Update()
     {
@@ -28,21 +23,20 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (type != null && !disabled) 
         {
-            
-            if (other.GetComponentInParent<objectController>()?.type == this.type)
-                onTriggerEnter?.Invoke();
-        }
-        else if (tagToCollide != null)
-        {
-            if (other.CompareTag(tagToCollide))
+            if (other.GetComponentInParent<objectController>()!= null)
             {
-               
-                puzzle1.DesajustarDegrau();
+                if (other.GetComponentInParent<objectController>().type == this.type)
+                {
+                    onTriggerEnter?.Invoke();
+                }
             }
-                
+               
+               
         }
+
 
     }
 
@@ -50,13 +44,14 @@ public class OnTriggerEnterEvent : MonoBehaviour
     {
         if (type != null && !disabled)
         {
-            if (other.GetComponentInParent<objectController>()?.type == this.type)
-                onTriggerExit?.Invoke();
-        }
-        else if (tagToCollide != null)
-        {
-            
-               
+            if (other.GetComponentInParent<objectController>() != null)
+            {
+                if (other.GetComponentInParent<objectController>().type == this.type)
+                {
+                    onTriggerExit?.Invoke();
+                }
+            }
+
         }
 
     }

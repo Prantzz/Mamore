@@ -22710,8 +22710,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.33, y: 0.73789454, z: 0.7439554}
-  m_Center: {x: 1.73, y: 0.9295121, z: -0.30400068}
+  m_Size: {x: 3.33, y: 0.4777797, z: 0.71975625}
+  m_Center: {x: 1.73, y: 1.1566921, z: -0.29190627}
 --- !u!114 &8274035066251747245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22726,12 +22726,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8274035067965486468}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls: []
-  tagToCollide: 
-  type: 
+      m_Calls:
+      - m_Target: {fileID: 8274035067965486468}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  tagToCollide: Player
+  type: Tabua
+  tabua: {fileID: 0}
 --- !u!1 &8274035066507845045
 GameObject:
   m_ObjectHideFlags: 0
@@ -22888,6 +22913,8 @@ Transform:
   - {fileID: 8274035066251747235}
   - {fileID: 8274035067965486469}
   - {fileID: 7293416343690670807}
+  - {fileID: 1169251713761695532}
+  - {fileID: 3109051567142843368}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40.521, y: 0, z: 0}
@@ -23020,8 +23047,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.33, y: 0.71200943, z: 0.72782624}
-  m_Center: {x: 1.73, y: 0.8839913, z: -0.30384982}
+  m_Size: {x: 3.33, y: 0.48027992, z: 0.72782624}
+  m_Center: {x: 1.73, y: 1.197801, z: -0.30385208}
 --- !u!114 &8274035067965486471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23036,9 +23063,166 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8274035066251747234}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls: []
-  tagToCollide: 
-  type: 
+      m_Calls:
+      - m_Target: {fileID: 8274035066251747234}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  tagToCollide: Player
+  type: Tabua
+  tabua: {fileID: 0}
+--- !u!1001 &5921756655361687690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8274035067241542194}
+    m_Modifications:
+    - target: {fileID: 1746722719033279717, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c27f359f677930b47bdaaf1f82a822a1, type: 2}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.1900024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.991195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.61003745
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9381279
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.346289
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Name
+      value: TabuaPuzzle (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+--- !u!4 &1169251713761695532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+  m_PrefabInstance: {fileID: 5921756655361687690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7580081116221039694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8274035067241542194}
+    m_Modifications:
+    - target: {fileID: 1746722719033279717, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c27f359f677930b47bdaaf1f82a822a1, type: 2}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.4400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3089824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4082131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9381279
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.346289
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Name
+      value: TabuaPuzzle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+--- !u!4 &3109051567142843368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+  m_PrefabInstance: {fileID: 7580081116221039694}
+  m_PrefabAsset: {fileID: 0}

@@ -88,4 +88,21 @@ public class PlayerController : MonoBehaviour
         Player.INSANITY += 25;
     }
     #endregion
+
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+       
+        objectController objCon = hit.gameObject.GetComponent<objectController>();
+        if (objCon)
+        {
+            if (objCon.type == "Tabua" && !objCon.hasInteracted)
+            {
+                hit.gameObject.GetComponent<FallIfNotHammered>().PlayerCollided();
+            }
+        }
+       
+    }
+
+    
 }

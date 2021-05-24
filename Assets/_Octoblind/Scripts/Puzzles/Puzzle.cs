@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,13 @@ public class Puzzle : MonoBehaviour
     protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
+    public GameObject[] ArrayPuzzlePieces;
+
     private void Start()
     {
+        
         if (steps == null) Debug.LogError("ESSE PUZZLE NÃO TEM STEPS CARALHO!",this);
-        //PuzzlePieces = new List<GameObject>();
+        
     }
 
     //Chamado pelo simple puzzle collider
@@ -42,11 +46,29 @@ public class Puzzle : MonoBehaviour
         if(!PuzzlePieces.Contains(toAdd))PuzzlePieces.Add(toAdd);
     }
 
+    /// <summary>
+    /// Tenha certeza de ter o array já pronto com os indexes preparados antes de chamar essa sobrecarga.
+    /// </summary>
+    /// <param name="toAdd"></param>
+    /// <param name="atIndex"></param>
+    public void AddPiece(GameObject toAdd, int atIndex) 
+    {
+        // usei array aqui msm pq com lista ela não preenche espaços nulos, ela só cria um espaço no meio de outros indexes e não funcionou ao propósito
+        if (!Array.Exists(ArrayPuzzlePieces, element => element == toAdd)) ArrayPuzzlePieces[atIndex] = toAdd; 
+    }
+
     //chamado pelo simple puzzle collider
     public void RemovePiece(GameObject toRemove)
     {
         PuzzlePieces.Remove(toRemove);
     }
+
+    public void ArrayRemovePiece(GameObject toRemove)
+    {
+        int a = Array.FindIndex(ArrayPuzzlePieces, element => element == toRemove);
+        ArrayPuzzlePieces[a] = null;
+    }
+
 
     public GameObject GetPiece (int pieceIndex)
     {
