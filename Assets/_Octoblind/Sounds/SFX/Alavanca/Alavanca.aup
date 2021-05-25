@@ -1,0 +1,70 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Alavanca_data" version="1.3.0" audacityversion="2.4.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="231.9383259912" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="ARTIST" value="Belanhud"/>
+		<tag name="TITLE" value="Metal Drag Fast Two"/>
+		<tag name="YEAR" value="2020"/>
+		<tag name="GENRE" value="Sound Effect"/>
+	</tags>
+	<wavetrack name="543625__belanhud__metal-drag-short" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="69424">
+				<waveblock start="0">
+					<simpleblockfile filename="e080881a.au" len="69424" min="-0.532129" max="0.467062" rms="0.108115"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="543625__belanhud__metal-drag-short" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="69424">
+				<waveblock start="0">
+					<simpleblockfile filename="e080815a.au" len="69424" min="-0.532033" max="0.467416" rms="0.108116"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="260435__roganmcdougald__metal-impact-ceramic-piece-in-sink" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="1.45594104" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="67069">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808e88.au" len="67069" min="-0.380544" max="0.380544" rms="0.076947"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="389429__rossbell__wooden-tray-misc-objects-falling-onto-it-2" isSelected="0" height="150" minimized="0" channel="2" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.02156463" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="34225">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808379.au" len="34225" min="-0.610257" max="0.608827" rms="0.061798"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="543625__belanhud__metal-drag-short" isSelected="0" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="21140">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808868.au" len="21140" min="-0.535748" max="0.467283" rms="0.108042"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="543625__belanhud__metal-drag-short" isSelected="0" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="21140">
+				<waveblock start="0">
+					<simpleblockfile filename="e080822e.au" len="21140" min="-0.535721" max="0.467754" rms="0.108043"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
