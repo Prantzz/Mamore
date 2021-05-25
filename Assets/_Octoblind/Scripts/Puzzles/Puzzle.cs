@@ -10,6 +10,9 @@ public class Puzzle : MonoBehaviour
     protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
+
+    [Header("Não mexa nesse array sem entendê-lo, utilize a lista de cima")] 
+    [Space]
     public GameObject[] ArrayPuzzlePieces;
 
     private void Start()
@@ -65,8 +68,11 @@ public class Puzzle : MonoBehaviour
 
     public void ArrayRemovePiece(GameObject toRemove)
     {
+        Debug.Log(toRemove);
+
         int a = Array.FindIndex(ArrayPuzzlePieces, element => element == toRemove);
-        ArrayPuzzlePieces[a] = null;
+        if(a < ArrayPuzzlePieces.Length)
+            ArrayPuzzlePieces[a] = null;
     }
 
 
@@ -75,6 +81,9 @@ public class Puzzle : MonoBehaviour
         return PuzzlePieces[pieceIndex];
 
     }
+
+    //Recomendado utilizar esse método em conjunto com ArrayPuzzlePieces
+    public virtual void DesajustarParte(GameObject objeto) { }
 
     //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
     //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
@@ -89,4 +98,6 @@ public class Puzzle : MonoBehaviour
             return false;
         }
     }
+
 }
+

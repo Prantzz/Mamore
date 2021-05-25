@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FallIfNotHammered : MonoBehaviour
 {
-    [SerializeField] Puzzle1 puzzle1;
-    
+    [SerializeField] Puzzle puzzle;
+
     public void PlayerCollided()
     {
-        Debug.Log("chamou o desajustar");
-        puzzle1.DesajustarDegrau(this.gameObject);
+        //aqui só para eu me recordar
+        //dependendo do objeto filho, o método específico dele será chamado, se sobreescrever o método pai
+        puzzle.DesajustarParte(this.gameObject);
     }
 
 }

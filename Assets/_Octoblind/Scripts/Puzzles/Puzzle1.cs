@@ -25,7 +25,6 @@ public class Puzzle1 : Puzzle
     public override void MiddleStep() 
     {
        
-
         //Travar degrau 1
         if (steps[0] && steps[1] && !locker1)
         {
@@ -73,7 +72,7 @@ public class Puzzle1 : Puzzle
 
     }
 
-    public void DesajustarDegrau(GameObject tabua)
+    public override void DesajustarParte(GameObject tabua)
     {
 
         if(ArrayPuzzlePieces.Length > 0)
@@ -82,7 +81,7 @@ public class Puzzle1 : Puzzle
             {
                 if ((!CheckStep(4) || !CheckStep(5)))
                 {
-                    Debug.Log($"desajustou degrau1: {tabua}");
+                    //Debug.Log($"desajustou degrau1: {tabua}");
                     tabua.transform.SetParent(null);
                     tabua.GetComponent<objectController>().enabled = true;
                     tabua.GetComponent<BoxCollider>().enabled = true;
@@ -114,7 +113,7 @@ public class Puzzle1 : Puzzle
             {
                 if ((!CheckStep(6) || !CheckStep(7)))
                 {
-                    Debug.Log($"desajustou degrau2: {tabua}");
+                    //Debug.Log($"desajustou degrau2: {tabua}");
                     tabua.transform.SetParent(null);
                     tabua.GetComponent<objectController>().enabled = true;
                     tabua.GetComponent<BoxCollider>().enabled = true;

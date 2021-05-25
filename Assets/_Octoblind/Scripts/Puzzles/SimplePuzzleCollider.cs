@@ -18,8 +18,8 @@ public class SimplePuzzleCollider : MonoBehaviour
     private void Start()
     {
         //-----LOG ERROR-----
-        if (!this.CompareTag("PuzzleCollider")) Debug.LogError("A tag deste collider não é 'Puzzle Collider'", this);
-        if (!this.GetComponent<Collider>().isTrigger) Debug.LogError("Esse collider não é trigger", this);
+        if (!this.CompareTag("PuzzleCollider")) Debug.LogError($"A tag deste collider \"{gameObject.name}\" não é 'Puzzle Collider'", this);
+        if (!this.GetComponent<Collider>().isTrigger) Debug.LogError($"Esse collider \"{gameObject.name}\" não é trigger", this);
         if(GetComponentInParent<Puzzle>() != null)
         {
             puzzle = GetComponentInParent<Puzzle>();
@@ -42,9 +42,21 @@ public class SimplePuzzleCollider : MonoBehaviour
 
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
-                    //Debug.Log(other.transform.parent.gameObject);
-                    puzzle.AddPiece(other.transform.parent.gameObject, giveIndex);
-                    puzzle.AchiveStep(stepOnConllision, true);
+                    if(puzzle.ArrayPuzzlePieces.Length >= 1)
+                    {
+                        puzzle.AddPiece(other.transform.parent.gameObject, giveIndex);
+                        puzzle.AchiveStep(stepOnConllision, true);
+                    }
+                    else if (puzzle.ArrayPuzzlePieces.Length < 1)
+                    {
+                        puzzle.AddPiece(other.transform.parent.gameObject);
+                        puzzle.AchiveStep(stepOnConllision, true);
+                    }
+                    else
+                    {
+                        Debug.Log("SOMETHING GONE WRONG");
+                    }
+                    
                     
                 }
             }
@@ -58,8 +70,20 @@ public class SimplePuzzleCollider : MonoBehaviour
             {
                 if (other.GetComponentInParent<objectController>()?.type == correctObject)
                 {
-                    puzzle.ArrayRemovePiece(other.transform.parent.gameObject);
-                    puzzle.AchiveStep(stepOnConllision, false);
+                    if (puzzle.ArrayPuzzlePieces.Length >= 1)
+                    {
+                        puzzle.ArrayRemovePiece(other.transform.parent.gameObject);
+                        puzzle.AchiveStep(stepOnConllision, false);
+                    }
+                    else if(puzzle.ArrayPuzzlePieces.Length < 1)
+                    {
+                        puzzle.RemovePiece(other.transform.parent.gameObject);
+                        puzzle.AchiveStep(stepOnConllision, false);
+                    }
+                    else
+                    {
+                        Debug.Log("SOMETHING GONE WRONG");
+                    }
                     
                 }
             }
@@ -73,11 +97,11 @@ public class SimplePuzzleCollider : MonoBehaviour
         if (puzzle.CheckStep(stepOnConllision) && !puzzle.CheckStep(stepOnTool))
         {
             puzzle.AchiveStep(stepOnTool, true);
-            if(puzzle.CheckStep(4) && puzzle.CheckStep(5))
+            if(puzzle.CheckStep(4) && puzzle.CheckStep(5) && trigger)
             {
                 trigger.DisableTrigger();
             }
-            if (puzzle.CheckStep(6) && puzzle.CheckStep(7))
+            if (puzzle.CheckStep(6) && puzzle.CheckStep(7) && trigger)
             {
                 trigger.DisableTrigger();
             }

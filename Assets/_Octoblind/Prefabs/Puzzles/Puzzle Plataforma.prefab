@@ -1816,6 +1816,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16411377, y: 1.0162151, z: 4.0076942}
   m_Center: {x: 0.06795032, y: 0.46695808, z: -4.8217545}
+--- !u!114 &527754563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977595432799833494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f262d97421a43884682ef0b176b439cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
+--- !u!114 &2023168850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336877004573108562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f262d97421a43884682ef0b176b439cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
 --- !u!1 &5700542034681156114
 GameObject:
   m_ObjectHideFlags: 0
@@ -22593,6 +22619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepOnConllision: 0
   puzzle: {fileID: 0}
+  giveIndex: 0
   canCollide: 0
   tagToCheck: Trigger
   correctObject: Tabua
@@ -22658,6 +22685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepOnConllision: 1
   puzzle: {fileID: 0}
+  giveIndex: 0
   canCollide: 0
   tagToCheck: Trigger
   correctObject: Tabua
@@ -22754,9 +22782,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  triggerIndex: 0
   tagToCollide: Player
   type: Tabua
-  tabua: {fileID: 0}
 --- !u!1 &8274035066507845045
 GameObject:
   m_ObjectHideFlags: 0
@@ -22846,6 +22874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepOnConllision: 3
   puzzle: {fileID: 0}
+  giveIndex: 1
   canCollide: 0
   tagToCheck: Trigger
   correctObject: Tabua
@@ -22934,6 +22963,9 @@ MonoBehaviour:
   steps: 0000000000000000
   completed: 0
   PuzzlePieces: []
+  ArrayPuzzlePieces:
+  - {fileID: 0}
+  - {fileID: 0}
   finalPosDegrau1: {fileID: 8274035066507845046}
   finalPosDegrau2: {fileID: 8274035067177301146}
 --- !u!1 &8274035067622818411
@@ -22995,6 +23027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepOnConllision: 2
   puzzle: {fileID: 0}
+  giveIndex: 1
   canCollide: 0
   tagToCheck: Trigger
   correctObject: Tabua
@@ -23091,9 +23124,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  triggerIndex: 0
   tagToCollide: Player
   type: Tabua
-  tabua: {fileID: 0}
 --- !u!1001 &5921756655361687690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23111,15 +23144,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1900024
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.991195
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.61003745
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23155,6 +23188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+--- !u!1 &1977595432799833494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+  m_PrefabInstance: {fileID: 5921756655361687690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1169251713761695532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
@@ -23177,15 +23215,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4400024
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3089824
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4082131
+      value: -0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23221,6 +23259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+--- !u!1 &2336877004573108562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+  m_PrefabInstance: {fileID: 7580081116221039694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3109051567142843368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}

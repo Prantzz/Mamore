@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7458539875462402257}
   m_Layer: 0
   m_Name: Trigger2
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508255350101171840}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.28713226, y: 0.2006669, z: 0.24627686}
@@ -55,12 +55,13 @@ GameObject:
   - component: {fileID: 1655008082053502330}
   - component: {fileID: 8271470914254521283}
   - component: {fileID: 5110007166401847571}
-  - component: {fileID: 6550303716577432755}
+  - component: {fileID: 6633091668761859831}
   - component: {fileID: 3738973196735276287}
   - component: {fileID: 7208315772497124958}
+  - component: {fileID: 6550303716577432755}
   m_Layer: 0
   m_Name: peMesa
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +77,8 @@ Transform:
   m_LocalPosition: {x: 66.62524, y: 0.9539024, z: 94.914085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 469085941469342561}
   - {fileID: 7074467081199752224}
+  - {fileID: 469085941469342561}
   - {fileID: 6008081937147208095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -131,7 +132,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6550303716577432755
+--- !u!65 &6633091668761859831
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +140,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527295747656895582}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1684021, y: 1.2320322, z: 0.14265686}
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: Pemesa
   isSelected: 0
   hasInteracted: 0
   zeroY: 0
@@ -181,9 +183,24 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  phoCon: {fileID: 0}
+  photoImg: {fileID: 0}
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+--- !u!65 &6550303716577432755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527295747656895582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1684021, y: 1.2320322, z: 0.14265686}
+  m_Center: {x: -0.00000014528632, y: 0.5910664, z: 0.00000010058284}
 --- !u!1 &1733524073870918972
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +213,7 @@ GameObject:
   - component: {fileID: 6940404823592989165}
   m_Layer: 0
   m_Name: Trigger1
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,7 +230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1655008082053502330}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6940404823592989165
 BoxCollider:
@@ -223,7 +240,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733524073870918972}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.28713226, y: 0.2006669, z: 0.24627686}
@@ -239,7 +256,7 @@ GameObject:
   - component: {fileID: 7074467081199752224}
   m_Layer: 0
   m_Name: HoldPoint
-  m_TagString: Untagged
+  m_TagString: Holdable
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,5 +273,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1655008082053502330}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

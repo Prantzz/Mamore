@@ -92,11 +92,11 @@ public class PlayerController : MonoBehaviour
     
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-       
         objectController objCon = hit.gameObject.GetComponent<objectController>();
+
         if (objCon)
         {
-            if (objCon.type == "Tabua" && !objCon.hasInteracted)
+            if (objCon.type == "Tabua" && !objCon.hasInteracted && hit.gameObject.GetComponent<FallIfNotHammered>())
             {
                 hit.gameObject.GetComponent<FallIfNotHammered>().PlayerCollided();
             }

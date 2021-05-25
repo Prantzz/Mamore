@@ -19,6 +19,9 @@ public class Puzzle3 : Puzzle
             AjustarBatente(finalPosTabua1.position, PuzzlePieces[0]);
             this.transform.GetChild(0).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(0).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+
+            if (PuzzlePieces[0].GetComponent<FallIfNotHammered>())
+                PuzzlePieces[0].GetComponent<FallIfNotHammered>().enabled = false;
             PuzzlePieces.Remove(PuzzlePieces[0]);
         }
         //Travar tabua 2
@@ -27,6 +30,9 @@ public class Puzzle3 : Puzzle
             AjustarBatente(finalPosTabua2.position, PuzzlePieces[0]);
             this.transform.GetChild(1).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(1).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+
+            if(PuzzlePieces[0].GetComponent<FallIfNotHammered>())
+                PuzzlePieces[0].GetComponent<FallIfNotHammered>().enabled = false;
             PuzzlePieces.Remove(PuzzlePieces[0]);
         }
     }
