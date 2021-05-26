@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 734140561079251129}
   - component: {fileID: 4440526581338390300}
   - component: {fileID: 1908149859375533014}
+  - component: {fileID: 5634802607461593742}
   m_Layer: 0
   m_Name: arco
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5634802607461593742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106925718103255555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8ea896f83f99541a916e64ecc16640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 8913349830605698233, guid: ef28ebfbb54f7bf47933ba47f713dcd7, type: 3}
