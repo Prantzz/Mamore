@@ -8,23 +8,31 @@ public class Arco : MonoBehaviour
     private GameObject arrow;
     private float shotForce = 0, startingFOV;
     private bool shotIsGauging;
+    private AudioSource ownAU;
 
     private void Start()
     {
         startingFOV = Camera.main.fieldOfView;
         shotIsGauging = false;
+        ownAU = GetComponent<AudioSource>();
     }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) 
         {
+            ownAU.Play();
             shotIsGauging = true;
         }
         if (Input.GetMouseButtonUp(0)) 
         {
+            ownAU.Stop();
             shotIsGauging = false;
             if (shotForce > 0.3f)
-            Shot();    
+            {
+                Shot();
+                GameGlobeData.AU.PullSound(this.transform.position, 9, 0);
+            }
+               
         }
 
         if (shotIsGauging)

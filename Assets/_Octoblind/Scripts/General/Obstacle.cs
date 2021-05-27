@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private float dissolveVelocity = 1f;
     [SerializeField] private float timer = 6f;
     [SerializeField] private bool dissolveGroup = true;
+    private AudioSource ownAU;
 
     private MeshRenderer[] childRenderers;
     private MeshRenderer childRenderer;
@@ -19,6 +20,7 @@ public class Obstacle : MonoBehaviour
 
     private void Start()
     {
+        ownAU = GetComponent<AudioSource>();
         m_remove = false;
 
         //pega meshrenderers das children
@@ -42,7 +44,11 @@ public class Obstacle : MonoBehaviour
     }
 
     //método chamado pelo raycast da nossa querida serra
-    public void Remove() => m_remove = true;
+    public void Remove() 
+    {
+        ownAU.Play();
+        m_remove = true;
+    }
 
     private void Update()
     {

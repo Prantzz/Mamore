@@ -19,7 +19,6 @@ public class Puzzle3 : Puzzle
             AjustarBatente(finalPosTabua1.position, PuzzlePieces[0]);
             this.transform.GetChild(0).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(0).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
-
             if (PuzzlePieces[0].GetComponent<FallIfNotHammered>())
                 PuzzlePieces[0].GetComponent<FallIfNotHammered>().enabled = false;
             PuzzlePieces.Remove(PuzzlePieces[0]);
@@ -30,14 +29,14 @@ public class Puzzle3 : Puzzle
             AjustarBatente(finalPosTabua2.position, PuzzlePieces[0]);
             this.transform.GetChild(1).GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             this.transform.GetChild(1).GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
-
-            if(PuzzlePieces[0].GetComponent<FallIfNotHammered>())
+            if (PuzzlePieces[0].GetComponent<FallIfNotHammered>())
                 PuzzlePieces[0].GetComponent<FallIfNotHammered>().enabled = false;
             PuzzlePieces.Remove(PuzzlePieces[0]);
         }
     }
     public void AjustarBatente(Vector3 pos, GameObject batente)
-    {               
+    {
+        GameGlobeData.AU.PullSound(pos, 10, 0);
         batente.transform.SetParent(this.gameObject.transform);
         batente.transform.position = pos;
         batente.transform.rotation = new Quaternion(0, 0, 0, 0);

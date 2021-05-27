@@ -119,6 +119,10 @@ public class Hand : MonoBehaviour
                 else{}
             }
         }
+        //if (string.Equals(HOLDING_TOOL, "Martelo"))
+        //{
+
+        //}
     }    
     public void Talk()
     {

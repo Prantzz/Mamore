@@ -10,16 +10,14 @@ public class Puzzle : MonoBehaviour
     protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
-
-    [Header("Não mexa nesse array sem entendê-lo, utilize a lista de cima")] 
-    [Space]
+    [Header("My boy, you suck my cock, não mexe no meu projeto sem entendê-lo, show some respect u donut")]
     public GameObject[] ArrayPuzzlePieces;
+ 
 
     private void Start()
     {
         
         if (steps == null) Debug.LogError("ESSE PUZZLE NÃO TEM STEPS CARALHO!",this);
-        
     }
 
     //Chamado pelo simple puzzle collider
