@@ -6,15 +6,8 @@ public class Flecha : MonoBehaviour
 {
     [SerializeField]
     LayerMask desiredBreakLayerMask;
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-        
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
