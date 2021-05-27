@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Puzzle1 : Puzzle
+//pra ngm poder herdar de puzzle1 usei o modificador Sealed
+sealed public class Puzzle1 : Puzzle
 {
     //Puzzle da escada
 
@@ -24,17 +25,18 @@ public class Puzzle1 : Puzzle
     //Chamado pelo AchieveStep
     public override void MiddleStep() 
     {
-       
         //Travar degrau 1
         if (steps[0] && steps[1] && !locker1)
         {
             Degrau0.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(true);
             if (!Degrau1.gameObject.activeSelf)
                 Degrau1.gameObject.SetActive(true);
+
             ArrayPuzzlePieces[0].GetComponent<objectController>().hasInteracted = false;
             AjustarDegrau(finalPosDegrau1.position, ArrayPuzzlePieces[0]);
             Degrau0.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau0.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+
             locker1 = true;
             
         }
@@ -50,12 +52,12 @@ public class Puzzle1 : Puzzle
             AjustarDegrau(finalPosDegrau2.position, ArrayPuzzlePieces[1]);
             Degrau1.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
+
             locker2 = true;
         }
 
     }
 
- 
 
     public void AjustarDegrau(Vector3 pos, GameObject degrau)
     {
@@ -68,7 +70,6 @@ public class Puzzle1 : Puzzle
         degrau.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
         degrau.transform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
         degrau.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-     
 
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,37 +39,47 @@ public class Puzzle : MonoBehaviour
         return true;
     }
 
+    //chamado pelos scripts de puzzle derivados (puzzle1, puzzle2, puzzle3) para instruções mais específicas
     public virtual void MiddleStep(int step = 0) { }
     public virtual void MiddleStep() { }
 
-    //chamado pelo simple puzzle collider
+
+    //os métodos Add/Remove são chamados em sua maioria pelo simple puzzle collider
     public void AddPiece(GameObject toAdd)
     {
         if(!PuzzlePieces.Contains(toAdd))PuzzlePieces.Add(toAdd);
     }
 
     /// <summary>
-    /// Tenha certeza de ter o array já pronto com os indexes preparados antes de chamar essa sobrecarga.
+    /// Tenha certeza de ter o array feito manualmente no inspector antes de chamar essa sobrecarga.
     /// </summary>
     /// <param name="toAdd"></param>
     /// <param name="atIndex"></param>
-    public void AddPiece(GameObject toAdd, int atIndex) 
+    public void ArrayAddPiece(GameObject toAdd, int atIndex) 
     {
-        // usei array aqui msm pq com lista ela não preenche espaços nulos, ela só cria um espaço no meio de outros indexes e não funcionou ao propósito
-        if (!Array.Exists(ArrayPuzzlePieces, element => element == toAdd)) ArrayPuzzlePieces[atIndex] = toAdd; 
+        // usei array aqui porque a lista não preenche espaços nulos, ela em vez disso adiciona novos objetos (mesmo com o Insert() )
+
+        // e usei linq aqui porque fica mais readable que isso:
+        // if (!Array.Exists(ArrayPuzzlePieces, element => element == toAdd)) ArrayPuzzlePieces[atIndex] = toAdd; 
+        
+        if (!ArrayPuzzlePieces.Contains(toAdd)) ArrayPuzzlePieces[atIndex] = toAdd;
+        
     }
 
-    //chamado pelo simple puzzle collider
+  
     public void RemovePiece(GameObject toRemove)
     {
         PuzzlePieces.Remove(toRemove);
     }
 
+   
     public void ArrayRemovePiece(GameObject toRemove)
     {
         Debug.Log(toRemove);
+        //Linq não tem FindIndex #triste
 
         int a = Array.FindIndex(ArrayPuzzlePieces, element => element == toRemove);
+
         if(a < ArrayPuzzlePieces.Length)
             ArrayPuzzlePieces[a] = null;
     }
@@ -77,7 +88,11 @@ public class Puzzle : MonoBehaviour
     public GameObject GetPiece (int pieceIndex)
     {
         return PuzzlePieces[pieceIndex];
+    }
 
+    public GameObject ArrayGetPiece (int pieceIndex)
+    {
+        return ArrayPuzzlePieces[pieceIndex];
     }
 
     //Recomendado utilizar esse método em conjunto com ArrayPuzzlePieces

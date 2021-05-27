@@ -8,62 +8,46 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     [SerializeField] private UnityEvent onTriggerEnter;
     [SerializeField] private UnityEvent onTriggerExit;
-    public int triggerIndex;
 
     [SerializeField] private string tagToCollide;
     [SerializeField] private string type;
 
-    bool disabled = false;
-   
+    public bool disabled = false;
 
-    private void Update()
+    private void Start()
     {
-        //Debug.Log("Habilitado");
+        //  DON'T DELETE THIS METHOD ETHAN, WE NEED OUR CHECKBOX HERE
     }
 
+    // "NO MORE CURLY BRACKETS" - OSBOURNE, Ozzy. 1991.
     private void OnTriggerEnter(Collider other)
     {
+        if (disabled)
+            return;
+
+        if (other.GetComponentInParent<objectController>() == null)
+            return;
+
+        if (other.GetComponentInParent<objectController>().type == this.type)
+            onTriggerEnter?.Invoke();
         
-        if (type != null && !disabled) 
-        {
-            if (other.GetComponentInParent<objectController>()!= null)
-            {
-                if (other.GetComponentInParent<objectController>().type == this.type)
-                {
-                    onTriggerEnter?.Invoke();
-                }
-            }
-               
-               
-        }
-
-
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (type != null && !disabled)
-        {
-            if (other.GetComponentInParent<objectController>() != null)
-            {
-                if (other.GetComponentInParent<objectController>().type == this.type)
-                {
-                    onTriggerExit?.Invoke();
-                }
-            }
+        if (disabled)
+            return;
 
-        }
+        if (other.GetComponentInParent<objectController>() == null)
+            return;
 
+        if (other.GetComponentInParent<objectController>().type == this.type)
+            onTriggerExit?.Invoke();
     }
 
-    public void AlternateTrigger(bool state)
-    {
-        disabled = state; 
-    }
+    public void AlternateTrigger(bool state) => disabled = state;
 
-    public void DisableTrigger()
-    {
-        this.enabled = false;
-    }
+    public void DisableTrigger() => GetComponent<BoxCollider>().enabled = false;
+
 
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,63 +33,62 @@ public class SimplePuzzleCollider : MonoBehaviour
 
         canCollide = true;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.tag);
-        if (canCollide)
-        {
-            if (other.CompareTag(tagToCheck))
-            {
+        if (!canCollide) //fiz inversões de if aqui só pelo prazer
+            return;
 
-                if (other.GetComponentInParent<objectController>()?.type == correctObject)
-                {
-                    if(puzzle.ArrayPuzzlePieces.Length >= 1)
-                    {
-                        puzzle.AddPiece(other.transform.parent.gameObject, giveIndex);
-                        puzzle.AchiveStep(stepOnConllision, true);
-                    }
-                    else if (puzzle.ArrayPuzzlePieces.Length < 1)
-                    {
-                        puzzle.AddPiece(other.transform.parent.gameObject);
-                        puzzle.AchiveStep(stepOnConllision, true);
-                    }
-                    else
-                    {
-                        Debug.Log("SOMETHING GONE WRONG");
-                    }
-                    
-                    
-                }
+        if (!other.CompareTag(tagToCheck))
+            return;
+
+        if (other.GetComponentInParent<objectController>()?.type == correctObject)
+        {
+            if(puzzle.ArrayPuzzlePieces.Any()) //usei Linq aqui só pelo prazer também
+            {
+                puzzle.ArrayAddPiece(other.transform.parent.gameObject, giveIndex);
+                puzzle.AchiveStep(stepOnConllision, true);
             }
-        }        
+            else if (!puzzle.ArrayPuzzlePieces.Any())
+            {
+                puzzle.AddPiece(other.transform.parent.gameObject);
+                puzzle.AchiveStep(stepOnConllision, true);
+            }
+            else
+            {
+                Debug.Log("SOMETHING GONE WRONG");
+            }                      
+        }  
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (canCollide)
+        if (!canCollide)
+            return;
+
+        if (!other.CompareTag(tagToCheck))
+            return;
+        
+        if (other.GetComponentInParent<objectController>()?.type == correctObject)
         {
-            if (other.CompareTag(tagToCheck))
+            if (puzzle.ArrayPuzzlePieces.Any())
             {
-                if (other.GetComponentInParent<objectController>()?.type == correctObject)
-                {
-                    if (puzzle.ArrayPuzzlePieces.Length >= 1)
-                    {
-                        puzzle.ArrayRemovePiece(other.transform.parent.gameObject);
-                        puzzle.AchiveStep(stepOnConllision, false);
-                    }
-                    else if(puzzle.ArrayPuzzlePieces.Length < 1)
-                    {
-                        puzzle.RemovePiece(other.transform.parent.gameObject);
-                        puzzle.AchiveStep(stepOnConllision, false);
-                    }
-                    else
-                    {
-                        Debug.Log("SOMETHING GONE WRONG");
-                    }
-                    
-                }
+                puzzle.ArrayRemovePiece(other.transform.parent.gameObject);
+                puzzle.AchiveStep(stepOnConllision, false);
             }
-        }        
+            else if(!puzzle.ArrayPuzzlePieces.Any())
+            {
+                puzzle.RemovePiece(other.transform.parent.gameObject);
+                puzzle.AchiveStep(stepOnConllision, false);
+            }
+            else
+            {
+                Debug.Log("SOMETHING GONE WRONG");
+            }  
+        }
     }
+
+
     public void TryToAchiveStep()
     {
         OnTriggerEnterEvent trigger = transform.parent.GetComponent<OnTriggerEnterEvent>();
@@ -99,6 +99,7 @@ public class SimplePuzzleCollider : MonoBehaviour
             puzzle.AchiveStep(stepOnTool, true);
             if(puzzle.CheckStep(4) && puzzle.CheckStep(5) && trigger)
             {
+                Debug.Log("HEYA");
                 trigger.DisableTrigger();
             }
             if (puzzle.CheckStep(6) && puzzle.CheckStep(7) && trigger)
@@ -111,7 +112,5 @@ public class SimplePuzzleCollider : MonoBehaviour
     public void AchiveTalkStep()
     {
         puzzle.AchiveStep(stepOnTool,true);
-
-        
     }
 }
