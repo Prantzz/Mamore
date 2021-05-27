@@ -7,7 +7,12 @@ public class Hand : MonoBehaviour
     public InventoryObject inventory;
     public int SelectInt;
     public static string HOLDING_TOOL;
-    
+    private Animator ownAnim;
+
+    private void Start()
+    {
+        ownAnim = GetComponent<Animator>();
+    }
     void Update()
     {
         UpdateSlot();
@@ -25,6 +30,11 @@ public class Hand : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (ownAnim.GetCurrentAnimatorStateInfo(0).IsName("Martelada"))
+        {
+            ownAnim.SetBool("ComeBack", true);
         }
     }
 
@@ -119,10 +129,10 @@ public class Hand : MonoBehaviour
                 else{}
             }
         }
-        //if (string.Equals(HOLDING_TOOL, "Martelo"))
-        //{
-
-        //}
+        if (string.Equals(HOLDING_TOOL, "Martelo"))
+        {
+            ownAnim.SetTrigger("Martelada");
+        }
     }    
     public void Talk()
     {
