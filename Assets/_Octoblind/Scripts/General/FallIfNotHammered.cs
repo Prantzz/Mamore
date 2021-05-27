@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FallIfNotHammered : MonoBehaviour
 {
+    //aqui só para eu me recordar do polimorfismo
+    //dependendo do objeto filho dentro dessa variável de tipo puzzle, se o método desajustar parte for sobreescrito, o método do filho será chamado
+    //mesmo sendo do tipo da classe do pai (só funciona pra métodos virtuais da classe pai)
     [SerializeField] Puzzle puzzle;
 
     public void PlayerCollided()
     {
-        //aqui só para eu me recordar
-        //dependendo do objeto filho, o método específico dele será chamado, se sobreescrever o método pai
+        if (puzzle == null)
+            return;
         puzzle.DesajustarParte(this.gameObject);
     }
 
