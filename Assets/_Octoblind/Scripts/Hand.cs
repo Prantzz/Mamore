@@ -129,9 +129,11 @@ public class Hand : MonoBehaviour
                 else{}
             }
         }
-        if (string.Equals(HOLDING_TOOL, "Martelo"))
+        if (string.Equals(HOLDING_TOOL, "Martelo") && !ownAnim.GetCurrentAnimatorStateInfo(0).IsName("Martelada"))
         {
+            GameGlobeData.AU.PullSound(this.transform.position, 9, 1);
             ownAnim.SetTrigger("Martelada");
+            ownAnim.SetBool("ComeBack", false);
         }
     }    
     public void Talk()
