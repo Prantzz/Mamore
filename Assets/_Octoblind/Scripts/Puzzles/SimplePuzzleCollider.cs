@@ -91,22 +91,14 @@ public class SimplePuzzleCollider : MonoBehaviour
 
     public void TryToAchiveStep()
     {
-        OnTriggerEnterEvent trigger = transform.parent.GetComponent<OnTriggerEnterEvent>();
+
         //Aqui estou dizendo que ele só pode ativar com uma tool depois que colidiu, imagino que esse não seja o caso para todo puzzle mas não farei esse modificação sem necessidade
         //Não gosto muito disso, esse código é muito específico e deveria estar no Puzzle não no collider.
+
         if (puzzle.CheckStep(stepOnConllision) && !puzzle.CheckStep(stepOnTool))
         {
             puzzle.AchiveStep(stepOnTool, true);
-            if(puzzle.CheckStep(4) && puzzle.CheckStep(5) && trigger)
-            {
-                Debug.Log("HEYA");
-                trigger.DisableTrigger();
-            }
-            if (puzzle.CheckStep(6) && puzzle.CheckStep(7) && trigger)
-            {
-                trigger.DisableTrigger();
-            }
-
+           
         }
     }
     public void AchiveTalkStep()

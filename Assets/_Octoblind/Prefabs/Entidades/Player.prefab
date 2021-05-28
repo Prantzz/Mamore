@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332466675}
   - component: {fileID: 8373166498940450518}
+  - component: {fileID: 263912149}
   m_Layer: 0
   m_Name: PlayerHands
   m_TagString: Untagged
@@ -45,6 +46,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: a55f2c9cac6896a4d8f47de41592d0eb, type: 2}
   SelectInt: 0
+--- !u!95 &263912149
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332466674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0398dc94cce444499d2e998afde5f5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6256268361693532444
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharCon: {fileID: 0}
+  movX: 0
+  movZ: 0
+  speed: 0.1
+  gravity: -19.81
+  jumpSpeed: 8
   xzMove: {x: 0, y: 0, z: 0}
   yMove: {x: 0, y: 0, z: 0}
   isSprinting: 0
@@ -291,6 +316,36 @@ MonoBehaviour:
       - m_Target: {fileID: 6256268361909891584}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Stand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMouseButtonPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8373166498940450518}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: ActiveItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnEPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8373166498940450518}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: Talk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -435,7 +490,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 413.35074
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -570,7 +625,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 75
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -620,7 +675,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0

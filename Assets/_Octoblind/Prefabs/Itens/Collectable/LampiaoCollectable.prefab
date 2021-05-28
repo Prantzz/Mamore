@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2968552266892574258}
   - component: {fileID: 3679246305758812741}
   m_Layer: 0
-  m_Name: lampiao
+  m_Name: LampiaoCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6244014406784684876}
-  m_Mesh: {fileID: 7129081268617859667, guid: 9f60c1cdb3410694fbd1c030f52593c4, type: 3}
+  m_Mesh: {fileID: 663309619159252651, guid: 7dfae75f3ae0a5e42bf35d04516b0f40, type: 3}
 --- !u!23 &5595668065657107097
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 9f60c1cdb3410694fbd1c030f52593c4, type: 3}
+  - {fileID: 2100000, guid: a85978386b7e65545b043712199ffc1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 
   isSelected: 0
   hasInteracted: 0
   zeroY: 0
@@ -150,6 +151,11 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  phoCon: {fileID: 0}
+  photoImg: {fileID: 0}
+  DocumentInventory: {fileID: 0}
+  Diary: {fileID: 0}
+  Document: {fileID: 0}
 --- !u!64 &3679246305758812741
 MeshCollider:
   m_ObjectHideFlags: 0

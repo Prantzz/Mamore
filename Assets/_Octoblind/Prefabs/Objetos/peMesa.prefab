@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 3738973196735276287}
   - component: {fileID: 7208315772497124958}
   - component: {fileID: 6550303716577432755}
+  - component: {fileID: 3098105769344543110}
   m_Layer: 0
   m_Name: peMesa
   m_TagString: Selectable
@@ -160,7 +161,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!114 &7208315772497124958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +202,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1684021, y: 1.2228135, z: 0.14265686}
   m_Center: {x: -0.00000014901161, y: -0.0035904343, z: 0.000000111725}
+--- !u!114 &3098105769344543110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527295747656895582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f262d97421a43884682ef0b176b439cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
 --- !u!1 &1733524073870918972
 GameObject:
   m_ObjectHideFlags: 0

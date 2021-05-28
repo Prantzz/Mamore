@@ -9,7 +9,6 @@ public class OnTriggerEnterEvent : MonoBehaviour
     [SerializeField] private UnityEvent onTriggerEnter;
     [SerializeField] private UnityEvent onTriggerExit;
 
-    [SerializeField] private string tagToCollide;
     [SerializeField] private string type;
 
     public bool disabled = false;
@@ -47,7 +46,6 @@ public class OnTriggerEnterEvent : MonoBehaviour
 
     public void AlternateTrigger(bool state) => disabled = state;
 
-    public void DisableTrigger() => GetComponent<BoxCollider>().enabled = false;
 
 
 }

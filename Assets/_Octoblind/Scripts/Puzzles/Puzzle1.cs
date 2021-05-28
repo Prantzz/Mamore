@@ -12,7 +12,7 @@ sealed public class Puzzle1 : Puzzle
     [SerializeField] private Transform finalPosDegrau2;
     private Transform Degrau0;
     private Transform Degrau1;
-    private int a = 0;
+
     bool locker1 = false;
     bool locker2 = false;
 
@@ -33,7 +33,7 @@ sealed public class Puzzle1 : Puzzle
                 Degrau1.gameObject.SetActive(true);
 
             ArrayPuzzlePieces[0].GetComponent<objectController>().hasInteracted = false;
-            AjustarDegrau(finalPosDegrau1.position, ArrayPuzzlePieces[0]);
+            AjustarDegrau(finalPosDegrau1.position, ArrayPuzzlePieces[0].transform);
             Degrau0.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau0.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
 
@@ -49,7 +49,7 @@ sealed public class Puzzle1 : Puzzle
                 Degrau0.gameObject.SetActive(true);
 
             ArrayPuzzlePieces[1].GetComponent<objectController>().hasInteracted = false;
-            AjustarDegrau(finalPosDegrau2.position, ArrayPuzzlePieces[1]);
+            AjustarDegrau(finalPosDegrau2.position, ArrayPuzzlePieces[1].transform);
             Degrau1.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = false;
             Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
 
@@ -59,16 +59,16 @@ sealed public class Puzzle1 : Puzzle
     }
 
 
-    public void AjustarDegrau(Vector3 pos, GameObject degrau)
+    public void AjustarDegrau(Vector3 pos, Transform degrau)
     {
 
-        degrau.transform.SetParent(transform);
-        degrau.transform.position = pos;
-        degrau.transform.eulerAngles = new Vector3(0, 90, 0);
+        degrau.SetParent(transform);
+        degrau.position = pos;
+        degrau.eulerAngles = new Vector3(0, 90, 0);
         degrau.GetComponent<objectController>().enabled = false;
         degrau.GetComponent<BoxCollider>().enabled = false;
-        degrau.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
-        degrau.transform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
+        degrau.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        degrau.GetChild(2).GetComponent<BoxCollider>().enabled = false;
         degrau.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
     }

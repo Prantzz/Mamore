@@ -11,7 +11,7 @@ public class Puzzle : MonoBehaviour
     protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
-    [Header("My boy, you suck my cock, não mexe no meu projeto sem entendê-lo, show some respect u donut")]
+    [Header("Hey, you should try getting a stick in ur big asshole, don't touch this")]
     public GameObject[] ArrayPuzzlePieces;
  
 
@@ -75,12 +75,12 @@ public class Puzzle : MonoBehaviour
    
     public void ArrayRemovePiece(GameObject toRemove)
     {
-        Debug.Log(toRemove);
+       // Debug.Log(toRemove);
         //Linq não tem FindIndex #triste
 
         int a = Array.FindIndex(ArrayPuzzlePieces, element => element == toRemove);
-
-        if(a < ArrayPuzzlePieces.Length)
+  
+        if(ArrayPuzzlePieces.Contains(toRemove))
             ArrayPuzzlePieces[a] = null;
     }
 
@@ -101,7 +101,7 @@ public class Puzzle : MonoBehaviour
     //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
     //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
     //TLDR: Se tu colocar no collider que ele da achive num step que não está no array o sistema não tem como identificar, é isso.
-    
+
     public bool CheckStep(int stepToCheck) 
     {
         return (stepToCheck <= steps.Length - 1) ? steps[stepToCheck] : ThrowError();
