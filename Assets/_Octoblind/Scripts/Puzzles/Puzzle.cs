@@ -11,7 +11,8 @@ public class Puzzle : MonoBehaviour
     protected bool[] steps;
     public bool completed;
     public List<GameObject> PuzzlePieces;
-    [Header("Hey, you should try getting a stick in ur big asshole, don't touch this")]
+
+    //batata
     public GameObject[] ArrayPuzzlePieces;
  
 
