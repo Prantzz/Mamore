@@ -30,10 +30,8 @@ sealed public class Puzzle2 : Puzzle
     {
         for (int i = 0; i < steps.Length - 4; i += 2)
         {
-            Debug.Log(i);
             if (CheckStep(i) && CheckStep(i+1) && !locker[i/2])
             {
-                Debug.Log("chamou o desajustar e afins");
                 encaixe[i/2].GetComponent<OnTriggerEnterEvent>().AlternateTrigger(true);
 
                 EnableTheDisabled(i/2);
@@ -86,7 +84,6 @@ sealed public class Puzzle2 : Puzzle
 
         foreach (Transform a in rightFeet)
         {
-            Debug.Log(a.name);
             if (!a.gameObject.activeSelf)
                 a.gameObject.SetActive(true);
         }
@@ -96,7 +93,6 @@ sealed public class Puzzle2 : Puzzle
 
     private void AjustarPemesa(Vector3 pos, Transform peMesa)
     {
-        Debug.Log("Ajustou o: " + peMesa);
         objectController objCon = peMesa.GetComponent<objectController>();
         peMesa.SetParent(transform);
         peMesa.position = pos;
@@ -104,41 +100,67 @@ sealed public class Puzzle2 : Puzzle
         objCon.isSelected = false;
         objCon.hasInteracted = false;
         objCon.enabled = false;
+
         peMesa.GetComponent<BoxCollider>().enabled = false;
         peMesa.GetChild(1).GetComponent<BoxCollider>().enabled = false;
         peMesa.GetChild(2).GetComponent<BoxCollider>().enabled = false;
 
-        Destroy(peMesa.GetComponent<EPOOutline.Outlinable>()); // isso aqui não sei pq não sumiu sozinho
-        Destroy(peMesa.GetComponent<Rigidbody>()); // tentei usar isKinematic = true, mas ele da conflito com o rigidbody do objeto pai
+        Destroy(peMesa.GetComponent<EPOOutline.Outlinable>()); // isso aqui não sei pq não sumiu sozinho, então to destruindo pra garantir
+
+        Destroy(peMesa.GetComponent<Rigidbody>()); 
+        // tentei usar isKinematic = true, mas ele da conflito com o rigidbody do objeto pai
+        // tbm tentei usar fixed joint/hinge joint, mas ai a gravidade parava de afetar o objeto pai
+        // então o esquema foi remover msm o rigidbody e adicionar dnv quando o pe da mesa cair
     }
 
-    public override void DesajustarParte(GameObject peMesa)
+    public override void DesajustarParte()
     {
-        Debug.Log("chamou o metodo desajustar");
-        if (ArrayPuzzlePieces.Any())
+
+        if (ArrayPuzzlePieces.Any(element => element != null))
         {
-            Debug.Log("chamou a funcionalidade desajustar ");
 
             for (int i = 0; i < 4; i++)
             {
-                if (Array.IndexOf(ArrayPuzzlePieces, peMesa) != i)
+                if (ArrayPuzzlePieces[i] == null)
                     continue;
-                if (CheckStep(i + 4)) // Step correspondente à martelada
-                    continue;
+                
+                Transform peMesa = ArrayPuzzlePieces[i].transform;
 
-                Debug.Log($"desajustou esse pemesa: {peMesa}");
-                Transform peMesaTransform = peMesa.transform;
-                peMesaTransform.SetParent(null);
-                peMesaTransform.GetComponent<objectController>().enabled = true;
-                peMesaTransform.GetComponent<BoxCollider>().enabled = false;
-                peMesaTransform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
-                peMesaTransform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
-                peMesa.AddComponent(typeof(Rigidbody));
+                if (!CheckStep(i + 8))
+                {
+                    
+                    Transform encaixe = this.encaixe[i];
+                    objectController objCon = peMesa.GetComponent<objectController>();
+                    peMesa.SetParent(null);
+                    peMesa.eulerAngles = new Vector3(UnityEngine.Random.Range(25, 60), 0, UnityEngine.Random.Range(25, 60));
+                    objCon.enabled = true;
+                    objCon.isSelected = false;
+                    objCon.hasInteracted = false;
+                    peMesa.GetComponent<BoxCollider>().enabled = true;
+                    peMesa.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+                    peMesa.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+                    peMesa.gameObject.AddComponent(typeof(Rigidbody));
+
+                    encaixe.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    encaixe.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
+                    encaixe.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
+                    EnableTheDisabled(i);
+
+                    AchiveStep(2*i, false);
+                    AchiveStep(2*i + 1, false);
+
+                    if (ArrayPuzzlePieces[i] != null)
+                        ArrayPuzzlePieces[i] = null;
+
+                    locker[i] = false;
+
+                }
 
             }
 
         }
 
     }
+
 
 }

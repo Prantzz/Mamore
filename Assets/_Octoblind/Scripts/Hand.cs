@@ -88,16 +88,18 @@ public class Hand : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 3f))
             {
                 //The hit is my bitch now
-                Transform hitT = hit.transform;
-
+                Transform hitT = hit.collider.transform; // antes era hit.transform
+                                                         // preguiça de explicar a diferença, se der erro entra call
+                Debug.Log(hitT);
                 //Caso acerte um PuzzleCollider
                 if (hitT.CompareTag("PuzzleCollider"))
-                {                    
+                {
+                    Debug.Log("foi");
                     SimplePuzzleCollider SPC = hitT.GetComponent<SimplePuzzleCollider>();
                     //Caso ele esteja usando a ferramenta correta para o serviço
                     if (string.Equals(SPC.correctTool, HOLDING_TOOL))
                     {
-                        
+                       
                         //Avance um step do Puzzle
                         SPC.TryToAchiveStep();
                     }

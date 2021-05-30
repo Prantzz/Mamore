@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,7 +77,7 @@ sealed public class Puzzle1 : Puzzle
     public override void DesajustarParte(GameObject tabua)
     {
 
-        if(ArrayPuzzlePieces.Length > 0)
+        if(ArrayPuzzlePieces.Any(element => element != null))
         {
             if (Array.IndexOf(ArrayPuzzlePieces, tabua) == 0)
             {

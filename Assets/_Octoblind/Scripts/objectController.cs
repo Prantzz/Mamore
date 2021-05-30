@@ -106,11 +106,24 @@ public class objectController : MonoBehaviour
 
     private void ObjectController_OnInteraction(object sender, EventArgs e)
     {
+
         #region HOLDABLE
         if (PropertyType == PropertyList[0]) //PropertyList[0] --- Holdable;
         {
+            bool a = false;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (type == "Mesa" && !a) // desajusta as pernas da mesa se o cara mexer na mesa sem martelar as pernas
+                {
+                    Puzzle puzzle2 = GetComponentInChildren<Puzzle2>();
+                    if (puzzle2)
+                        puzzle2.DesajustarParte();
+                    Debug.Log("chamo");
+                }
+            }
             if (Input.GetKey(KeyCode.E))
             {
+                
                 gameObject.transform.parent = player.transform;
                 if (!gameObject.GetComponent<Rigidbody>().isKinematic) gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 if (Input.GetKey(KeyCode.Q))

@@ -6,7 +6,7 @@ using UnityEngine;
 public class SimplePuzzleCollider : MonoBehaviour
 {
     [SerializeField]
-    private int stepOnConllision;
+    private int stepOnConllision; //SHAME!
     public Puzzle puzzle;
     [SerializeField]private int giveIndex;
     public bool canCollide;
@@ -15,6 +15,7 @@ public class SimplePuzzleCollider : MonoBehaviour
     private string correctObject;
     public string correctTool;
     public int stepOnTool;
+    public bool ignoreStepOnTool;
     public bool talker;
     private void Start()
     {
@@ -95,7 +96,7 @@ public class SimplePuzzleCollider : MonoBehaviour
         //Aqui estou dizendo que ele só pode ativar com uma tool depois que colidiu, imagino que esse não seja o caso para todo puzzle mas não farei esse modificação sem necessidade
         //Não gosto muito disso, esse código é muito específico e deveria estar no Puzzle não no collider.
 
-        if (puzzle.CheckStep(stepOnConllision) && !puzzle.CheckStep(stepOnTool))
+        if (puzzle.CheckStep(stepOnConllision) && !puzzle.CheckStep(stepOnTool) && !ignoreStepOnTool)
         {
             puzzle.AchiveStep(stepOnTool, true);
            

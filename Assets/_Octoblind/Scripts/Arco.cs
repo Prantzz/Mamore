@@ -52,7 +52,7 @@ public class Arco : MonoBehaviour
             }
         }
 
-        Debug.Log(shotForce);
+      //  Debug.Log(shotForce); // comentei esse debug pq tava travando dmais no meu pc, se eu esquecer de descomentar forgive-me i'm just a human, get out bitch, get out the way
     }
 
     private void Shot() 

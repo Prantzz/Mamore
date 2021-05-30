@@ -96,8 +96,10 @@ public class Puzzle : MonoBehaviour
         return ArrayPuzzlePieces[pieceIndex];
     }
 
-    //Recomendado utilizar esse método em conjunto com ArrayPuzzlePieces
-    public virtual void DesajustarParte(GameObject objeto) { }
+    //utilizar esse método em conjunto com ArrayPuzzlePieces
+    public virtual void DesajustarParte(GameObject objeto) { } // pra desajustar partes específicas
+    
+    public virtual void DesajustarParte() { } // pra desajustar várias partes de uma vez
 
     //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
     //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
