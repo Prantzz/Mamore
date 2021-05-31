@@ -28,7 +28,7 @@ sealed public class Puzzle2 : Puzzle
 
     public override void MiddleStep()
     {
-        for (int i = 0; i < steps.Length - 4; i += 2)
+        for (int i = 0; i < steps.Length - 5; i += 2)
         {
             if (CheckStep(i) && CheckStep(i+1) && !locker[i/2])
             {
@@ -45,33 +45,6 @@ sealed public class Puzzle2 : Puzzle
             }
             
         }
-
-        ////Travar perna 0
-        //if (CheckStep(0) && !locker[0])
-        //{
-
-        //    locker[0] = true;
-        //}
-
-        ////Travar perna 1
-        //if (CheckStep(1) && !locker[1])
-        //{
-        //    locker[1] = true;
-        //}
-
-
-        ////Travar perna 2
-        //if (CheckStep(2) && !locker[2])
-        //{
-        //    locker[2] = true;
-        //}
-
-
-        ////Travar perna 3
-        //if (CheckStep(3) && !locker[3])
-        //{
-        //    locker[3] = true;
-        //}
 
     }
 
@@ -116,51 +89,51 @@ sealed public class Puzzle2 : Puzzle
     public override void DesajustarParte()
     {
 
-        if (ArrayPuzzlePieces.Any(element => element != null))
+        if (!ArrayPuzzlePieces.Any(element => element != null))
+            return;
+
+        for (int i = 0; i < 4; i++)
         {
+            if (CheckStep(i + 8))
+                continue;
 
-            for (int i = 0; i < 4; i++)
-            {
-                if (ArrayPuzzlePieces[i] == null)
-                    continue;
-                
-                Transform peMesa = ArrayPuzzlePieces[i].transform;
+            if (ArrayPuzzlePieces[i] == null)
+                continue;
 
-                if (!CheckStep(i + 8))
-                {
-                    
-                    Transform encaixe = this.encaixe[i];
-                    objectController objCon = peMesa.GetComponent<objectController>();
-                    peMesa.SetParent(null);
-                    peMesa.eulerAngles = new Vector3(UnityEngine.Random.Range(25, 60), 0, UnityEngine.Random.Range(25, 60));
-                    objCon.enabled = true;
-                    objCon.isSelected = false;
-                    objCon.hasInteracted = false;
-                    peMesa.GetComponent<BoxCollider>().enabled = true;
-                    peMesa.GetChild(1).GetComponent<BoxCollider>().enabled = true;
-                    peMesa.GetChild(2).GetComponent<BoxCollider>().enabled = true;
-                    peMesa.gameObject.AddComponent(typeof(Rigidbody));
+            Transform peMesa = ArrayPuzzlePieces[i].transform;
 
-                    encaixe.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
-                    encaixe.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
-                    encaixe.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
-                    EnableTheDisabled(i);
+            Transform encaixe = this.encaixe[i];
 
-                    AchiveStep(2*i, false);
-                    AchiveStep(2*i + 1, false);
+            objectController objCon = peMesa.GetComponent<objectController>();
 
-                    if (ArrayPuzzlePieces[i] != null)
-                        ArrayPuzzlePieces[i] = null;
+            peMesa.SetParent(null);
+            peMesa.eulerAngles = new Vector3(UnityEngine.Random.Range(25, 60), 0, UnityEngine.Random.Range(25, 60));
+            objCon.enabled = true;
+            objCon.isSelected = false;
+            objCon.hasInteracted = false;
+            peMesa.GetComponent<BoxCollider>().enabled = true;
+            peMesa.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+            peMesa.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+            peMesa.gameObject.AddComponent(typeof(Rigidbody));
 
-                    locker[i] = false;
+            encaixe.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
+            encaixe.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = true;
+            encaixe.GetComponent<OnTriggerEnterEvent>().AlternateTrigger(false);
+            EnableTheDisabled(i);
 
-                }
+            AchiveStep(2 * i, false);
+            AchiveStep(2 * i + 1, false);
 
-            }
+            if (ArrayPuzzlePieces[i] != null)
+                ArrayPuzzlePieces[i] = null;
 
+            locker[i] = false;
         }
-
     }
 
+    public void CompletarMesa()
+    {
+
+    }
 
 }

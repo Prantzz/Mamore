@@ -110,12 +110,11 @@ public class objectController : MonoBehaviour
         #region HOLDABLE
         if (PropertyType == PropertyList[0]) //PropertyList[0] --- Holdable;
         {
-            bool a = false;
+            Puzzle puzzle2 = GetComponentInChildren<Puzzle2>();
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (type == "Mesa" && !a) // desajusta as pernas da mesa se o cara mexer na mesa sem martelar as pernas
+                if (type == "Mesa") // desajusta as pernas da mesa se o cara mexer na mesa sem martelar as pernas
                 {
-                    Puzzle puzzle2 = GetComponentInChildren<Puzzle2>();
                     if (puzzle2)
                         puzzle2.DesajustarParte();
                     Debug.Log("chamo");
@@ -139,6 +138,14 @@ public class objectController : MonoBehaviour
                     transform.Rotate(Vector3.up * mPosX);
                     transform.Rotate(Vector3.right * mPosY);
                     transform.localRotation = Quaternion.Euler(-rotationx, rotationy, 0);
+
+                    if (type == "Mesa") // verifica se a mesa foi virada para cima
+                    {
+                        if (puzzle2)
+
+                           
+                        Debug.Log("chamo2");
+                    }
                 }
             }
             if (Input.GetKeyUp(KeyCode.E))
