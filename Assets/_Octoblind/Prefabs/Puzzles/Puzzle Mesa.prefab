@@ -94,8 +94,8 @@ MonoBehaviour:
   tagToCheck: Trigger
   correctObject: Pemesa
   correctTool: Martelo
-  stepOnTool: 7
-  ignoreStepOnTool: 0
+  stepOnTool: 0
+  ignoreStepOnTool: 1
   talker: 0
 --- !u!1 &4240055376117644790
 GameObject:
@@ -161,8 +161,8 @@ MonoBehaviour:
   tagToCheck: Trigger
   correctObject: Pemesa
   correctTool: Martelo
-  stepOnTool: 5
-  ignoreStepOnTool: 0
+  stepOnTool: 0
+  ignoreStepOnTool: 1
   talker: 0
 --- !u!1 &5561876038181019097
 GameObject:
@@ -355,8 +355,8 @@ MonoBehaviour:
   tagToCheck: Trigger
   correctObject: Pemesa
   correctTool: Martelo
-  stepOnTool: 6
-  ignoreStepOnTool: 0
+  stepOnTool: 0
+  ignoreStepOnTool: 1
   talker: 0
 --- !u!1 &6771346274519952933
 GameObject:
@@ -492,42 +492,6 @@ MonoBehaviour:
   stepOnTool: 8
   ignoreStepOnTool: 0
   talker: 0
---- !u!59 &8261960708825615188
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8131512602781217825}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.61601615, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 46.412006, y: 0.3519841, z: 52.228}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &8613621444289408715
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +672,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8613621445345714926}
   - component: {fileID: 8613621445345714921}
-  m_Layer: 0
+  - component: {fileID: 1475286861}
+  m_Layer: 10
   m_Name: Mesa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
-  steps: 000000000000000000000000
+  steps: 00000000000000000000000100
   completed: 0
   PuzzlePieces: []
   ArrayPuzzlePieces:
@@ -759,6 +724,19 @@ MonoBehaviour:
   - {fileID: 2258508407905554738}
   - {fileID: 350901667523406158}
   - {fileID: 9168067229161119839}
+--- !u!65 &1475286861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613621445345714927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7485619, y: 0.23061228, z: 1.7062378}
+  m_Center: {x: 0.0041217804, y: -1.2422137, z: -0.05426407}
 --- !u!1 &8613621445702990467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,8 +1288,8 @@ MonoBehaviour:
   tagToCheck: Trigger
   correctObject: Pemesa
   correctTool: Martelo
-  stepOnTool: 4
-  ignoreStepOnTool: 0
+  stepOnTool: 0
+  ignoreStepOnTool: 1
   talker: 0
 --- !u!1 &9178713664602120872
 GameObject:
@@ -1358,8 +1336,8 @@ GameObject:
   - component: {fileID: 5023684530823085521}
   - component: {fileID: 9221713830020197052}
   - component: {fileID: 9221713830020197053}
-  m_Layer: 0
-  m_Name: PuzzleMesa
+  m_Layer: 11
+  m_Name: Puzzle Mesa
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1503,6 +1481,10 @@ MonoBehaviour:
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!1001 &311059239387719890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1520,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.42
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1528,7 +1510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.14
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1582,7 +1564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1590,7 +1572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.33
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1644,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1652,7 +1634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.96
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1706,7 +1688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.74
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1714,7 +1696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.99
+      value: -1.83
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1749,10 +1731,5 @@ PrefabInstance:
 --- !u!4 &7025191030881791237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
-  m_PrefabInstance: {fileID: 8613621446122092671}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8131512602781217825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
   m_PrefabInstance: {fileID: 8613621446122092671}
   m_PrefabAsset: {fileID: 0}

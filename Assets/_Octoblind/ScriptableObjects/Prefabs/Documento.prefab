@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478.95673, y: -347.8}
+  m_AnchoredPosition: {x: -478.95673, y: -1947.8}
   m_SizeDelta: {x: 773.2025, y: 78.0944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7170945421958915349
@@ -134,16 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc061b73e8d10b49bae800266c38ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: Arrependimento.
-  Body: "Eu sabia que essa ideia era maluca. Uma ferrovia que atravessa a Amaz\xF4nia
-    e o Acre? Isso \xE9 um absurdo, n\xE3o me surpreende que levaram d\xE9cadas para
-    concretizar a ideia. Por que aceitei trabalhar nessa insanidade?\r\n\r\nAl\xE9m
-    do trabalho imposs\xEDvel e baixo sal\xE1rio, nossos acampamentos est\xE3o sendo
-    atacados por on\xE7as. V\xE1rias pessoas est\xE3o tendo que fugir e se abrigar
-    em tendas improvisadas. Por\xE9m, todos que se abrigarem nessas tendas devem
-    voltar o mais r\xE1pido poss\xEDvel para o acampamento. Dizem que ficar sozinho
-    na mata te corrompe.\r\n\r\nEstou cansado, minha cabe\xE7a est\xE1 quente, t\xE3o
-    quente que cheguei a enxergar chamas a noite. Quero ir para casa.\r\n"
+  Title: "\xC9 Real. "
+  Body: "\xC9 real! A criatura \xE9 real! Eu vi a chama me perseguindo, parecia querer
+    me expulsar daqui a todo custo. Tentei o revidar com flechas mas foi in\xFAtil,
+    pelo menos este arco me serviu para coletar alguns alimentos.\r\n\r\nAquela luz
+    forte me deu n\xE1useas\u2026 Que Deus me proteja dessa maldi\xE7\xE3o.\r\n"
   CanvasTitle: {fileID: 0}
   CanvasBody: {fileID: 0}
 --- !u!1 &7170945422423052537

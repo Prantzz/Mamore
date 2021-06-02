@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8253004482098642101}
   - component: {fileID: 2968552266892574258}
   - component: {fileID: 3679246305758812741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LampiaoCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6244014406784684876}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.22, y: 1.626, z: 15.86071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -156,6 +156,10 @@ MonoBehaviour:
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!64 &3679246305758812741
 MeshCollider:
   m_ObjectHideFlags: 0

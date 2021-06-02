@@ -101,6 +101,8 @@ public class Puzzle : MonoBehaviour
     
     public virtual void DesajustarParte() { } // pra desajustar várias partes de uma vez
 
+    public virtual void FinalStep() { } // pra alguma parte final de algum puzzle
+
     //Fiz diversas punhetações de prog aqui para pegar uma exceção mas admito que estou ficando com sono e isso não é essencial.
     //Atualmente da um IndexOutofBound mas pelo menos dou esse error também.
     //TLDR: Se tu colocar no collider que ele da achive num step que não está no array o sistema não tem como identificar, é isso.

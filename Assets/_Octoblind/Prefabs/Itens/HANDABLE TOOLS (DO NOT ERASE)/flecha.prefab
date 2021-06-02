@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 788188655041224814}
   - component: {fileID: 8179914238603664244}
   - component: {fileID: 20654757366735005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: flecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}

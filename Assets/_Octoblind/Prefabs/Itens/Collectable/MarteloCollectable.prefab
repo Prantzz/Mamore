@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3254871371625643439}
   - component: {fileID: 3254871369700697839}
   - component: {fileID: 5889517046869773578}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MarteloCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 
   isSelected: 0
   hasInteracted: 0
   zeroY: 0
@@ -107,9 +108,15 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  phoCon: {fileID: 0}
+  photoImg: {fileID: 0}
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!114 &3254871369700697839
 MonoBehaviour:
   m_ObjectHideFlags: 0

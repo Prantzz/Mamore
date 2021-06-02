@@ -14,6 +14,30 @@ sealed public class Puzzle2 : Puzzle
 
     private bool[] locker;
 
+    private objectController mesaCon;
+    private Transform mesaTransform;
+
+    private bool check;
+    private bool canFinish;
+
+    private BoxCollider[] collidersFilhos;
+
+    private void Awake()
+    {
+        mesaCon = GetComponentInParent<objectController>();
+        mesaTransform = transform.parent;
+    }
+
+    private void OnEnable()
+    {
+        mesaCon.OnInteraction += DisableColliders;
+    }
+
+    private void OnDisable()
+    {
+        mesaCon.OnInteraction -= DisableColliders;
+    }
+
     private void Start()
     {
         locker = new bool[4];
@@ -24,6 +48,45 @@ sealed public class Puzzle2 : Puzzle
             encaixe[i] = transform.GetChild(i);
             locker[i] = false;
         }
+
+        collidersFilhos = GetComponentsInChildren<BoxCollider>();
+    }
+
+    private void DisableColliders(object sender, EventArgs e)
+    {
+        foreach(BoxCollider a in collidersFilhos)
+        {
+            a.enabled = false;
+        }
+        
+        check = true;
+        StartCoroutine(EnableAgain());
+    }
+
+    private void EnableColliders()
+    {
+        foreach (BoxCollider a in collidersFilhos)
+        {
+            a.enabled = true;
+        }
+
+        check = false;
+    }
+
+    private IEnumerator EnableAgain()
+    {
+        while (check)
+        {
+            if (!mesaCon.hasInteracted)
+            {
+                check = false;
+                EnableColliders();
+            }
+
+            yield return null;
+        }
+
+        yield return null;
     }
 
     public override void MiddleStep()
@@ -88,6 +151,8 @@ sealed public class Puzzle2 : Puzzle
 
     public override void DesajustarParte()
     {
+        if (CheckStep(12))
+            return;
 
         if (!ArrayPuzzlePieces.Any(element => element != null))
             return;
@@ -131,8 +196,46 @@ sealed public class Puzzle2 : Puzzle
         }
     }
 
-    public void CompletarMesa()
+    //bom é isso aqui por enquanto msm
+    private bool setTheParentNull = false;
+    private void LateUpdate()
     {
+        if (setTheParentNull)
+        {
+            mesaTransform.SetParent(null);
+            setTheParentNull = false;
+            if (mesaTransform.GetComponent<EPOOutline.Outlinable>())
+                Destroy(mesaTransform.GetComponent<EPOOutline.Outlinable>());
+            if (mesaTransform.GetComponent<Rigidbody>())
+                mesaTransform.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        
+    }
+
+    // chamado pelo object controller quando o jogador começa a rotacionar a mesa
+    public override void FinalStep()
+    {
+            
+        Destroy(mesaCon);
+
+        mesaTransform.localEulerAngles = new Vector3(UnityEngine.Random.Range(-2f, 2f), mesaTransform.localEulerAngles.y, UnityEngine.Random.Range(-2f, 2f));
+ 
+        mesaTransform.tag = "Untagged";
+
+        setTheParentNull = true;
+
+        AchiveStep(12, true);
+     
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        canFinish = CheckStep(8) && CheckStep(9) && CheckStep(10) && CheckStep(11) && !CheckStep(12);
+
+        if (canFinish)
+        {
+            FinalStep();
+        }
 
     }
 

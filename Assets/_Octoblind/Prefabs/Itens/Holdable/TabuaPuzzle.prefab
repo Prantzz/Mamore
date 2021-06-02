@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 1199694341896628024}
   - component: {fileID: 1831592425}
   - component: {fileID: 1831592424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TabuaPuzzle
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -173,6 +173,10 @@ MonoBehaviour:
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!114 &1199694341896628024
 MonoBehaviour:
   m_ObjectHideFlags: 0

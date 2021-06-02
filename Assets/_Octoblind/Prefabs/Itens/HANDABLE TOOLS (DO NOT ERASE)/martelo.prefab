@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8990030769602728032}
   - component: {fileID: 5434959436278898629}
   - component: {fileID: 7820550807050218255}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: martelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

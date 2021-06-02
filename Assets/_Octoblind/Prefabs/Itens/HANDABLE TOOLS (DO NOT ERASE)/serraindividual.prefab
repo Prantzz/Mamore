@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1601517317038254943}
   - component: {fileID: 2420227501553657082}
   - component: {fileID: 464600146180329520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: serraindividual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

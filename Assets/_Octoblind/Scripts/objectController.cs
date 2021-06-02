@@ -21,7 +21,7 @@ public class objectController : MonoBehaviour
     public bool isSelected = false;
     public bool hasInteracted = false;
     public event EventHandler OnSelection;
-    public event EventHandler OnInteraction;
+    public event EventHandler OnInteraction; //usando esse pro puzzle2
     [SerializeField] private float zeroY;
     public List<String> PropertyList;
     public List<String> CollectableList;
@@ -51,6 +51,7 @@ public class objectController : MonoBehaviour
 
     private Player Player;
     private Item item;
+    private Puzzle puzzle;
 
     [SerializeField]
     InventoryDocument DocumentInventory;
@@ -110,12 +111,17 @@ public class objectController : MonoBehaviour
         {
             timer += dissolveTime * Time.deltaTime;
             if (timer < 1.5f)
+            {
                 meshRenderer.material.SetFloat("_Dissolve", timer);
+            }    
             else
+            {
                 gameObject.SetActive(false);
-
+                break;
+            }
             yield return null;
         }
+        yield return null;
     }
 
     #region UPDATE_METHODS
@@ -132,18 +138,30 @@ public class objectController : MonoBehaviour
             hasInteracted = true;
         }
     }
+
+    bool dirtyFlag = false;
     public void Interactions()
     {
         #region HOLDABLE
         if (isHoldable)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (hasInteracted) //Input.GetKeyDown(KeyCode.E)
             {
+                OnInteraction?.Invoke(this, EventArgs.Empty);
                 if (transform.parent == null) transform.parent = player.transform;
                 if (!objectRB.isKinematic) objectRB.isKinematic = true;
                 if (!shouldRotate) shouldRotate = true;
                 if (!objIsGrabbed) objIsGrabbed = true;
+
+                if (type == "Mesa" && !dirtyFlag) // desajusta as pernas da mesa se o cara mexer na mesa sem martelar as pernas
+                {
+                    puzzle = GetComponentInChildren<Puzzle2>();
+                    if (puzzle)
+                        puzzle.DesajustarParte();
+
+                    dirtyFlag = true;
+                }
             }
             if (shouldRotate)
             {
@@ -152,17 +170,29 @@ public class objectController : MonoBehaviour
                     if (!GameGlobeData.IsCamLock) GameGlobeData.IsCamLock = true;
                     if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
                     if (Cursor.visible) Cursor.visible = false;
-
+                    
+                    /* anterior
                     rotationx -= mPosY;
                     rotationy -= mPosX;
                     UpdateMouseValues();
                     //transform.Rotate(Vector3.up * mPosX);
                     //transform.Rotate(Vector3.right * mPosY);
                     transform.localRotation = Quaternion.Euler(-rotationx, rotationy, 0);
+                    */
+
+                    UpdateMouseValues();
+
+                    //mudei aqui pra rotacionar em torno dos eixos locais do player (câmera)
+                    //dessa maneira pra cima sempre será o meu pra cima, pra baixo sempre será o meu pra baixo e assim por diante
+
+                    //gon'take over the world while these haters gettin' mad
+                    transform.Rotate(player.up, -mPosX, Space.World);
+                    transform.Rotate(player.right, mPosY, Space.World);
                 }
             }
             if (Input.GetKeyUp(KeyCode.E))
             {
+                dirtyFlag = false;
                 gameObject.transform.parent = null;
                 objectRB.isKinematic = false;
                 hasInteracted = false;
@@ -315,8 +345,8 @@ public class objectController : MonoBehaviour
     }
     private void UpdateMouseValues()
     {
-        mPosX = Input.GetAxis("Mouse X") * 0.2f;
-        mPosY = Input.GetAxis("Mouse Y") * 0.2f;
+        mPosX = Input.GetAxis("Mouse X") * 10f * Time.deltaTime; //aumentei aqui a sensibilidade, não sei ficou muito mais lenta que antes
+        mPosY = Input.GetAxis("Mouse Y") * 10f * Time.deltaTime;
     }
 
     public void AddDocumentToSO(InventoryDocument Inventory)

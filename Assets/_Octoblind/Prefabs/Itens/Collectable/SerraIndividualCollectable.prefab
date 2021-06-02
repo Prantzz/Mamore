@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3189610599466954845}
   - component: {fileID: 601729929363866772}
   - component: {fileID: 8118430401961553343}
-  m_Layer: 0
-  m_Name: serraindividual
+  m_Layer: 11
+  m_Name: SerraIndividualCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24673c03b3483b548a3f6bdb574582e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 
   isSelected: 0
   hasInteracted: 0
   zeroY: 0
@@ -121,6 +122,15 @@ MonoBehaviour:
   AudioNum: 0
   DocumentIndex: 0
   DocMan: {fileID: 0}
+  phoCon: {fileID: 0}
+  photoImg: {fileID: 0}
+  DocumentInventory: {fileID: 0}
+  Diary: {fileID: 0}
+  Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!114 &8118430401961553343
 MonoBehaviour:
   m_ObjectHideFlags: 0

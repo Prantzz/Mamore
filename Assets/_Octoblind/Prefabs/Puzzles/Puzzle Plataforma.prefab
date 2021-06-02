@@ -1816,19 +1816,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16411377, y: 1.0162151, z: 4.0076942}
   m_Center: {x: 0.06795032, y: 0.46695808, z: -4.8217545}
---- !u!114 &4172383133669994353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6594689857347010136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f262d97421a43884682ef0b176b439cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
 --- !u!114 &2023168850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22560,6 +22547,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4172383133669994353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594689857347010136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f262d97421a43884682ef0b176b439cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
 --- !u!1 &8274035065970048102
 GameObject:
   m_ObjectHideFlags: 0
@@ -22625,6 +22625,7 @@ MonoBehaviour:
   correctObject: Tabua
   correctTool: Martelo
   stepOnTool: 4
+  ignoreStepOnTool: 0
   talker: 0
 --- !u!1 &8274035066227347723
 GameObject:
@@ -22691,6 +22692,7 @@ MonoBehaviour:
   correctObject: Tabua
   correctTool: Martelo
   stepOnTool: 5
+  ignoreStepOnTool: 0
   talker: 0
 --- !u!1 &8274035066251747234
 GameObject:
@@ -22782,7 +22784,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  tagToCollide: Player
   type: Tabua
   disabled: 0
 --- !u!1 &8274035066507845045
@@ -22880,6 +22881,7 @@ MonoBehaviour:
   correctObject: Tabua
   correctTool: Martelo
   stepOnTool: 7
+  ignoreStepOnTool: 0
   talker: 0
 --- !u!1 &8274035067177301145
 GameObject:
@@ -23033,6 +23035,7 @@ MonoBehaviour:
   correctObject: Tabua
   correctTool: Martelo
   stepOnTool: 6
+  ignoreStepOnTool: 0
   talker: 0
 --- !u!1 &8274035067965486468
 GameObject:
@@ -23124,7 +23127,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  tagToCollide: Player
   type: Tabua
   disabled: 0
 --- !u!1001 &1358558354243433284
@@ -23215,7 +23217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.67
+      value: -2.56
       objectReference: {fileID: 0}
     - target: {fileID: 4761512554070267814, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_LocalPosition.y

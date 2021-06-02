@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 7208315772497124958}
   - component: {fileID: 6550303716577432755}
   - component: {fileID: 3098105769344543110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: peMesa
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -189,6 +189,10 @@ MonoBehaviour:
   DocumentInventory: {fileID: 0}
   Diary: {fileID: 0}
   Document: {fileID: 0}
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
 --- !u!65 &6550303716577432755
 BoxCollider:
   m_ObjectHideFlags: 0
