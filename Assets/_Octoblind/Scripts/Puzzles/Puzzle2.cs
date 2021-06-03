@@ -21,6 +21,7 @@ sealed public class Puzzle2 : Puzzle
     private bool canFinish;
 
     private BoxCollider[] collidersFilhos;
+    public Puzzle questFerreiro;
 
     private void Awake()
     {
@@ -179,6 +180,7 @@ sealed public class Puzzle2 : Puzzle
             peMesa.GetComponent<BoxCollider>().enabled = true;
             peMesa.GetChild(1).GetComponent<BoxCollider>().enabled = true;
             peMesa.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+
             peMesa.gameObject.AddComponent(typeof(Rigidbody));
 
             encaixe.GetChild(0).GetComponent<SimplePuzzleCollider>().canCollide = true;
@@ -225,7 +227,7 @@ sealed public class Puzzle2 : Puzzle
         setTheParentNull = true;
 
         AchiveStep(12, true);
-     
+        questFerreiro.AchiveStep(1, true);
     }
 
     private void OnTriggerEnter(Collider other)

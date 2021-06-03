@@ -14,6 +14,8 @@ public class CompassController : MonoBehaviour
     float compassUnit;
     public QuestHandler quest1;
     public QuestHandler quest1_1;
+    public QuestHandler quest2;
+    public QuestHandler quest3;
 
     private void Start()
     {

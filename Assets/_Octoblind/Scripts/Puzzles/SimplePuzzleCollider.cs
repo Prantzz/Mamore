@@ -7,7 +7,7 @@ public class SimplePuzzleCollider : MonoBehaviour
 {
     [SerializeField]
     private int stepOnConllision; //SHAME!
-    public Puzzle puzzle;
+    [HideInInspector]public Puzzle puzzle;
     [SerializeField]private int giveIndex;
     public bool canCollide;
     public string tagToCheck;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Puzzle4 : Puzzle
+public class Puzzle6 : Puzzle
 {
     public CompassController CC;
     public QuestCanvasLogic QCL;
@@ -14,22 +14,21 @@ public class Puzzle4 : Puzzle
     {
         if (steps[0] && !steps[1] && !steps[2])
         {
-            CC.AddQuestMarker(CC.quest1_1);
-            QCL.changeTextAndActive(CC.quest1_1.description, true);
-            PuzzlePieces[1].SetActive(true);
+            CC.AddQuestMarker(CC.quest3);
+            QCL.changeTextAndActive(CC.quest3.description, true);
         }
         if (steps[1] && steps[0] && !steps[2])
         {
             this.AchiveStep(2, true);
-            GameObject x = PuzzlePieces[1];
-            QCL.changeTextAndActive(CC.quest1_1.description, false);
-            RemovePiece(PuzzlePieces[1]);
-            Destroy(x);
+            //GameObject x = PuzzlePieces[1];
+            QCL.changeTextAndActive(CC.quest3.description, false);
+            //RemovePiece(PuzzlePieces[1]);
+            //Destroy(x);
         }
-        if (steps[0] && steps[1] && steps[2]) {
+        if (steps[0] && steps[1] && steps[2])
+        {
             PuzzlePieces[0].SetActive(true);
+            PuzzlePieces[1].SetActive(true);
         }
-       
     }
-
 }

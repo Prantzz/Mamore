@@ -150,6 +150,7 @@ public class objectController : MonoBehaviour
             {
                 OnInteraction?.Invoke(this, EventArgs.Empty);
                 if (transform.parent == null) transform.parent = player.transform;
+                if (objectRB == null) objectRB = GetComponent<Rigidbody>();
                 if (!objectRB.isKinematic) objectRB.isKinematic = true;
                 if (!shouldRotate) shouldRotate = true;
                 if (!objIsGrabbed) objIsGrabbed = true;

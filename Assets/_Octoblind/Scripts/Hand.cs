@@ -103,7 +103,7 @@ public class Hand : MonoBehaviour
                         SPC.TryToAchiveStep();
                     }
                     //Caso ele não esteja usando a fita certa
-                    else
+                    else if (!SPC.talker)
                     {
                         //Tome dano pra parar de ser otário
                         transform.parent.transform.parent.transform.parent.GetComponent<PlayerController>().TakeDamage();
@@ -120,7 +120,7 @@ public class Hand : MonoBehaviour
                         obstacle.Remove();
                     }
                     //Caso ele não esteja usando a fita certa
-                    else
+                    else 
                     {
                         //Tome dano pra parar de ser otário
                         transform.parent.transform.parent.transform.parent.GetComponent<PlayerController>().TakeDamage();
