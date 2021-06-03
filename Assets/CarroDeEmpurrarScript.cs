@@ -11,7 +11,7 @@ public class CarroDeEmpurrarScript : MonoBehaviour
     public Puzzle puzzle2;
     public float velocity;
 
-
+    public float stop1, stop2, stop3, stop4;
     public void Move()
     {
         if (canMove)
@@ -28,12 +28,22 @@ public class CarroDeEmpurrarScript : MonoBehaviour
     {
         //Em raras situações o carrinho buga e faz muiuto barulho
         canMove = true;
-        if (transform.position.x >= 91.24f && !puzzle1.CheckStep(0))
+        if (transform.position.x >= stop1 && !puzzle1.CheckStep(0))
         {
             GameGlobeData.AU.PullSound(this.transform.position, 8, 2);
             velocity = -velocity;
         }
-        if (transform.position.x >= 103.5f && !puzzle1.CheckStep(3))
+        if (transform.position.x >= stop2 && !puzzle1.CheckStep(3))
+        {
+            GameGlobeData.AU.PullSound(this.transform.position, 8, 2);
+            velocity = -velocity;
+        }
+        if (transform.position.x >= stop3 && !puzzle2.CheckStep(0))
+        {
+            GameGlobeData.AU.PullSound(this.transform.position, 8, 2);
+            velocity = -velocity;
+        }
+        if (transform.position.x >= stop4 && !puzzle2.CheckStep(1))
         {
             GameGlobeData.AU.PullSound(this.transform.position, 8, 2);
             velocity = -velocity;

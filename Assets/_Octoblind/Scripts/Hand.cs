@@ -188,7 +188,10 @@ public class Hand : MonoBehaviour
                 kart.transform.Find("MoveFowardCollider").gameObject.SetActive(false);
                 player.transform.SetParent(null);
             }
-            
+            else if (hitT.CompareTag("Alavanca"))
+            {
+                hitT.GetComponent<AlavancaComponent>().Switch();
+            }
         }
     }
 }

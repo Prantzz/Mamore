@@ -17,21 +17,27 @@ public class EndCanvas : MonoBehaviour
     public bool continueCredits = false;
     public bool switcher;
     public Text memo;
+
+    public GameObject voltar;
+    public GameObject sair;
     private void Start()
     {
-        ending = good;
+        //Mudar
+        if (GameGlobeData.IsGoodEnding) ending = good;
+        else ending = bad;
         StartCoroutine("Main");
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && switcher && continueCredits == true)
+        if (Input.GetMouseButtonDown(0) && switcher == true && continueCredits == true)
         {
             switcher = false;
             continueCredits = false;
         }
-        if (Input.GetMouseButtonDown(0) && switcher && continueCredits == false) continueCredits = !continueCredits;
-        
+        if (Input.GetMouseButtonDown(0) && switcher == true && continueCredits == false) continueCredits = !continueCredits;
+
+
     }
     IEnumerator Main()
     {
@@ -83,9 +89,21 @@ public class EndCanvas : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         while(continueCredits == false && switcher == false && memo.color.a > 0)
         {
+            producao.color = new Color(producao.color.r, producao.color.g, producao.color.b, producao.color.a - (fadeSpeed * 3));
+            octo.color = new Color(octo.color.r, octo.color.g, octo.color.b, octo.color.a - (fadeSpeed * 3));
             memo.color = new Color(memo.color.r, memo.color.g, memo.color.b, memo.color.a - (fadeSpeed * 3));
             yield return new WaitForSecondsRealtime(0.01f);
         }
+        voltar.SetActive(true);
+        sair.SetActive(true);
+        ////yield return new WaitForSecondsRealtime(2f);
+        //while (continueCredits == false && switcher == false && memo.color.a > 0)
+        //{
+        //    producao.color = new Color(producao.color.r, producao.color.g, producao.color.b, producao.color.a - (fadeSpeed * 3));
+        //    octo.color = new Color(octo.color.r, octo.color.g, octo.color.b, octo.color.a - (fadeSpeed * 3));
+        //    memo.color = new Color(memo.color.r, memo.color.g, memo.color.b, memo.color.a - (fadeSpeed * 3));
+        //    yield return new WaitForSecondsRealtime(0.01f);
+        //}
         yield return null;
     }
 
@@ -109,6 +127,16 @@ public class EndCanvas : MonoBehaviour
         Application.Quit();
     }
     */
+
+    public void Sair()
+    {
+        Application.Quit();
+    }
+
+    public void Voltar()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 }
 
