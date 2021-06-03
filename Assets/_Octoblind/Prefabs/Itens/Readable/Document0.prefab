@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 9002448187489832765}
   - component: {fileID: 9002448187489832764}
   - component: {fileID: 9002448187489832762}
-  - component: {fileID: 567886417785512826}
+  - component: {fileID: 1937716725}
+  - component: {fileID: 5417117829543588047}
   m_Layer: 0
-  m_Name: Document
+  m_Name: Document0
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +142,23 @@ MonoBehaviour:
   DocumentInventory: {fileID: 11400000, guid: def85c57bd781c844aaa27e061f43cfa, type: 2}
   Diary: {fileID: 0}
   Document: {fileID: 11400000, guid: 8c87efec8e711ce49a911940019e980a, type: 2}
---- !u!65 &567886417785512826
+  objectRB: {fileID: 0}
+  shouldRotate: 0
+  objIsGrabbed: 0
+  isHoldable: 0
+--- !u!114 &1937716725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002448187489832761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4dbd7125cc1cf4c9ffcc7dd572ca13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5417117829543588047
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,5 +169,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.80666167, y: 0.038153317, z: 1.0991583}
-  m_Center: {x: 0.00017550588, y: 0.019076658, z: -0.00014320016}
+  m_Size: {x: 0.5041635, y: 0.023845822, z: 0.6869739}
+  m_Center: {x: 0.000104919076, y: 0.011922911, z: -0.00009714067}
