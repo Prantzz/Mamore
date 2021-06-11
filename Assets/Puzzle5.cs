@@ -23,12 +23,18 @@ public class Puzzle5 : Puzzle
             this.AchiveStep(2, true);
             GameObject x = PuzzlePieces[1];
             QCL.changeTextAndActive(CC.quest2.description, false);
+            CC.RemoveQuestMarker(CC.quest1_1);
             RemovePiece(PuzzlePieces[1]);
-            Destroy(x);
+
+            x.SetActive(false);
         }
         if (steps[0] && steps[1] && steps[2])
         {
             PuzzlePieces[0].SetActive(true);
+            CC.RemoveQuestMarker(CC.quest2);
+            CC.AddQuestMarker(CC.quest5);
+            QCL.changeTextAndActive(CC.quest5.description, true);
+            
         }
 
     }

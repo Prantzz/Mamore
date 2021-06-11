@@ -29,6 +29,8 @@ public class Puzzle6 : Puzzle
         {
             PuzzlePieces[0].SetActive(true);
             PuzzlePieces[1].SetActive(true);
+            CC.RemoveQuestMarker(CC.quest3);
+            CC.AddQuestMarker(CC.quest4);
         }
     }
 }

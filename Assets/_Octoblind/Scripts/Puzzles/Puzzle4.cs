@@ -23,11 +23,16 @@ public class Puzzle4 : Puzzle
             this.AchiveStep(2, true);
             GameObject x = PuzzlePieces[1];
             QCL.changeTextAndActive(CC.quest1_1.description, false);
+            CC.RemoveQuestMarker(CC.quest1_1);
             RemovePiece(PuzzlePieces[1]);
-            Destroy(x);
+
+            x.SetActive(false);
         }
         if (steps[0] && steps[1] && steps[2]) {
             PuzzlePieces[0].SetActive(true);
+            CC.RemoveQuestMarker(CC.quest1);
+            CC.RemoveQuestMarker(CC.quest1_1);
+            CC.AddQuestMarker(CC.quest3);
         }
        
     }

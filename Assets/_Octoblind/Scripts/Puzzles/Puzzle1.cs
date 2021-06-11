@@ -14,13 +14,24 @@ sealed public class Puzzle1 : Puzzle
     private Transform Degrau0;
     private Transform Degrau1;
 
+    [SerializeField] private GameObject[] dustParticles;
+
     bool locker1 = false;
     bool locker2 = false;
 
+    private void Awake()
+    {
+        for (int i = 0; i < dustParticles.Length; i++)
+        {
+            dustParticles[i].SetActive(false);
+        }
+    }
     private void Start()
     {
+        
         Degrau0 = transform.GetChild(0);
         Degrau1 = transform.GetChild(1);
+
     }
 
     //Chamado pelo AchieveStep
@@ -42,6 +53,8 @@ sealed public class Puzzle1 : Puzzle
             
         }
 
+       
+
         //Travar degrau 2
         if (steps[2] && steps[3] && !locker2)
         {
@@ -55,6 +68,28 @@ sealed public class Puzzle1 : Puzzle
             Degrau1.GetChild(1).GetComponent<SimplePuzzleCollider>().canCollide = false;
 
             locker2 = true;
+        }
+
+        //Feedback degrau martelado
+        if (steps[4] && locker1)
+        {
+            dustParticles[0].SetActive(true);
+        }
+        //Feedback degrau martelado
+        if (steps[5] && locker1)
+        {
+            dustParticles[1].SetActive(true);
+        }
+
+        //Feedback degrau martelado
+        if (steps[6] && locker2)
+        {
+            dustParticles[2].SetActive(true);
+        }
+        //Feedback degrau martelado
+        if (steps[7] && locker2)
+        {
+            dustParticles[3].SetActive(true);
         }
 
     }
@@ -108,7 +143,8 @@ sealed public class Puzzle1 : Puzzle
                     
                     if (ArrayPuzzlePieces[0] != null)
                         ArrayPuzzlePieces[0] = null;
-
+                    dustParticles[0].SetActive(false);
+                    dustParticles[1].SetActive(false);
                 }
             }
             else if (Array.IndexOf(ArrayPuzzlePieces, tabua) == 1)
@@ -140,6 +176,9 @@ sealed public class Puzzle1 : Puzzle
 
                     if (ArrayPuzzlePieces[1] != null)
                         ArrayPuzzlePieces[1] = null;
+
+                    dustParticles[3].SetActive(false);
+                    dustParticles[4].SetActive(false);
 
                 }
             }

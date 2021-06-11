@@ -8,14 +8,23 @@ public class CompassController : MonoBehaviour
     public GameObject iconPrefab;
     List<QuestHandler> QuestList = new List<QuestHandler>();
 
+    public GameObject newMarker;
+
     private RawImage compass;
     private Transform player;
 
+    public Sprite nullSprite;
+
     float compassUnit;
+
+    //extra dumb and autistic - but it works
     public QuestHandler quest1;
     public QuestHandler quest1_1;
     public QuestHandler quest2;
     public QuestHandler quest3;
+    public QuestHandler quest4;
+    public QuestHandler quest5;
+    //extra dumb and autistic - but it works
 
     private void Start()
     {
@@ -35,11 +44,21 @@ public class CompassController : MonoBehaviour
 
     public void AddQuestMarker(QuestHandler marker)
     {
-        GameObject newMarker = Instantiate(iconPrefab, compass.transform);
+        newMarker = Instantiate(iconPrefab, compass.transform);
         marker.thisImg = newMarker.GetComponent<Image>();
         marker.thisImg.sprite = marker.QuestMark;
         QuestList.Add(marker);
+        
     }
+    public void RemoveQuestMarker(QuestHandler marker) 
+    {
+        for (int i = 0; i < QuestList.Count; i++)
+        {
+            QuestList[i].QuestMark = nullSprite;
+        }
+        newMarker.GetComponent<Image>().sprite = nullSprite;
+        QuestList.Remove(marker);
+    } 
 
     Vector2 GetPosOnCompass (QuestHandler marker) 
     {
