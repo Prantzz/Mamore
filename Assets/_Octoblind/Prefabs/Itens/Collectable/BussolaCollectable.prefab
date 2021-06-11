@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7792272204966503288}
   - component: {fileID: 6008359026170402064}
   - component: {fileID: 84323320}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: BussolaCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}

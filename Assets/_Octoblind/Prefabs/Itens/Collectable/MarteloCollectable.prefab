@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3254871371625643439}
   - component: {fileID: 3254871369700697839}
   - component: {fileID: 5889517046869773578}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MarteloCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}

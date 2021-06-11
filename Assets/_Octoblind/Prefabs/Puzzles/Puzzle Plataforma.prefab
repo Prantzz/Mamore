@@ -23188,6 +23188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TabuaPuzzle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
 --- !u!1 &6594689857347010136 stripped
@@ -23258,6 +23262,10 @@ PrefabInstance:
     - target: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
       propertyPath: m_Name
       value: TabuaPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287114757782605084, guid: 916982bdde650bd49b030d2bf9587829, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916982bdde650bd49b030d2bf9587829, type: 3}

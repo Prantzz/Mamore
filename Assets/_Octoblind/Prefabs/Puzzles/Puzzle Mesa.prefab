@@ -1337,7 +1337,7 @@ GameObject:
   - component: {fileID: 5023684530823085521}
   - component: {fileID: 9221713830020197052}
   - component: {fileID: 9221713830020197053}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Puzzle Mesa
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -1497,6 +1497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: peMesa2
       objectReference: {fileID: 0}
+    - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1558,6 +1562,10 @@ PrefabInstance:
     - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_Name
       value: peMesa3
+      objectReference: {fileID: 0}
+    - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_RootOrder
@@ -1621,6 +1629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: peMesa1
       objectReference: {fileID: 0}
+    - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1682,6 +1694,10 @@ PrefabInstance:
     - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_Name
       value: peMesa0
+      objectReference: {fileID: 0}
+    - target: {fileID: 527295747656895582, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1655008082053502330, guid: 70d838e29f4fd0048954c1714e228bba, type: 3}
       propertyPath: m_RootOrder

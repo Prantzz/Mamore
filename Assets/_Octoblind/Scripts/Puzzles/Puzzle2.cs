@@ -131,6 +131,7 @@ sealed public class Puzzle2 : Puzzle
     private void AjustarPemesa(Vector3 pos, Transform peMesa)
     {
         objectController objCon = peMesa.GetComponent<objectController>();
+        if (peMesa.gameObject.layer != 0) peMesa.gameObject.layer = 0;
         peMesa.SetParent(transform);
         peMesa.position = pos;
         peMesa.eulerAngles = new Vector3(0, 0, 0);

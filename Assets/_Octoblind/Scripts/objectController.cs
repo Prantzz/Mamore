@@ -148,6 +148,7 @@ public class objectController : MonoBehaviour
 
             if (hasInteracted) //Input.GetKeyDown(KeyCode.E)
             {
+                if(gameObject.layer != 11) gameObject.layer = 11;
                 OnInteraction?.Invoke(this, EventArgs.Empty);
                 if (transform.parent == null) transform.parent = player.transform;
                 if (objectRB == null) objectRB = GetComponent<Rigidbody>();
@@ -193,6 +194,7 @@ public class objectController : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.E))
             {
+                if (gameObject.layer != 0) gameObject.layer = 0;
                 dirtyFlag = false;
                 gameObject.transform.parent = null;
                 objectRB.isKinematic = false;

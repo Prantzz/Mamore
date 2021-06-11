@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3189610599466954845}
   - component: {fileID: 601729929363866772}
   - component: {fileID: 8118430401961553343}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SerraIndividualCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: c564bdc9d0fc9054c9407c4f21c5d9bd, type: 3}
+  - {fileID: 2100000, guid: d0c6fd341a6a4f5478ea566c67ad275f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

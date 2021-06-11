@@ -62,7 +62,7 @@ sealed public class Puzzle1 : Puzzle
 
     public void AjustarDegrau(Vector3 pos, Transform degrau)
     {
-
+        if(degrau.gameObject.layer != 0) degrau.gameObject.layer = 0;
         degrau.SetParent(transform);
         degrau.position = pos;
         degrau.eulerAngles = new Vector3(0, 90, 0);

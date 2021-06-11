@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8253004482098642101}
   - component: {fileID: 2968552266892574258}
   - component: {fileID: 3679246305758812741}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LampiaoCollectable
   m_TagString: Selectable
   m_Icon: {fileID: 0}
